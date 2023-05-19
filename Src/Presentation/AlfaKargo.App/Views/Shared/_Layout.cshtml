@@ -1,0 +1,241 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - AlfaKargo.App</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/assets/css/shared.css">
+    @RenderSection("css",false)
+</head>
+<body>
+        @RenderSection("login",false)
+    <header>
+        <div class="top-header py-2">
+            <div class="container">
+                <div class="col-lg-12 col-md-12 col-sm-12">
+                    <div class="row align-items-center">
+                        <div class="nav justify-content-between">
+                            <div class="top-header-left-side d-flex gap-5 align-items-center">
+                                <a href="tel:*7171" class="d-flex gap-2">
+                                    <span class="iconify"
+                                          data-icon="healthicons:phone" data-height="16"
+                                          style="color: #7b7b93;"></span>*7171
+                                </a>
+                                <a asp-controller="info" asp-action="ProhibitedItems">Daşınması qadağan olan məhsullar</a>
+                                <a asp-controller="info" asp-action="faq">Tez-tez verilən suallar</a>
+                            </div>
+                            <div class="top-header-right-side d-flex gap-4 align-items-center">
+                                <a href="#" class="d-flex align-items-center gap-1 lang-all" id="lang-all">
+                                    <span class="lang" id="lang" style="position: relative;">AZ</span>
+                                    <div class="lang-drop-down" id="lang-drop-down">
+                                        <span class="aze selected" id="aze">AZ</span>
+                                        <span class="eng" id="eng">EN</span>
+                                        <span class="rus" id="rus">RU</span>
+                                    </div>
+                                    <span class="iconify chevron" id="chevron" data-icon="ci:chevron-big-down"
+                                          style="color: black;"></span>
+                                </a>
+                                <a asp-controller="account" asp-action="login" class="sign-in">Daxil ol</a>
+                                <a asp-controller="info" asp-action="register" class="sign-up">Qeydiyyat</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="bottom-header py-4">
+            <div class="container py-1">
+                <div class="col-lg-12 col-md-12 col-sm-12">
+                    <div class="row align-items-center">
+                        <div class="nav justify-content-between align-items-center">
+                            <div class="bottom-header-left-side pt-1">
+                                <a asp-controller="home" asp-action="index" class="logo">
+                                    <img src="~/assets/imgs/Logo/alfa kuryer logo.png" alt="Dynamex Logo" height="100" class="logo">
+                                </a>
+                            </div>
+                            <div class="bottom-header-menu">
+                                <nav>
+                                    <ul class="nav d-flex gap-5 align-items-center">
+                                        <li><a asp-controller="rate" asp-action="index">Tariflər</a></li>
+                                        <li><a asp-controller="news" asp-action="index">Xəbərlər</a></li>
+                                        <li><a asp-controller="contact" asp-action="index">Əlaqə</a></li>
+                                        <li style="display: flex">
+                                            <input id="tracking" placeholder="tracking" />
+                                            <button class="btn-red"><i class="fa fa-search"></i></button>
+                                        </li>
+                                    </ul>
+                                </nav>
+                            </div>
+                            <div class="bottom-header-right-side">
+                                <a asp-controller="account" asp-action="login" class="sign-in">Daxil ol</a>
+                                <a asp-controller="account" asp-action="login" class="sign-in">Qeydiyyat</a>
+                            </div>
+
+                            <div class="menu-bar">
+                                <div class="icon">
+                                    <i class="fa-solid fa-bars"></i>
+                                </div>
+                                <div class="mini-menu active-menu">
+                                    <ul>
+                                        <li class="close"><i class="fa-solid fa-xmark"></i></li>
+                                        <li style="display: flex">
+                                            <input id="tracking2" placeholder="tracking" />
+                                            <button class="btn-red2"><i class="fa fa-search"></i></button>
+                                        </li>
+                                        <li>
+                                            <select name="cars" id="cars">
+                                                <option value="saab">Az</option>
+                                                <option value="mercedes">En</option>
+                                                <option value="audi">Ru</option>
+                                                <option value="audi">Tr</option>
+                                            </select>
+                                        </li>
+
+                            
+                                        <li><a asp-controller="store" asp-action="index">Əməkdaşlar</a></li>
+                                        <li><a asp-controller="news" asp-action="index">Yeniliklər</a></li>
+                                        <li><a asp-controller="contact" asp-action="index">Əlaqə</a></li>
+                                     
+                                       
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="mobile-header">
+            <div class="logo">
+                <a asp-controller="home" asp-action="index" class="logo">
+                    <img src="~/assets/imgs/Logo/alfa kuryer logo.png" alt="Dynamex Logo" height="100" class="logo">
+                </a>
+            </div>
+            <div class="menu-bar2">
+                <div class="icon">
+                    <i class="fa-solid fa-bars"></i>
+                </div>
+                <div class="mini-menu2 active-menu">
+                    <ul>
+                              <li class="close2"><i class="fa-solid fa-xmark"></i></li>
+                        <li>
+                            <select name="cars" id="cars">
+                                <option value="saab">Az</option>
+                                <option value="mercedes">En</option>
+                                <option value="audi">Ru</option>
+                                <option value="audi">Tr</option>
+                            </select>
+                        </li>
+
+                        <li style="display: flex">
+                            <input id="tracking3" placeholder="tracking" />
+                            <button class="btn-red3"><i class="fa fa-search"></i></button>
+                        </li>
+                    
+                        <li><a asp-controller="store" asp-action="index">Əməkdaşlar</a></li>
+                        <li><a asp-controller="news" asp-action="index">Yeniliklər</a></li>
+                        <li><a asp-controller="contact" asp-action="index">Əlaqə</a></li>
+                    
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </header>
+    <main>
+        @RenderBody()
+    </main>
+    <footer>
+        <div class="container footer">
+            <div class="row">
+                <div class="col-md-12 mt-5 mb-5">
+                    <div class="row">
+                        <div class="col-lg-4 col-md-12">
+                            <a asp-controller="home" asp-action="index" class="white-logo">
+                                <img class="mb-4" src="~/assets/imgs/index/Logo.jpg" alt="Dynamex Logo" width="160">
+                            </a>
+                            <p class="mb-5">
+                                <span class="iconify" data-icon="mdi:copyright"></span>
+                                Alfaex.az<br>Bütün hüquqlar qorunur
+                            </p>
+                            <div class="socials">
+                                <a href="https://www.facebook.com/dynamex.az/" class="social" target="_blank">
+                                    <span class="iconify" data-icon="cib:facebook-f" data-height="20"
+                                          style="color: white;"></span>
+                                </a>
+                                <a href="https://dynamex.az/about-us.html#" class="social" target="_blank">
+                                    <span class="iconify" data-icon="akar-icons:twitter-fill" data-height="20"
+                                          style="color: white;"></span>
+                                </a>
+                                <a href="https://www.instagram.com/dynamic.express/?hl=en" class="social"
+                                   target="_blank">
+                                    <span class="iconify" data-icon="akar-icons:instagram-fill" data-height="20"
+                                          style="color: white;"></span>
+                                </a>
+                                <a href="https://www.youtube.com/channel/UCnNG1fkf-8Wd3SKbS0Ioavg/featured"
+                                   class="social" target="_blank">
+                                    <i>
+                                        <span class="iconify" data-icon="akar-icons:youtube-fill" data-height="20"
+                                              style="color: white;"></span>
+                                    </i>
+                                </a>
+                            </div>
+
+                        </div>
+                        <div class="col-lg-2 col-md-6">
+                            <h3>Menu</h3>
+                            <ul class="menu-list">
+                                <li><a asp-controller="about" asp-action="index">Haqqımızda</a></li>
+                                <li><a asp-controller="service" asp-action="index">Xidmətlər</a></li>
+                                <li><a asp-controller="rate" asp-action="index">Tariflər</a></li>
+                                <li><a asp-controller="news" asp-action="index">Xəbərlər</a></li>
+                                <li><a asp-controller="contact" asp-action="index">Əlaqə</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-lg-2 col-md-6">
+                            <h3>Kömək</h3>
+                            <ul class="help-list">
+                                <li><a asp-controller="about" asp-action="Privacy">Gizlilik siyasəti</a></li>
+                                <li><a asp-controller="about" asp-action="agreement">İstifadəçi Razılaşması</a></li>
+                                <li><a asp-controller="news" asp-action="index">Yeniliklər</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-lg-4 col-md-12">
+                            <h3>Əlaqə</h3>
+                            <ul class="contact-list">
+                                <li>
+                                    <a href="mailto:info@dynamex.az">Problemli şöbə ilə əlaqə: info@alfaex.az</a>
+                                </li>
+                                <li>
+                                    <a href="mailto:hr@dynamex.az">Əməkdaşlıq üçün : hr@alfaex.az</a>
+                                </li>
+                                <li>
+                                    <a href="tel:*7171" class="d-flex gap-2">
+                                        <span class="iconify" data-icon="healthicons:phone" data-height="16"
+                                              style="color: #7b7b93;"></span>
+                                        *7171
+                                    </a>
+                                </li>
+                            </ul>
+                          
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+      
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/assets/js/shared.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/iconify/2.0.0/iconify.min.js"
+            integrity="sha512-lYMiwcB608+RcqJmP93CMe7b4i9G9QK1RbixsNu4PzMRJMsqr/bUrkXUuFzCNsRUo3IXNUr5hz98lINURv5CNA=="
+            crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

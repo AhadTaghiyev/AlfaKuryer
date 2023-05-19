@@ -1,0 +1,73 @@
+﻿<Properties StartupConfiguration="{739921F7-E59A-429C-A769-E0E5F831EB8B}|https">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.ItemProperties.Src.Presentation.AlfaKargo.App PreferredExecutionTarget="/Volumes/Google Chrome/Google Chrome.app" />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore>
+      <Breakpoint file="/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/areas/manage/Controllers/SettingController.cs" relfile="Src/Presentation/AlfaKargo.App/areas/manage/Controllers/SettingController.cs" line="33" column="1" />
+    </BreakpointStore>
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Src/Presentation/AlfaKargo.App/areas/manage/Controllers/SettingController.cs">
+    <Files>
+      <File FileName="Src/Presentation/AlfaKargo.App/areas/manage/HomeController.cs" Line="13" Column="2" />
+      <File FileName="Src/Presentation/AlfaKargo.App/areas/manage/Controllers/SettingController.cs" Line="33" Column="1" />
+      <File FileName="Src/Presentation/AlfaKargo.App/areas/manage/Views/Home/Index.cshtml" Line="5" Column="59" />
+      <File FileName="Src/Presentation/AlfaKargo.App/areas/manage/Views/Setting/Index.cshtml" Line="23" Column="1" />
+      <File FileName="Src/Presentation/AlfaKargo.App/areas/manage/Views/Shared/_Layout.cshtml" Line="376" Column="8" />
+      <File FileName="Src/Presentation/AlfaKargo.App/areas/manage/Views/_ViewImports.cshtml" Line="2" Column="1" />
+      <File FileName="Src/Presentation/AlfaKargo.App/areas/manage/Views/_ViewStart.cshtml" Line="1" Column="1" />
+      <File FileName="Src/Presentation/AlfaKargo.App/areas/ViewModels/UpdateVewModel.cs" Line="10" Column="8" />
+      <File FileName="Src/Presentation/AlfaKargo.App/areas/manage/Views/Setting/Update.cshtml" Line="60" Column="45" />
+      <File FileName="Src/Infrastucture/AlfaKuryer.Persistance/Services/SettingService.cs" Line="48" Column="19" />
+      <File FileName="Src/Core/AlfaKuryer.Application/Profiles/MapProfile.cs" Line="1" Column="1" />
+      <File FileName="Src/Presentation/AlfaKargo.App/Program.cs" Line="1" Column="1" />
+      <File FileName="Src/Infrastucture/AlfaKuryer.Persistance/ServiceRegisterations/ServiceRegisteration.cs" Line="29" Column="1" />
+      <File FileName="Src/Core/AlfaKuryer.Application/Validations/SettingPostDtoValidation.cs" Line="26" Column="16" />
+      <File FileName="Src/Core/AlfaKuryer.Application/Dtos/SettingDtos/SettingPostDto.cs" Line="7" Column="26" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="AlfaKargo" expanded="True">
+            <Node name="Src" expanded="True">
+              <Node name="Core" expanded="True">
+                <Node name="AlfaKuryer.Application" expanded="True">
+                  <Node name="Dtos" expanded="True">
+                    <Node name="SettingDtos" expanded="True" />
+                  </Node>
+                </Node>
+              </Node>
+              <Node name="Infrastucture" expanded="True">
+                <Node name="AlfaKuryer.Persistance" expanded="True">
+                  <Node name="ServiceRegisterations" expanded="True" />
+                  <Node name="Services" expanded="True" />
+                </Node>
+              </Node>
+              <Node name="Presentation" expanded="True">
+                <Node name="AlfaKargo.App" expanded="True">
+                  <Node name="areas" expanded="True">
+                    <Node name="manage" expanded="True">
+                      <Node name="Controllers" expanded="True">
+                        <Node name="SettingController.cs" selected="True" />
+                      </Node>
+                      <Node name="Views" expanded="True">
+                        <Node name="Setting" expanded="True" />
+                      </Node>
+                    </Node>
+                    <Node name="ViewModels" expanded="True" />
+                  </Node>
+                  <Node name="wwwroot" expanded="True">
+                    <Node name="assets" expanded="True">
+                      <Node name="imgs" expanded="True" />
+                    </Node>
+                  </Node>
+                </Node>
+              </Node>
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+</Properties>

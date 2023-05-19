@@ -1,0 +1,1445 @@
+{
+  "Files": [
+    {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/obj/Debug/net7.0/scopedcss/projectbundle/AlfaKargo.App.bundle.scp.css",
+      "PackagePath": "staticwebassets/AlfaKargo.App.bundle.scp.css"
+    },
+    {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/Admin/css/sb-admin-2.css",
+      "PackagePath": "staticwebassets/Admin/css/sb-admin-2.css"
+    },
+    {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/Admin/css/sb-admin-2.min.css",
+      "PackagePath": "staticwebassets/Admin/css/sb-admin-2.min.css"
+    },
+    {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/Admin/img/undraw_posting_photo.svg",
+      "PackagePath": "staticwebassets/Admin/img/undraw_posting_photo.svg"
+    },
+    {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/Admin/js/admin.js",
+      "PackagePath": "staticwebassets/Admin/js/admin.js"
+    },
+    {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/Admin/js/demo/chart-area-demo.js",
+      "PackagePath": "staticwebassets/Admin/js/demo/chart-area-demo.js"
+    },
+    {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/Admin/js/demo/chart-bar-demo.js",
+      "PackagePath": "staticwebassets/Admin/js/demo/chart-bar-demo.js"
+    },
+    {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/Admin/js/demo/chart-pie-demo.js",
+      "PackagePath": "staticwebassets/Admin/js/demo/chart-pie-demo.js"
+    },
+    {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/Admin/js/demo/datatables-demo.js",
+      "PackagePath": "staticwebassets/Admin/js/demo/datatables-demo.js"
+    },
+    {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/Admin/js/sb-admin-2.js",
+      "PackagePath": "staticwebassets/Admin/js/sb-admin-2.js"
+    },
+    {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/Admin/js/sb-admin-2.min.js",
+      "PackagePath": "staticwebassets/Admin/js/sb-admin-2.min.js"
+    },
+    {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/Admin/login/css/mystyle.css",
+      "PackagePath": "staticwebassets/Admin/login/css/mystyle.css"
+    },
+    {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/Admin/login/img/log.png",
+      "PackagePath": "staticwebassets/Admin/login/img/log.png"
+    },
+    {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/Admin/login/js/main.js",
+      "PackagePath": "staticwebassets/Admin/login/js/main.js"
+    },
+    {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/Admin/vendor/bootstrap/js/bootstrap.bundle.js",
+      "PackagePath": "staticwebassets/Admin/vendor/bootstrap/js/bootstrap.bundle.js"
+    },
+    {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/Admin/vendor/bootstrap/js/bootstrap.bundle.js.map",
+      "PackagePath": "staticwebassets/Admin/vendor/bootstrap/js/bootstrap.bundle.js.map"
+    },
+    {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/Admin/vendor/bootstrap/js/bootstrap.bundle.min.js",
+      "PackagePath": "staticwebassets/Admin/vendor/bootstrap/js/bootstrap.bundle.min.js"
+    },
+    {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/Admin/vendor/bootstrap/js/bootstrap.bundle.min.js.map",
+      "PackagePath": "staticwebassets/Admin/vendor/bootstrap/js/bootstrap.bundle.min.js.map"
+    },
+    {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/Admin/vendor/bootstrap/js/bootstrap.js",
+      "PackagePath": "staticwebassets/Admin/vendor/bootstrap/js/bootstrap.js"
+    },
+    {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/Admin/vendor/bootstrap/js/bootstrap.js.map",
+      "PackagePath": "staticwebassets/Admin/vendor/bootstrap/js/bootstrap.js.map"
+    },
+    {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/Admin/vendor/bootstrap/js/bootstrap.min.js",
+      "PackagePath": "staticwebassets/Admin/vendor/bootstrap/js/bootstrap.min.js"
+    },
+    {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/Admin/vendor/bootstrap/js/bootstrap.min.js.map",
+      "PackagePath": "staticwebassets/Admin/vendor/bootstrap/js/bootstrap.min.js.map"
+    },
+    {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/Admin/vendor/bootstrap/scss/_alert.scss",
+      "PackagePath": "staticwebassets/Admin/vendor/bootstrap/scss/_alert.scss"
+    },
+    {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/Admin/vendor/bootstrap/scss/_badge.scss",
+      "PackagePath": "staticwebassets/Admin/vendor/bootstrap/scss/_badge.scss"
+    },
+    {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/Admin/vendor/bootstrap/scss/_breadcrumb.scss",
+      "PackagePath": "staticwebassets/Admin/vendor/bootstrap/scss/_breadcrumb.scss"
+    },
+    {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/Admin/vendor/bootstrap/scss/_button-group.scss",
+      "PackagePath": "staticwebassets/Admin/vendor/bootstrap/scss/_button-group.scss"
+    },
+    {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/Admin/vendor/bootstrap/scss/_buttons.scss",
+      "PackagePath": "staticwebassets/Admin/vendor/bootstrap/scss/_buttons.scss"
+    },
+    {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/Admin/vendor/bootstrap/scss/_card.scss",
+      "PackagePath": "staticwebassets/Admin/vendor/bootstrap/scss/_card.scss"
+    },
+    {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/Admin/vendor/bootstrap/scss/_carousel.scss",
+      "PackagePath": "staticwebassets/Admin/vendor/bootstrap/scss/_carousel.scss"
+    },
+    {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/Admin/vendor/bootstrap/scss/_close.scss",
+      "PackagePath": "staticwebassets/Admin/vendor/bootstrap/scss/_close.scss"
+    },
+    {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/Admin/vendor/bootstrap/scss/_code.scss",
+      "PackagePath": "staticwebassets/Admin/vendor/bootstrap/scss/_code.scss"
+    },
+    {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/Admin/vendor/bootstrap/scss/_custom-forms.scss",
+      "PackagePath": "staticwebassets/Admin/vendor/bootstrap/scss/_custom-forms.scss"
+    },
+    {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/Admin/vendor/bootstrap/scss/_dropdown.scss",
+      "PackagePath": "staticwebassets/Admin/vendor/bootstrap/scss/_dropdown.scss"
+    },
+    {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/Admin/vendor/bootstrap/scss/_forms.scss",
+      "PackagePath": "staticwebassets/Admin/vendor/bootstrap/scss/_forms.scss"
+    },
+    {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/Admin/vendor/bootstrap/scss/_functions.scss",
+      "PackagePath": "staticwebassets/Admin/vendor/bootstrap/scss/_functions.scss"
+    },
+    {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/Admin/vendor/bootstrap/scss/_grid.scss",
+      "PackagePath": "staticwebassets/Admin/vendor/bootstrap/scss/_grid.scss"
+    },
+    {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/Admin/vendor/bootstrap/scss/_images.scss",
+      "PackagePath": "staticwebassets/Admin/vendor/bootstrap/scss/_images.scss"
+    },
+    {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/Admin/vendor/bootstrap/scss/_input-group.scss",
+      "PackagePath": "staticwebassets/Admin/vendor/bootstrap/scss/_input-group.scss"
+    },
+    {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/Admin/vendor/bootstrap/scss/_jumbotron.scss",
+      "PackagePath": "staticwebassets/Admin/vendor/bootstrap/scss/_jumbotron.scss"
+    },
+    {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/Admin/vendor/bootstrap/scss/_list-group.scss",
+      "PackagePath": "staticwebassets/Admin/vendor/bootstrap/scss/_list-group.scss"
+    },
+    {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/Admin/vendor/bootstrap/scss/_media.scss",
+      "PackagePath": "staticwebassets/Admin/vendor/bootstrap/scss/_media.scss"
+    },
+    {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/Admin/vendor/bootstrap/scss/_mixins.scss",
+      "PackagePath": "staticwebassets/Admin/vendor/bootstrap/scss/_mixins.scss"
+    },
+    {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/Admin/vendor/bootstrap/scss/_modal.scss",
+      "PackagePath": "staticwebassets/Admin/vendor/bootstrap/scss/_modal.scss"
+    },
+    {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/Admin/vendor/bootstrap/scss/_nav.scss",
+      "PackagePath": "staticwebassets/Admin/vendor/bootstrap/scss/_nav.scss"
+    },
+    {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/Admin/vendor/bootstrap/scss/_navbar.scss",
+      "PackagePath": "staticwebassets/Admin/vendor/bootstrap/scss/_navbar.scss"
+    },
+    {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/Admin/vendor/bootstrap/scss/_pagination.scss",
+      "PackagePath": "staticwebassets/Admin/vendor/bootstrap/scss/_pagination.scss"
+    },
+    {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/Admin/vendor/bootstrap/scss/_popover.scss",
+      "PackagePath": "staticwebassets/Admin/vendor/bootstrap/scss/_popover.scss"
+    },
+    {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/Admin/vendor/bootstrap/scss/_print.scss",
+      "PackagePath": "staticwebassets/Admin/vendor/bootstrap/scss/_print.scss"
+    },
+    {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/Admin/vendor/bootstrap/scss/_progress.scss",
+      "PackagePath": "staticwebassets/Admin/vendor/bootstrap/scss/_progress.scss"
+    },
+    {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/Admin/vendor/bootstrap/scss/_reboot.scss",
+      "PackagePath": "staticwebassets/Admin/vendor/bootstrap/scss/_reboot.scss"
+    },
+    {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/Admin/vendor/bootstrap/scss/_root.scss",
+      "PackagePath": "staticwebassets/Admin/vendor/bootstrap/scss/_root.scss"
+    },
+    {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/Admin/vendor/bootstrap/scss/_spinners.scss",
+      "PackagePath": "staticwebassets/Admin/vendor/bootstrap/scss/_spinners.scss"
+    },
+    {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/Admin/vendor/bootstrap/scss/_tables.scss",
+      "PackagePath": "staticwebassets/Admin/vendor/bootstrap/scss/_tables.scss"
+    },
+    {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/Admin/vendor/bootstrap/scss/_toasts.scss",
+      "PackagePath": "staticwebassets/Admin/vendor/bootstrap/scss/_toasts.scss"
+    },
+    {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/Admin/vendor/bootstrap/scss/_tooltip.scss",
+      "PackagePath": "staticwebassets/Admin/vendor/bootstrap/scss/_tooltip.scss"
+    },
+    {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/Admin/vendor/bootstrap/scss/_transitions.scss",
+      "PackagePath": "staticwebassets/Admin/vendor/bootstrap/scss/_transitions.scss"
+    },
+    {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/Admin/vendor/bootstrap/scss/_type.scss",
+      "PackagePath": "staticwebassets/Admin/vendor/bootstrap/scss/_type.scss"
+    },
+    {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/Admin/vendor/bootstrap/scss/_utilities.scss",
+      "PackagePath": "staticwebassets/Admin/vendor/bootstrap/scss/_utilities.scss"
+    },
+    {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/Admin/vendor/bootstrap/scss/_variables.scss",
+      "PackagePath": "staticwebassets/Admin/vendor/bootstrap/scss/_variables.scss"
+    },
+    {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/Admin/vendor/bootstrap/scss/bootstrap-grid.scss",
+      "PackagePath": "staticwebassets/Admin/vendor/bootstrap/scss/bootstrap-grid.scss"
+    },
+    {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/Admin/vendor/bootstrap/scss/bootstrap-reboot.scss",
+      "PackagePath": "staticwebassets/Admin/vendor/bootstrap/scss/bootstrap-reboot.scss"
+    },
+    {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/Admin/vendor/bootstrap/scss/bootstrap.scss",
+      "PackagePath": "staticwebassets/Admin/vendor/bootstrap/scss/bootstrap.scss"
+    },
+    {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/Admin/vendor/bootstrap/scss/mixins/_alert.scss",
+      "PackagePath": "staticwebassets/Admin/vendor/bootstrap/scss/mixins/_alert.scss"
+    },
+    {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/Admin/vendor/bootstrap/scss/mixins/_background-variant.scss",
+      "PackagePath": "staticwebassets/Admin/vendor/bootstrap/scss/mixins/_background-variant.scss"
+    },
+    {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/Admin/vendor/bootstrap/scss/mixins/_badge.scss",
+      "PackagePath": "staticwebassets/Admin/vendor/bootstrap/scss/mixins/_badge.scss"
+    },
+    {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/Admin/vendor/bootstrap/scss/mixins/_border-radius.scss",
+      "PackagePath": "staticwebassets/Admin/vendor/bootstrap/scss/mixins/_border-radius.scss"
+    },
+    {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/Admin/vendor/bootstrap/scss/mixins/_box-shadow.scss",
+      "PackagePath": "staticwebassets/Admin/vendor/bootstrap/scss/mixins/_box-shadow.scss"
+    },
+    {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/Admin/vendor/bootstrap/scss/mixins/_breakpoints.scss",
+      "PackagePath": "staticwebassets/Admin/vendor/bootstrap/scss/mixins/_breakpoints.scss"
+    },
+    {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/Admin/vendor/bootstrap/scss/mixins/_buttons.scss",
+      "PackagePath": "staticwebassets/Admin/vendor/bootstrap/scss/mixins/_buttons.scss"
+    },
+    {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/Admin/vendor/bootstrap/scss/mixins/_caret.scss",
+      "PackagePath": "staticwebassets/Admin/vendor/bootstrap/scss/mixins/_caret.scss"
+    },
+    {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/Admin/vendor/bootstrap/scss/mixins/_clearfix.scss",
+      "PackagePath": "staticwebassets/Admin/vendor/bootstrap/scss/mixins/_clearfix.scss"
+    },
+    {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/Admin/vendor/bootstrap/scss/mixins/_deprecate.scss",
+      "PackagePath": "staticwebassets/Admin/vendor/bootstrap/scss/mixins/_deprecate.scss"
+    },
+    {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/Admin/vendor/bootstrap/scss/mixins/_float.scss",
+      "PackagePath": "staticwebassets/Admin/vendor/bootstrap/scss/mixins/_float.scss"
+    },
+    {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/Admin/vendor/bootstrap/scss/mixins/_forms.scss",
+      "PackagePath": "staticwebassets/Admin/vendor/bootstrap/scss/mixins/_forms.scss"
+    },
+    {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/Admin/vendor/bootstrap/scss/mixins/_gradients.scss",
+      "PackagePath": "staticwebassets/Admin/vendor/bootstrap/scss/mixins/_gradients.scss"
+    },
+    {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/Admin/vendor/bootstrap/scss/mixins/_grid-framework.scss",
+      "PackagePath": "staticwebassets/Admin/vendor/bootstrap/scss/mixins/_grid-framework.scss"
+    },
+    {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/Admin/vendor/bootstrap/scss/mixins/_grid.scss",
+      "PackagePath": "staticwebassets/Admin/vendor/bootstrap/scss/mixins/_grid.scss"
+    },
+    {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/Admin/vendor/bootstrap/scss/mixins/_hover.scss",
+      "PackagePath": "staticwebassets/Admin/vendor/bootstrap/scss/mixins/_hover.scss"
+    },
+    {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/Admin/vendor/bootstrap/scss/mixins/_image.scss",
+      "PackagePath": "staticwebassets/Admin/vendor/bootstrap/scss/mixins/_image.scss"
+    },
+    {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/Admin/vendor/bootstrap/scss/mixins/_list-group.scss",
+      "PackagePath": "staticwebassets/Admin/vendor/bootstrap/scss/mixins/_list-group.scss"
+    },
+    {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/Admin/vendor/bootstrap/scss/mixins/_lists.scss",
+      "PackagePath": "staticwebassets/Admin/vendor/bootstrap/scss/mixins/_lists.scss"
+    },
+    {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/Admin/vendor/bootstrap/scss/mixins/_nav-divider.scss",
+      "PackagePath": "staticwebassets/Admin/vendor/bootstrap/scss/mixins/_nav-divider.scss"
+    },
+    {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/Admin/vendor/bootstrap/scss/mixins/_pagination.scss",
+      "PackagePath": "staticwebassets/Admin/vendor/bootstrap/scss/mixins/_pagination.scss"
+    },
+    {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/Admin/vendor/bootstrap/scss/mixins/_reset-text.scss",
+      "PackagePath": "staticwebassets/Admin/vendor/bootstrap/scss/mixins/_reset-text.scss"
+    },
+    {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/Admin/vendor/bootstrap/scss/mixins/_resize.scss",
+      "PackagePath": "staticwebassets/Admin/vendor/bootstrap/scss/mixins/_resize.scss"
+    },
+    {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/Admin/vendor/bootstrap/scss/mixins/_screen-reader.scss",
+      "PackagePath": "staticwebassets/Admin/vendor/bootstrap/scss/mixins/_screen-reader.scss"
+    },
+    {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/Admin/vendor/bootstrap/scss/mixins/_size.scss",
+      "PackagePath": "staticwebassets/Admin/vendor/bootstrap/scss/mixins/_size.scss"
+    },
+    {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/Admin/vendor/bootstrap/scss/mixins/_table-row.scss",
+      "PackagePath": "staticwebassets/Admin/vendor/bootstrap/scss/mixins/_table-row.scss"
+    },
+    {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/Admin/vendor/bootstrap/scss/mixins/_text-emphasis.scss",
+      "PackagePath": "staticwebassets/Admin/vendor/bootstrap/scss/mixins/_text-emphasis.scss"
+    },
+    {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/Admin/vendor/bootstrap/scss/mixins/_text-hide.scss",
+      "PackagePath": "staticwebassets/Admin/vendor/bootstrap/scss/mixins/_text-hide.scss"
+    },
+    {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/Admin/vendor/bootstrap/scss/mixins/_text-truncate.scss",
+      "PackagePath": "staticwebassets/Admin/vendor/bootstrap/scss/mixins/_text-truncate.scss"
+    },
+    {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/Admin/vendor/bootstrap/scss/mixins/_transition.scss",
+      "PackagePath": "staticwebassets/Admin/vendor/bootstrap/scss/mixins/_transition.scss"
+    },
+    {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/Admin/vendor/bootstrap/scss/mixins/_visibility.scss",
+      "PackagePath": "staticwebassets/Admin/vendor/bootstrap/scss/mixins/_visibility.scss"
+    },
+    {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/Admin/vendor/bootstrap/scss/utilities/_align.scss",
+      "PackagePath": "staticwebassets/Admin/vendor/bootstrap/scss/utilities/_align.scss"
+    },
+    {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/Admin/vendor/bootstrap/scss/utilities/_background.scss",
+      "PackagePath": "staticwebassets/Admin/vendor/bootstrap/scss/utilities/_background.scss"
+    },
+    {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/Admin/vendor/bootstrap/scss/utilities/_borders.scss",
+      "PackagePath": "staticwebassets/Admin/vendor/bootstrap/scss/utilities/_borders.scss"
+    },
+    {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/Admin/vendor/bootstrap/scss/utilities/_clearfix.scss",
+      "PackagePath": "staticwebassets/Admin/vendor/bootstrap/scss/utilities/_clearfix.scss"
+    },
+    {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/Admin/vendor/bootstrap/scss/utilities/_display.scss",
+      "PackagePath": "staticwebassets/Admin/vendor/bootstrap/scss/utilities/_display.scss"
+    },
+    {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/Admin/vendor/bootstrap/scss/utilities/_embed.scss",
+      "PackagePath": "staticwebassets/Admin/vendor/bootstrap/scss/utilities/_embed.scss"
+    },
+    {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/Admin/vendor/bootstrap/scss/utilities/_flex.scss",
+      "PackagePath": "staticwebassets/Admin/vendor/bootstrap/scss/utilities/_flex.scss"
+    },
+    {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/Admin/vendor/bootstrap/scss/utilities/_float.scss",
+      "PackagePath": "staticwebassets/Admin/vendor/bootstrap/scss/utilities/_float.scss"
+    },
+    {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/Admin/vendor/bootstrap/scss/utilities/_overflow.scss",
+      "PackagePath": "staticwebassets/Admin/vendor/bootstrap/scss/utilities/_overflow.scss"
+    },
+    {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/Admin/vendor/bootstrap/scss/utilities/_position.scss",
+      "PackagePath": "staticwebassets/Admin/vendor/bootstrap/scss/utilities/_position.scss"
+    },
+    {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/Admin/vendor/bootstrap/scss/utilities/_screenreaders.scss",
+      "PackagePath": "staticwebassets/Admin/vendor/bootstrap/scss/utilities/_screenreaders.scss"
+    },
+    {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/Admin/vendor/bootstrap/scss/utilities/_shadows.scss",
+      "PackagePath": "staticwebassets/Admin/vendor/bootstrap/scss/utilities/_shadows.scss"
+    },
+    {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/Admin/vendor/bootstrap/scss/utilities/_sizing.scss",
+      "PackagePath": "staticwebassets/Admin/vendor/bootstrap/scss/utilities/_sizing.scss"
+    },
+    {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/Admin/vendor/bootstrap/scss/utilities/_spacing.scss",
+      "PackagePath": "staticwebassets/Admin/vendor/bootstrap/scss/utilities/_spacing.scss"
+    },
+    {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/Admin/vendor/bootstrap/scss/utilities/_stretched-link.scss",
+      "PackagePath": "staticwebassets/Admin/vendor/bootstrap/scss/utilities/_stretched-link.scss"
+    },
+    {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/Admin/vendor/bootstrap/scss/utilities/_text.scss",
+      "PackagePath": "staticwebassets/Admin/vendor/bootstrap/scss/utilities/_text.scss"
+    },
+    {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/Admin/vendor/bootstrap/scss/utilities/_visibility.scss",
+      "PackagePath": "staticwebassets/Admin/vendor/bootstrap/scss/utilities/_visibility.scss"
+    },
+    {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/Admin/vendor/bootstrap/scss/vendor/_rfs.scss",
+      "PackagePath": "staticwebassets/Admin/vendor/bootstrap/scss/vendor/_rfs.scss"
+    },
+    {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/Admin/vendor/chart.js/Chart.bundle.js",
+      "PackagePath": "staticwebassets/Admin/vendor/chart.js/Chart.bundle.js"
+    },
+    {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/Admin/vendor/chart.js/Chart.bundle.min.js",
+      "PackagePath": "staticwebassets/Admin/vendor/chart.js/Chart.bundle.min.js"
+    },
+    {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/Admin/vendor/chart.js/Chart.js",
+      "PackagePath": "staticwebassets/Admin/vendor/chart.js/Chart.js"
+    },
+    {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/Admin/vendor/chart.js/Chart.min.js",
+      "PackagePath": "staticwebassets/Admin/vendor/chart.js/Chart.min.js"
+    },
+    {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/Admin/vendor/datatables/dataTables.bootstrap4.css",
+      "PackagePath": "staticwebassets/Admin/vendor/datatables/dataTables.bootstrap4.css"
+    },
+    {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/Admin/vendor/datatables/dataTables.bootstrap4.js",
+      "PackagePath": "staticwebassets/Admin/vendor/datatables/dataTables.bootstrap4.js"
+    },
+    {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/Admin/vendor/datatables/dataTables.bootstrap4.min.css",
+      "PackagePath": "staticwebassets/Admin/vendor/datatables/dataTables.bootstrap4.min.css"
+    },
+    {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/Admin/vendor/datatables/dataTables.bootstrap4.min.js",
+      "PackagePath": "staticwebassets/Admin/vendor/datatables/dataTables.bootstrap4.min.js"
+    },
+    {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/Admin/vendor/datatables/jquery.dataTables.js",
+      "PackagePath": "staticwebassets/Admin/vendor/datatables/jquery.dataTables.js"
+    },
+    {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/Admin/vendor/datatables/jquery.dataTables.min.js",
+      "PackagePath": "staticwebassets/Admin/vendor/datatables/jquery.dataTables.min.js"
+    },
+    {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/Admin/vendor/jquery-easing/jquery.easing.compatibility.js",
+      "PackagePath": "staticwebassets/Admin/vendor/jquery-easing/jquery.easing.compatibility.js"
+    },
+    {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/Admin/vendor/jquery-easing/jquery.easing.js",
+      "PackagePath": "staticwebassets/Admin/vendor/jquery-easing/jquery.easing.js"
+    },
+    {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/Admin/vendor/jquery-easing/jquery.easing.min.js",
+      "PackagePath": "staticwebassets/Admin/vendor/jquery-easing/jquery.easing.min.js"
+    },
+    {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/Admin/vendor/jquery/jquery.js",
+      "PackagePath": "staticwebassets/Admin/vendor/jquery/jquery.js"
+    },
+    {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/Admin/vendor/jquery/jquery.min.js",
+      "PackagePath": "staticwebassets/Admin/vendor/jquery/jquery.min.js"
+    },
+    {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/Admin/vendor/jquery/jquery.min.map",
+      "PackagePath": "staticwebassets/Admin/vendor/jquery/jquery.min.map"
+    },
+    {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/Admin/vendor/jquery/jquery.slim.js",
+      "PackagePath": "staticwebassets/Admin/vendor/jquery/jquery.slim.js"
+    },
+    {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/Admin/vendor/jquery/jquery.slim.min.js",
+      "PackagePath": "staticwebassets/Admin/vendor/jquery/jquery.slim.min.js"
+    },
+    {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/Admin/vendor/jquery/jquery.slim.min.map",
+      "PackagePath": "staticwebassets/Admin/vendor/jquery/jquery.slim.min.map"
+    },
+    {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/_Layout.cshtml.css",
+      "PackagePath": "staticwebassets/_Layout.cshtml.css"
+    },
+    {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/assets/css/about.css",
+      "PackagePath": "staticwebassets/assets/css/about.css"
+    },
+    {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/assets/css/agreement.css",
+      "PackagePath": "staticwebassets/assets/css/agreement.css"
+    },
+    {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/assets/css/contact.css",
+      "PackagePath": "staticwebassets/assets/css/contact.css"
+    },
+    {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/assets/css/faq.css",
+      "PackagePath": "staticwebassets/assets/css/faq.css"
+    },
+    {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/assets/css/index.css",
+      "PackagePath": "staticwebassets/assets/css/index.css"
+    },
+    {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/assets/css/login.css",
+      "PackagePath": "staticwebassets/assets/css/login.css"
+    },
+    {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/assets/css/news.css",
+      "PackagePath": "staticwebassets/assets/css/news.css"
+    },
+    {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/assets/css/privacy-policy.css",
+      "PackagePath": "staticwebassets/assets/css/privacy-policy.css"
+    },
+    {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/assets/css/prohibited-items.css",
+      "PackagePath": "staticwebassets/assets/css/prohibited-items.css"
+    },
+    {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/assets/css/rates.css",
+      "PackagePath": "staticwebassets/assets/css/rates.css"
+    },
+    {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/assets/css/register.css",
+      "PackagePath": "staticwebassets/assets/css/register.css"
+    },
+    {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/assets/css/services.css",
+      "PackagePath": "staticwebassets/assets/css/services.css"
+    },
+    {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/assets/css/shared.css",
+      "PackagePath": "staticwebassets/assets/css/shared.css"
+    },
+    {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/assets/css/stores.css",
+      "PackagePath": "staticwebassets/assets/css/stores.css"
+    },
+    {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/assets/fonts/KFOmCnqEu92Fr1Mu4mxKKTU1Kg.woff2",
+      "PackagePath": "staticwebassets/assets/fonts/KFOmCnqEu92Fr1Mu4mxKKTU1Kg.woff2"
+    },
+    {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/assets/imgs/Logo/2cbf255f-d0e3-4bd3-b9d8-e509e97a87e1alfa kuryer logo.png",
+      "PackagePath": "staticwebassets/assets/imgs/Logo/2cbf255f-d0e3-4bd3-b9d8-e509e97a87e1alfa kuryer logo.png"
+    },
+    {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/assets/imgs/Logo/alfa kuryer favicon.jpeg",
+      "PackagePath": "staticwebassets/assets/imgs/Logo/alfa kuryer favicon.jpeg"
+    },
+    {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/assets/imgs/Logo/alfa kuryer favicon.pdf",
+      "PackagePath": "staticwebassets/assets/imgs/Logo/alfa kuryer favicon.pdf"
+    },
+    {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/assets/imgs/Logo/alfa kuryer favicon.png",
+      "PackagePath": "staticwebassets/assets/imgs/Logo/alfa kuryer favicon.png"
+    },
+    {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/assets/imgs/Logo/alfa kuryer favicon.svg",
+      "PackagePath": "staticwebassets/assets/imgs/Logo/alfa kuryer favicon.svg"
+    },
+    {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/assets/imgs/Logo/alfa kuryer logo.jpeg",
+      "PackagePath": "staticwebassets/assets/imgs/Logo/alfa kuryer logo.jpeg"
+    },
+    {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/assets/imgs/Logo/alfa kuryer logo.pdf",
+      "PackagePath": "staticwebassets/assets/imgs/Logo/alfa kuryer logo.pdf"
+    },
+    {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/assets/imgs/Logo/alfa kuryer logo.png",
+      "PackagePath": "staticwebassets/assets/imgs/Logo/alfa kuryer logo.png"
+    },
+    {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/assets/imgs/Logo/alfa kuryer logo.svg",
+      "PackagePath": "staticwebassets/assets/imgs/Logo/alfa kuryer logo.svg"
+    },
+    {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/assets/imgs/Logo/f58926a3-c8d8-48e9-b304-db1232bb944dalfa kuryer logo.png",
+      "PackagePath": "staticwebassets/assets/imgs/Logo/f58926a3-c8d8-48e9-b304-db1232bb944dalfa kuryer logo.png"
+    },
+    {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/assets/imgs/about/about.png",
+      "PackagePath": "staticwebassets/assets/imgs/about/about.png"
+    },
+    {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/assets/imgs/index/Logo.jpg",
+      "PackagePath": "staticwebassets/assets/imgs/index/Logo.jpg"
+    },
+    {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/assets/imgs/index/bag.png",
+      "PackagePath": "staticwebassets/assets/imgs/index/bag.png"
+    },
+    {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/assets/imgs/index/branches-on-map.png",
+      "PackagePath": "staticwebassets/assets/imgs/index/branches-on-map.png"
+    },
+    {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/assets/imgs/index/payment.png",
+      "PackagePath": "staticwebassets/assets/imgs/index/payment.png"
+    },
+    {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/assets/imgs/index/plane.png",
+      "PackagePath": "staticwebassets/assets/imgs/index/plane.png"
+    },
+    {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/assets/imgs/index/rez-slider-bg.svg",
+      "PackagePath": "staticwebassets/assets/imgs/index/rez-slider-bg.svg"
+    },
+    {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/assets/imgs/index/second-slider/airplane.png",
+      "PackagePath": "staticwebassets/assets/imgs/index/second-slider/airplane.png"
+    },
+    {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/assets/imgs/index/second-slider/discount-on-standart-rates.png",
+      "PackagePath": "staticwebassets/assets/imgs/index/second-slider/discount-on-standart-rates.png"
+    },
+    {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/assets/imgs/index/second-slider/mobile-app.png",
+      "PackagePath": "staticwebassets/assets/imgs/index/second-slider/mobile-app.png"
+    },
+    {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/assets/imgs/index/slider-bg.svg",
+      "PackagePath": "staticwebassets/assets/imgs/index/slider-bg.svg"
+    },
+    {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/assets/imgs/index/slider_bg.svg",
+      "PackagePath": "staticwebassets/assets/imgs/index/slider_bg.svg"
+    },
+    {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/assets/imgs/index/stores/m-defacto.png",
+      "PackagePath": "staticwebassets/assets/imgs/index/stores/m-defacto.png"
+    },
+    {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/assets/imgs/index/stores/m-lc-waikiki.png",
+      "PackagePath": "staticwebassets/assets/imgs/index/stores/m-lc-waikiki.png"
+    },
+    {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/assets/imgs/index/stores/m-mango.png",
+      "PackagePath": "staticwebassets/assets/imgs/index/stores/m-mango.png"
+    },
+    {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/assets/imgs/index/stores/m-n11.jpg",
+      "PackagePath": "staticwebassets/assets/imgs/index/stores/m-n11.jpg"
+    },
+    {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/assets/imgs/index/stores/m-pierre-cardin.jpg",
+      "PackagePath": "staticwebassets/assets/imgs/index/stores/m-pierre-cardin.jpg"
+    },
+    {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/assets/imgs/index/stores/m-trendyol.png",
+      "PackagePath": "staticwebassets/assets/imgs/index/stores/m-trendyol.png"
+    },
+    {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/assets/imgs/index/youtube/black-friday-2022.png",
+      "PackagePath": "staticwebassets/assets/imgs/index/youtube/black-friday-2022.png"
+    },
+    {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/assets/imgs/index/youtube/dynamex-app-published.png",
+      "PackagePath": "staticwebassets/assets/imgs/index/youtube/dynamex-app-published.png"
+    },
+    {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/assets/imgs/index/youtube/how-fill-decleration.png",
+      "PackagePath": "staticwebassets/assets/imgs/index/youtube/how-fill-decleration.png"
+    },
+    {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/assets/imgs/index/youtube/order-for-me.jpg",
+      "PackagePath": "staticwebassets/assets/imgs/index/youtube/order-for-me.jpg"
+    },
+    {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/assets/imgs/index/youtube/whats-tracking-id.jpg",
+      "PackagePath": "staticwebassets/assets/imgs/index/youtube/whats-tracking-id.jpg"
+    },
+    {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/assets/imgs/index/youtube/where-is-dynamex.png",
+      "PackagePath": "staticwebassets/assets/imgs/index/youtube/where-is-dynamex.png"
+    },
+    {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/assets/imgs/login/login.svg",
+      "PackagePath": "staticwebassets/assets/imgs/login/login.svg"
+    },
+    {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/assets/imgs/main/app-store.png",
+      "PackagePath": "staticwebassets/assets/imgs/main/app-store.png"
+    },
+    {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/assets/imgs/main/favicon.png",
+      "PackagePath": "staticwebassets/assets/imgs/main/favicon.png"
+    },
+    {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/assets/imgs/main/google-play.png",
+      "PackagePath": "staticwebassets/assets/imgs/main/google-play.png"
+    },
+    {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/assets/imgs/main/logo-white.svg",
+      "PackagePath": "staticwebassets/assets/imgs/main/logo-white.svg"
+    },
+    {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/assets/imgs/main/logo.svg",
+      "PackagePath": "staticwebassets/assets/imgs/main/logo.svg"
+    },
+    {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/assets/imgs/main/preloader.gif",
+      "PackagePath": "staticwebassets/assets/imgs/main/preloader.gif"
+    },
+    {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/assets/imgs/news/Yay aylarında 28 may filialımızın iş saatlarını artırdıq.jpg",
+      "PackagePath": "staticwebassets/assets/imgs/news/Yay aylarında 28 may filialımızın iş saatlarını artırdıq.jpg"
+    },
+    {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/assets/imgs/news/Yeni-is-saatlari.png",
+      "PackagePath": "staticwebassets/assets/imgs/news/Yeni-is-saatlari.png"
+    },
+    {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/assets/imgs/news/azin-her-noqtesinde.png",
+      "PackagePath": "staticwebassets/assets/imgs/news/azin-her-noqtesinde.png"
+    },
+    {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/assets/imgs/news/bakixanovachildi.png",
+      "PackagePath": "staticwebassets/assets/imgs/news/bakixanovachildi.png"
+    },
+    {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/assets/imgs/news/bayram-gunleri.png",
+      "PackagePath": "staticwebassets/assets/imgs/news/bayram-gunleri.png"
+    },
+    {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/assets/imgs/news/bir-yox.jpg",
+      "PackagePath": "staticwebassets/assets/imgs/news/bir-yox.jpg"
+    },
+    {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/assets/imgs/news/memar-ecemi-tehvil-mentegesi.png",
+      "PackagePath": "staticwebassets/assets/imgs/news/memar-ecemi-tehvil-mentegesi.png"
+    },
+    {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/assets/imgs/news/nezerine1.png",
+      "PackagePath": "staticwebassets/assets/imgs/news/nezerine1.png"
+    },
+    {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/assets/imgs/news/novzur.png",
+      "PackagePath": "staticwebassets/assets/imgs/news/novzur.png"
+    },
+    {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/assets/imgs/news/summer-discount.png",
+      "PackagePath": "staticwebassets/assets/imgs/news/summer-discount.png"
+    },
+    {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/assets/imgs/news/yaygeyimleri.png",
+      "PackagePath": "staticwebassets/assets/imgs/news/yaygeyimleri.png"
+    },
+    {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/assets/imgs/news/yayheyacani.jpg",
+      "PackagePath": "staticwebassets/assets/imgs/news/yayheyacani.jpg"
+    },
+    {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/assets/imgs/rates/calc_circle.png",
+      "PackagePath": "staticwebassets/assets/imgs/rates/calc_circle.png"
+    },
+    {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/assets/imgs/register/f_reg_img.svg",
+      "PackagePath": "staticwebassets/assets/imgs/register/f_reg_img.svg"
+    },
+    {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/assets/imgs/services/5b32c0c3-b2fb-41dc-9123-96233a01ebc0.jpg",
+      "PackagePath": "staticwebassets/assets/imgs/services/5b32c0c3-b2fb-41dc-9123-96233a01ebc0.jpg"
+    },
+    {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/assets/imgs/services/7411e7d5-b046-4716-be8f-ac6bfe190928.jpg",
+      "PackagePath": "staticwebassets/assets/imgs/services/7411e7d5-b046-4716-be8f-ac6bfe190928.jpg"
+    },
+    {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/assets/imgs/services/callcenter.gif",
+      "PackagePath": "staticwebassets/assets/imgs/services/callcenter.gif"
+    },
+    {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/assets/imgs/services/courier.gif",
+      "PackagePath": "staticwebassets/assets/imgs/services/courier.gif"
+    },
+    {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/assets/imgs/services/door.gif",
+      "PackagePath": "staticwebassets/assets/imgs/services/door.gif"
+    },
+    {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/assets/imgs/services/insurance.gif",
+      "PackagePath": "staticwebassets/assets/imgs/services/insurance.gif"
+    },
+    {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/assets/imgs/services/order.gif",
+      "PackagePath": "staticwebassets/assets/imgs/services/order.gif"
+    },
+    {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/assets/imgs/services/post.gif",
+      "PackagePath": "staticwebassets/assets/imgs/services/post.gif"
+    },
+    {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/assets/imgs/services/return.gif",
+      "PackagePath": "staticwebassets/assets/imgs/services/return.gif"
+    },
+    {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/assets/imgs/services/transportation.gif",
+      "PackagePath": "staticwebassets/assets/imgs/services/transportation.gif"
+    },
+    {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/assets/imgs/stores/Stradivarius_logo.png",
+      "PackagePath": "staticwebassets/assets/imgs/stores/Stradivarius_logo.png"
+    },
+    {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/assets/imgs/stores/aliexpress.png",
+      "PackagePath": "staticwebassets/assets/imgs/stores/aliexpress.png"
+    },
+    {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/assets/imgs/stores/avva.png",
+      "PackagePath": "staticwebassets/assets/imgs/stores/avva.png"
+    },
+    {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/assets/imgs/stores/bershka.png",
+      "PackagePath": "staticwebassets/assets/imgs/stores/bershka.png"
+    },
+    {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/assets/imgs/stores/colins.png",
+      "PackagePath": "staticwebassets/assets/imgs/stores/colins.png"
+    },
+    {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/assets/imgs/stores/d3ea5ba4-781e-40e3-a32c-44b54ec68173.jpg",
+      "PackagePath": "staticwebassets/assets/imgs/stores/d3ea5ba4-781e-40e3-a32c-44b54ec68173.jpg"
+    },
+    {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/assets/imgs/stores/defacto-new.png",
+      "PackagePath": "staticwebassets/assets/imgs/stores/defacto-new.png"
+    },
+    {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/assets/imgs/stores/dnr.png",
+      "PackagePath": "staticwebassets/assets/imgs/stores/dnr.png"
+    },
+    {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/assets/imgs/stores/dsdamat.png",
+      "PackagePath": "staticwebassets/assets/imgs/stores/dsdamat.png"
+    },
+    {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/assets/imgs/stores/flo.png",
+      "PackagePath": "staticwebassets/assets/imgs/stores/flo.png"
+    },
+    {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/assets/imgs/stores/gratis.png",
+      "PackagePath": "staticwebassets/assets/imgs/stores/gratis.png"
+    },
+    {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/assets/imgs/stores/iherb.png",
+      "PackagePath": "staticwebassets/assets/imgs/stores/iherb.png"
+    },
+    {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/assets/imgs/stores/koton.png",
+      "PackagePath": "staticwebassets/assets/imgs/stores/koton.png"
+    },
+    {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/assets/imgs/stores/mavitr.png",
+      "PackagePath": "staticwebassets/assets/imgs/stores/mavitr.png"
+    },
+    {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/assets/imgs/stores/morhipo.png",
+      "PackagePath": "staticwebassets/assets/imgs/stores/morhipo.png"
+    },
+    {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/assets/imgs/stores/penti.png",
+      "PackagePath": "staticwebassets/assets/imgs/stores/penti.png"
+    },
+    {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/assets/imgs/stores/pierre-cardin.png",
+      "PackagePath": "staticwebassets/assets/imgs/stores/pierre-cardin.png"
+    },
+    {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/assets/imgs/stores/trenyol.png",
+      "PackagePath": "staticwebassets/assets/imgs/stores/trenyol.png"
+    },
+    {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/assets/imgs/stores/uspoloass.png",
+      "PackagePath": "staticwebassets/assets/imgs/stores/uspoloass.png"
+    },
+    {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/assets/js/about.js",
+      "PackagePath": "staticwebassets/assets/js/about.js"
+    },
+    {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/assets/js/calculator.js",
+      "PackagePath": "staticwebassets/assets/js/calculator.js"
+    },
+    {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/assets/js/faq.js",
+      "PackagePath": "staticwebassets/assets/js/faq.js"
+    },
+    {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/assets/js/index.js",
+      "PackagePath": "staticwebassets/assets/js/index.js"
+    },
+    {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/assets/js/maps.js",
+      "PackagePath": "staticwebassets/assets/js/maps.js"
+    },
+    {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/assets/js/news.js",
+      "PackagePath": "staticwebassets/assets/js/news.js"
+    },
+    {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/assets/js/prohibited-items.js",
+      "PackagePath": "staticwebassets/assets/js/prohibited-items.js"
+    },
+    {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/assets/js/rates.js",
+      "PackagePath": "staticwebassets/assets/js/rates.js"
+    },
+    {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/assets/js/register.js",
+      "PackagePath": "staticwebassets/assets/js/register.js"
+    },
+    {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/assets/js/reset-modal.js",
+      "PackagePath": "staticwebassets/assets/js/reset-modal.js"
+    },
+    {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/assets/js/send-email.js",
+      "PackagePath": "staticwebassets/assets/js/send-email.js"
+    },
+    {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/assets/js/shared.js",
+      "PackagePath": "staticwebassets/assets/js/shared.js"
+    },
+    {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/assets/scss/about/_responsive.scss",
+      "PackagePath": "staticwebassets/assets/scss/about/_responsive.scss"
+    },
+    {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/assets/scss/about/_section-about.scss",
+      "PackagePath": "staticwebassets/assets/scss/about/_section-about.scss"
+    },
+    {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/assets/scss/about/about.scss",
+      "PackagePath": "staticwebassets/assets/scss/about/about.scss"
+    },
+    {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/assets/scss/agreement/_responsive.scss",
+      "PackagePath": "staticwebassets/assets/scss/agreement/_responsive.scss"
+    },
+    {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/assets/scss/agreement/_section-agreement.scss",
+      "PackagePath": "staticwebassets/assets/scss/agreement/_section-agreement.scss"
+    },
+    {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/assets/scss/agreement/agreement.scss",
+      "PackagePath": "staticwebassets/assets/scss/agreement/agreement.scss"
+    },
+    {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/assets/scss/contact/_responsive.scss",
+      "PackagePath": "staticwebassets/assets/scss/contact/_responsive.scss"
+    },
+    {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/assets/scss/contact/_section-contact.scss",
+      "PackagePath": "staticwebassets/assets/scss/contact/_section-contact.scss"
+    },
+    {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/assets/scss/contact/_section-intro.scss",
+      "PackagePath": "staticwebassets/assets/scss/contact/_section-intro.scss"
+    },
+    {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/assets/scss/contact/_section-maps.scss",
+      "PackagePath": "staticwebassets/assets/scss/contact/_section-maps.scss"
+    },
+    {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/assets/scss/contact/contact.scss",
+      "PackagePath": "staticwebassets/assets/scss/contact/contact.scss"
+    },
+    {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/assets/scss/faq/_responsive.scss",
+      "PackagePath": "staticwebassets/assets/scss/faq/_responsive.scss"
+    },
+    {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/assets/scss/faq/_section-faq.scss",
+      "PackagePath": "staticwebassets/assets/scss/faq/_section-faq.scss"
+    },
+    {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/assets/scss/faq/faq.scss",
+      "PackagePath": "staticwebassets/assets/scss/faq/faq.scss"
+    },
+    {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/assets/scss/index/_sec-calculator.scss",
+      "PackagePath": "staticwebassets/assets/scss/index/_sec-calculator.scss"
+    },
+    {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/assets/scss/index/_sec-delivery.scss",
+      "PackagePath": "staticwebassets/assets/scss/index/_sec-delivery.scss"
+    },
+    {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/assets/scss/index/_sec-how-works.scss",
+      "PackagePath": "staticwebassets/assets/scss/index/_sec-how-works.scss"
+    },
+    {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/assets/scss/index/_sec-intro.scss",
+      "PackagePath": "staticwebassets/assets/scss/index/_sec-intro.scss"
+    },
+    {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/assets/scss/index/_sec-news.scss",
+      "PackagePath": "staticwebassets/assets/scss/index/_sec-news.scss"
+    },
+    {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/assets/scss/index/_sec-stores.scss",
+      "PackagePath": "staticwebassets/assets/scss/index/_sec-stores.scss"
+    },
+    {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/assets/scss/index/_sec-youtube.scss",
+      "PackagePath": "staticwebassets/assets/scss/index/_sec-youtube.scss"
+    },
+    {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/assets/scss/index/index.scss",
+      "PackagePath": "staticwebassets/assets/scss/index/index.scss"
+    },
+    {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/assets/scss/login/_intro.scss",
+      "PackagePath": "staticwebassets/assets/scss/login/_intro.scss"
+    },
+    {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/assets/scss/login/_modal.scss",
+      "PackagePath": "staticwebassets/assets/scss/login/_modal.scss"
+    },
+    {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/assets/scss/login/_responsive.scss",
+      "PackagePath": "staticwebassets/assets/scss/login/_responsive.scss"
+    },
+    {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/assets/scss/login/_section-login.scss",
+      "PackagePath": "staticwebassets/assets/scss/login/_section-login.scss"
+    },
+    {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/assets/scss/login/login.scss",
+      "PackagePath": "staticwebassets/assets/scss/login/login.scss"
+    },
+    {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/assets/scss/news/_responsive.scss",
+      "PackagePath": "staticwebassets/assets/scss/news/_responsive.scss"
+    },
+    {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/assets/scss/news/_section-intro.scss",
+      "PackagePath": "staticwebassets/assets/scss/news/_section-intro.scss"
+    },
+    {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/assets/scss/news/_section-news.scss",
+      "PackagePath": "staticwebassets/assets/scss/news/_section-news.scss"
+    },
+    {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/assets/scss/news/news.scss",
+      "PackagePath": "staticwebassets/assets/scss/news/news.scss"
+    },
+    {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/assets/scss/privacy-policy/_responsive.scss",
+      "PackagePath": "staticwebassets/assets/scss/privacy-policy/_responsive.scss"
+    },
+    {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/assets/scss/privacy-policy/_section-privacy-policy.scss",
+      "PackagePath": "staticwebassets/assets/scss/privacy-policy/_section-privacy-policy.scss"
+    },
+    {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/assets/scss/privacy-policy/privacy-policy.scss",
+      "PackagePath": "staticwebassets/assets/scss/privacy-policy/privacy-policy.scss"
+    },
+    {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/assets/scss/prohibited-items/_responsive.scss",
+      "PackagePath": "staticwebassets/assets/scss/prohibited-items/_responsive.scss"
+    },
+    {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/assets/scss/prohibited-items/_section-prohibited-items.scss",
+      "PackagePath": "staticwebassets/assets/scss/prohibited-items/_section-prohibited-items.scss"
+    },
+    {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/assets/scss/prohibited-items/prohibited-items.scss",
+      "PackagePath": "staticwebassets/assets/scss/prohibited-items/prohibited-items.scss"
+    },
+    {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/assets/scss/rates/_responsive.scss",
+      "PackagePath": "staticwebassets/assets/scss/rates/_responsive.scss"
+    },
+    {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/assets/scss/rates/_section-calculator.scss",
+      "PackagePath": "staticwebassets/assets/scss/rates/_section-calculator.scss"
+    },
+    {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/assets/scss/rates/_section-delivery.scss",
+      "PackagePath": "staticwebassets/assets/scss/rates/_section-delivery.scss"
+    },
+    {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/assets/scss/rates/_section-intro.scss",
+      "PackagePath": "staticwebassets/assets/scss/rates/_section-intro.scss"
+    },
+    {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/assets/scss/rates/rates.scss",
+      "PackagePath": "staticwebassets/assets/scss/rates/rates.scss"
+    },
+    {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/assets/scss/register/_intro.scss",
+      "PackagePath": "staticwebassets/assets/scss/register/_intro.scss"
+    },
+    {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/assets/scss/register/_responsive.scss",
+      "PackagePath": "staticwebassets/assets/scss/register/_responsive.scss"
+    },
+    {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/assets/scss/register/_section-register.scss",
+      "PackagePath": "staticwebassets/assets/scss/register/_section-register.scss"
+    },
+    {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/assets/scss/register/register.scss",
+      "PackagePath": "staticwebassets/assets/scss/register/register.scss"
+    },
+    {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/assets/scss/services/_responsive.scss",
+      "PackagePath": "staticwebassets/assets/scss/services/_responsive.scss"
+    },
+    {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/assets/scss/services/_section-services.scss",
+      "PackagePath": "staticwebassets/assets/scss/services/_section-services.scss"
+    },
+    {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/assets/scss/services/services.scss",
+      "PackagePath": "staticwebassets/assets/scss/services/services.scss"
+    },
+    {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/assets/scss/shared/_common.scss",
+      "PackagePath": "staticwebassets/assets/scss/shared/_common.scss"
+    },
+    {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/assets/scss/shared/_footer.scss",
+      "PackagePath": "staticwebassets/assets/scss/shared/_footer.scss"
+    },
+    {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/assets/scss/shared/_header.scss",
+      "PackagePath": "staticwebassets/assets/scss/shared/_header.scss"
+    },
+    {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/assets/scss/shared/_responsive.scss",
+      "PackagePath": "staticwebassets/assets/scss/shared/_responsive.scss"
+    },
+    {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/assets/scss/shared/shared.scss",
+      "PackagePath": "staticwebassets/assets/scss/shared/shared.scss"
+    },
+    {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/assets/scss/stores/_responsive.scss",
+      "PackagePath": "staticwebassets/assets/scss/stores/_responsive.scss"
+    },
+    {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/assets/scss/stores/_section-stores.scss",
+      "PackagePath": "staticwebassets/assets/scss/stores/_section-stores.scss"
+    },
+    {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/assets/scss/stores/stores.scss",
+      "PackagePath": "staticwebassets/assets/scss/stores/stores.scss"
+    },
+    {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/lib/bootstrap/LICENSE",
+      "PackagePath": "staticwebassets/lib/bootstrap"
+    },
+    {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/lib/bootstrap/dist/css/bootstrap-grid.css",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-grid.css"
+    },
+    {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/lib/bootstrap/dist/css/bootstrap-grid.css.map",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-grid.css.map"
+    },
+    {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/lib/bootstrap/dist/css/bootstrap-grid.min.css",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-grid.min.css"
+    },
+    {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/lib/bootstrap/dist/css/bootstrap-grid.min.css.map",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-grid.min.css.map"
+    },
+    {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/lib/bootstrap/dist/css/bootstrap-grid.rtl.css",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-grid.rtl.css"
+    },
+    {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/lib/bootstrap/dist/css/bootstrap-grid.rtl.css.map",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-grid.rtl.css.map"
+    },
+    {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/lib/bootstrap/dist/css/bootstrap-grid.rtl.min.css",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-grid.rtl.min.css"
+    },
+    {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/lib/bootstrap/dist/css/bootstrap-grid.rtl.min.css.map",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-grid.rtl.min.css.map"
+    },
+    {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.css",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-reboot.css"
+    },
+    {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.css.map",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-reboot.css.map"
+    },
+    {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.min.css",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-reboot.min.css"
+    },
+    {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.min.css.map",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-reboot.min.css.map"
+    },
+    {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.rtl.css",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-reboot.rtl.css"
+    },
+    {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.rtl.css.map",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-reboot.rtl.css.map"
+    },
+    {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.rtl.min.css",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-reboot.rtl.min.css"
+    },
+    {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/lib/bootstrap/dist/css/bootstrap-reboot.rtl.min.css.map",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-reboot.rtl.min.css.map"
+    },
+    {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/lib/bootstrap/dist/css/bootstrap-utilities.css",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-utilities.css"
+    },
+    {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/lib/bootstrap/dist/css/bootstrap-utilities.css.map",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-utilities.css.map"
+    },
+    {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/lib/bootstrap/dist/css/bootstrap-utilities.min.css",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-utilities.min.css"
+    },
+    {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/lib/bootstrap/dist/css/bootstrap-utilities.min.css.map",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-utilities.min.css.map"
+    },
+    {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/lib/bootstrap/dist/css/bootstrap-utilities.rtl.css",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-utilities.rtl.css"
+    },
+    {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/lib/bootstrap/dist/css/bootstrap-utilities.rtl.css.map",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-utilities.rtl.css.map"
+    },
+    {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/lib/bootstrap/dist/css/bootstrap-utilities.rtl.min.css",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-utilities.rtl.min.css"
+    },
+    {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/lib/bootstrap/dist/css/bootstrap-utilities.rtl.min.css.map",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap-utilities.rtl.min.css.map"
+    },
+    {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/lib/bootstrap/dist/css/bootstrap.css",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap.css"
+    },
+    {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/lib/bootstrap/dist/css/bootstrap.css.map",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap.css.map"
+    },
+    {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/lib/bootstrap/dist/css/bootstrap.min.css",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap.min.css"
+    },
+    {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/lib/bootstrap/dist/css/bootstrap.min.css.map",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap.min.css.map"
+    },
+    {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/lib/bootstrap/dist/css/bootstrap.rtl.css",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap.rtl.css"
+    },
+    {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/lib/bootstrap/dist/css/bootstrap.rtl.css.map",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap.rtl.css.map"
+    },
+    {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/lib/bootstrap/dist/css/bootstrap.rtl.min.css",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap.rtl.min.css"
+    },
+    {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/lib/bootstrap/dist/css/bootstrap.rtl.min.css.map",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/css/bootstrap.rtl.min.css.map"
+    },
+    {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/lib/bootstrap/dist/js/bootstrap.bundle.js",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/js/bootstrap.bundle.js"
+    },
+    {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/lib/bootstrap/dist/js/bootstrap.bundle.js.map",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/js/bootstrap.bundle.js.map"
+    },
+    {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/lib/bootstrap/dist/js/bootstrap.bundle.min.js",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/js/bootstrap.bundle.min.js"
+    },
+    {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/lib/bootstrap/dist/js/bootstrap.bundle.min.js.map",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/js/bootstrap.bundle.min.js.map"
+    },
+    {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/lib/bootstrap/dist/js/bootstrap.esm.js",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/js/bootstrap.esm.js"
+    },
+    {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/lib/bootstrap/dist/js/bootstrap.esm.js.map",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/js/bootstrap.esm.js.map"
+    },
+    {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/lib/bootstrap/dist/js/bootstrap.esm.min.js",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/js/bootstrap.esm.min.js"
+    },
+    {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/lib/bootstrap/dist/js/bootstrap.esm.min.js.map",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/js/bootstrap.esm.min.js.map"
+    },
+    {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/lib/bootstrap/dist/js/bootstrap.js",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/js/bootstrap.js"
+    },
+    {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/lib/bootstrap/dist/js/bootstrap.js.map",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/js/bootstrap.js.map"
+    },
+    {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/lib/bootstrap/dist/js/bootstrap.min.js",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/js/bootstrap.min.js"
+    },
+    {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/lib/bootstrap/dist/js/bootstrap.min.js.map",
+      "PackagePath": "staticwebassets/lib/bootstrap/dist/js/bootstrap.min.js.map"
+    },
+    {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/lib/jquery-validation-unobtrusive/LICENSE.txt",
+      "PackagePath": "staticwebassets/lib/jquery-validation-unobtrusive/LICENSE.txt"
+    },
+    {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js",
+      "PackagePath": "staticwebassets/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js"
+    },
+    {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js",
+      "PackagePath": "staticwebassets/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"
+    },
+    {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/lib/jquery-validation/LICENSE.md",
+      "PackagePath": "staticwebassets/lib/jquery-validation/LICENSE.md"
+    },
+    {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/lib/jquery-validation/dist/additional-methods.js",
+      "PackagePath": "staticwebassets/lib/jquery-validation/dist/additional-methods.js"
+    },
+    {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/lib/jquery-validation/dist/additional-methods.min.js",
+      "PackagePath": "staticwebassets/lib/jquery-validation/dist/additional-methods.min.js"
+    },
+    {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/lib/jquery-validation/dist/jquery.validate.js",
+      "PackagePath": "staticwebassets/lib/jquery-validation/dist/jquery.validate.js"
+    },
+    {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/lib/jquery-validation/dist/jquery.validate.min.js",
+      "PackagePath": "staticwebassets/lib/jquery-validation/dist/jquery.validate.min.js"
+    },
+    {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/lib/jquery/LICENSE.txt",
+      "PackagePath": "staticwebassets/lib/jquery/LICENSE.txt"
+    },
+    {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/lib/jquery/dist/jquery.js",
+      "PackagePath": "staticwebassets/lib/jquery/dist/jquery.js"
+    },
+    {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/lib/jquery/dist/jquery.min.js",
+      "PackagePath": "staticwebassets/lib/jquery/dist/jquery.min.js"
+    },
+    {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/lib/jquery/dist/jquery.min.map",
+      "PackagePath": "staticwebassets/lib/jquery/dist/jquery.min.map"
+    },
+    {
+      "Id": "obj/Debug/net7.0/staticwebassets/msbuild.AlfaKargo.App.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj/Debug/net7.0/staticwebassets/msbuild.build.AlfaKargo.App.props",
+      "PackagePath": "build\\AlfaKargo.App.props"
+    },
+    {
+      "Id": "obj/Debug/net7.0/staticwebassets/msbuild.buildMultiTargeting.AlfaKargo.App.props",
+      "PackagePath": "buildMultiTargeting\\AlfaKargo.App.props"
+    },
+    {
+      "Id": "obj/Debug/net7.0/staticwebassets/msbuild.buildTransitive.AlfaKargo.App.props",
+      "PackagePath": "buildTransitive\\AlfaKargo.App.props"
+    }
+  ],
+  "ElementsToRemove": []
+}
