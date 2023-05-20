@@ -5,8 +5,8 @@ namespace AlfaKargo.App.areas.ViewModels
 {
 	public record UpdateVewModel<T,U> where T:new() where U:new()
 	{
-		public T PostDto { get; set; }
-		public U GetDto { get; set; }
+		public T? PostDto { get; set; }
+		public U? GetDto { get; set; }
        
 	}
 }

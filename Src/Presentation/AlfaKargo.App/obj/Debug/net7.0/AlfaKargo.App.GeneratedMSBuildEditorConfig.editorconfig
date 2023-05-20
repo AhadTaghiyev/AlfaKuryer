@@ -16,8 +16,56 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = /Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App
 build_property._RazorSourceGeneratorDebug = 
 
+[/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/areas/manage/Views/City/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = YXJlYXMvbWFuYWdlL1ZpZXdzL0NpdHkvQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/areas/manage/Views/City/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = YXJlYXMvbWFuYWdlL1ZpZXdzL0NpdHkvSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/areas/manage/Views/City/Update.cshtml]
+build_metadata.AdditionalFiles.TargetPath = YXJlYXMvbWFuYWdlL1ZpZXdzL0NpdHkvVXBkYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/areas/manage/Views/District/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = YXJlYXMvbWFuYWdlL1ZpZXdzL0Rpc3RyaWN0L0NyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/areas/manage/Views/District/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = YXJlYXMvbWFuYWdlL1ZpZXdzL0Rpc3RyaWN0L0luZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/areas/manage/Views/District/Update.cshtml]
+build_metadata.AdditionalFiles.TargetPath = YXJlYXMvbWFuYWdlL1ZpZXdzL0Rpc3RyaWN0L1VwZGF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/areas/manage/Views/Help/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = YXJlYXMvbWFuYWdlL1ZpZXdzL0hlbHAvQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/areas/manage/Views/Help/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = YXJlYXMvbWFuYWdlL1ZpZXdzL0hlbHAvSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/areas/manage/Views/Help/Update.cshtml]
+build_metadata.AdditionalFiles.TargetPath = YXJlYXMvbWFuYWdlL1ZpZXdzL0hlbHAvVXBkYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/areas/manage/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = YXJlYXMvbWFuYWdlL1ZpZXdzL0hvbWUvSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/areas/manage/Views/Rate/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = YXJlYXMvbWFuYWdlL1ZpZXdzL1JhdGUvQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/areas/manage/Views/Rate/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = YXJlYXMvbWFuYWdlL1ZpZXdzL1JhdGUvSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/areas/manage/Views/Rate/Update.cshtml]
+build_metadata.AdditionalFiles.TargetPath = YXJlYXMvbWFuYWdlL1ZpZXdzL1JhdGUvVXBkYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/areas/manage/Views/Setting/Index.cshtml]
@@ -30,6 +78,18 @@ build_metadata.AdditionalFiles.CssScope =
 
 [/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/areas/manage/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = YXJlYXMvbWFuYWdlL1ZpZXdzL1NoYXJlZC9fTGF5b3V0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/areas/manage/Views/Slide/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = YXJlYXMvbWFuYWdlL1ZpZXdzL1NsaWRlL0NyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/areas/manage/Views/Slide/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = YXJlYXMvbWFuYWdlL1ZpZXdzL1NsaWRlL0luZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/areas/manage/Views/Slide/Update.cshtml]
+build_metadata.AdditionalFiles.TargetPath = YXJlYXMvbWFuYWdlL1ZpZXdzL1NsaWRlL1VwZGF0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/areas/manage/Views/_ViewImports.cshtml]

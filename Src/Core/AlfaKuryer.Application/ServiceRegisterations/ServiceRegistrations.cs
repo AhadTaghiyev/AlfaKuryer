@@ -12,6 +12,7 @@ namespace AlfaKuryer.Application.ServiceRegisterations
             services.AddAutoMapper(Assembly.GetExecutingAssembly());
             services.AddFluentValidationAutoValidation().AddFluentValidationClientsideAdapters();
             services.AddValidatorsFromAssembly(Assembly.GetExecutingAssembly());
+
         }
     }
 }

@@ -1,4 +1,9 @@
 ﻿using AlfaKargo.App.Models;
+using AlfaKargo.App.ViewModels;
+using AlfaKuryer.Application.Services.HelpServices;
+using AlfaKuryer.Application.Services.RateServices;
+using AlfaKuryer.Application.Services.SlideService;
+using Microsoft.AspNetCore.Localization;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 
@@ -6,16 +11,34 @@ namespace AlfaKargo.App.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
+        private readonly IHelpService _helpService;
+        private readonly IRateService _rateService;
+        private readonly ISlideService _slideService;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(IHelpService helpService, IRateService rateService, ISlideService slideService)
         {
-            _logger = logger;
+            _helpService = helpService;
+            _rateService = rateService;
+            _slideService = slideService;
         }
 
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
-            return View();
+            HomeViewModel homeViewModel = new HomeViewModel
+            {
+                helpGetDtos = await _helpService.GetAll(),
+                rateGetDtos = await _rateService.GetAll(),
+                slideGetDtos = await _slideService.GetAll()
+            };
+            return View(homeViewModel);
+        }
+        public IActionResult ChangeLanguage(string culture)
+        {
+            Response.Cookies.Append(CookieRequestCultureProvider.DefaultCookieName,
+                CookieRequestCultureProvider.MakeCookieValue(new RequestCulture(culture)),
+                new CookieOptions() { Expires = DateTimeOffset.UtcNow.AddYears(1) });
+
+            return Redirect(Request.Headers["Referer"].ToString());
         }
 
         public IActionResult Privacy()

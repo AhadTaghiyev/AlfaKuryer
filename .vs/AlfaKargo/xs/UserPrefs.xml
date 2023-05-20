@@ -1,40 +1,96 @@
 ﻿<Properties StartupConfiguration="{739921F7-E59A-429C-A769-E0E5F831EB8B}|https">
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.ItemProperties.Src.Presentation.AlfaKargo.App PreferredExecutionTarget="/Volumes/Google Chrome/Google Chrome.app" />
-  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore>
       <Breakpoint file="/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/areas/manage/Controllers/SettingController.cs" relfile="Src/Presentation/AlfaKargo.App/areas/manage/Controllers/SettingController.cs" line="33" column="1" />
+      <Breakpoint file="/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Infrastucture/AlfaKuryer.Persistance/Services/HelpService.cs" relfile="Src/Infrastucture/AlfaKuryer.Persistance/Services/HelpService.cs" line="33" column="1" />
+      <Breakpoint file="/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/areas/manage/Controllers/DistrictController.cs" relfile="Src/Presentation/AlfaKargo.App/areas/manage/Controllers/DistrictController.cs" line="35" column="1" />
     </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MultiItemStartupConfigurations />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Src/Presentation/AlfaKargo.App/areas/manage/Controllers/SettingController.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Src/Presentation/AlfaKargo.App/Views/Shared/_Layout.cshtml">
     <Files>
-      <File FileName="Src/Presentation/AlfaKargo.App/areas/manage/HomeController.cs" Line="13" Column="2" />
-      <File FileName="Src/Presentation/AlfaKargo.App/areas/manage/Controllers/SettingController.cs" Line="33" Column="1" />
-      <File FileName="Src/Presentation/AlfaKargo.App/areas/manage/Views/Home/Index.cshtml" Line="5" Column="59" />
-      <File FileName="Src/Presentation/AlfaKargo.App/areas/manage/Views/Setting/Index.cshtml" Line="23" Column="1" />
-      <File FileName="Src/Presentation/AlfaKargo.App/areas/manage/Views/Shared/_Layout.cshtml" Line="376" Column="8" />
-      <File FileName="Src/Presentation/AlfaKargo.App/areas/manage/Views/_ViewImports.cshtml" Line="2" Column="1" />
-      <File FileName="Src/Presentation/AlfaKargo.App/areas/manage/Views/_ViewStart.cshtml" Line="1" Column="1" />
-      <File FileName="Src/Presentation/AlfaKargo.App/areas/ViewModels/UpdateVewModel.cs" Line="10" Column="8" />
-      <File FileName="Src/Presentation/AlfaKargo.App/areas/manage/Views/Setting/Update.cshtml" Line="60" Column="45" />
-      <File FileName="Src/Infrastucture/AlfaKuryer.Persistance/Services/SettingService.cs" Line="48" Column="19" />
-      <File FileName="Src/Core/AlfaKuryer.Application/Profiles/MapProfile.cs" Line="1" Column="1" />
-      <File FileName="Src/Presentation/AlfaKargo.App/Program.cs" Line="1" Column="1" />
-      <File FileName="Src/Infrastucture/AlfaKuryer.Persistance/ServiceRegisterations/ServiceRegisteration.cs" Line="29" Column="1" />
-      <File FileName="Src/Core/AlfaKuryer.Application/Validations/SettingPostDtoValidation.cs" Line="26" Column="16" />
-      <File FileName="Src/Core/AlfaKuryer.Application/Dtos/SettingDtos/SettingPostDto.cs" Line="7" Column="26" />
+      <File FileName="Src/Infrastucture/AlfaKuryer.Persistance/Repositories/WriteRepositories/DistrictWriteRepository.cs" Line="10" Column="78" />
+      <File FileName="Src/Infrastucture/AlfaKuryer.Persistance/Repositories/WriteRepositories/HelpWriteRepository.cs" Line="8" Column="4" />
+      <File FileName="Src/Infrastucture/AlfaKuryer.Persistance/Repositories/WriteRepositories/CityWriteRepository.cs" Line="16" Column="1" />
+      <File FileName="Src/Infrastucture/AlfaKuryer.Persistance/Context/AlfaKuryerDbContext.cs" Line="19" Column="44" />
+      <File FileName="Src/Infrastucture/AlfaKuryer.Persistance/Services/CityService.cs" Line="12" Column="4" />
+      <File FileName="Src/Infrastucture/AlfaKuryer.Persistance/Services/RateService.cs" Line="15" Column="3" />
+      <File FileName="Src/Infrastucture/AlfaKuryer.Persistance/Services/DistrictService.cs" Line="64" Column="1" />
+      <File FileName="Src/Core/AlfaKuryer.Domain/Entities/District.cs" Line="6" Column="23" />
+      <File FileName="Src/Infrastucture/AlfaKuryer.Persistance/Services/HelpService.cs" Line="1" Column="1" />
+      <File FileName="Src/Infrastucture/AlfaKuryer.Persistance/ServiceRegisterations/ServiceRegisteration.cs" Line="61" Column="10" />
+      <File FileName="Src/Presentation/AlfaKargo.App/areas/manage/Controllers/HelpController.cs" Line="14" Column="4" />
+      <File FileName="Src/Presentation/AlfaKargo.App/areas/manage/Controllers/CityController.cs" Line="16" Column="6" />
+      <File FileName="Src/Presentation/AlfaKargo.App/areas/manage/Controllers/DistrictController.cs" Line="66" Column="1" />
+      <File FileName="Src/Presentation/AlfaKargo.App/areas/manage/Views/City/Index.cshtml" Line="8" Column="3" />
+      <File FileName="Src/Presentation/AlfaKargo.App/areas/manage/Views/City/Create.cshtml" Line="1" Column="1" />
+      <File FileName="Src/Presentation/AlfaKargo.App/areas/manage/Views/City/Update.cshtml" Line="19" Column="63" />
+      <File FileName="Src/Presentation/AlfaKargo.App/areas/manage/Views/Help/Update.cshtml" Line="6" Column="19" />
+      <File FileName="Src/Presentation/AlfaKargo.App/areas/manage/Views/Setting/Update.cshtml" Line="11" Column="6" />
+      <File FileName="Src/Presentation/AlfaKargo.App/areas/manage/Views/District/Index.cshtml" Line="39" Column="29" />
+      <File FileName="Src/Core/AlfaKuryer.Application/Dtos/DistrictDtos/DistrictGetDto.cs" Line="4" Column="15" />
+      <File FileName="Src/Presentation/AlfaKargo.App/areas/manage/Views/District/Update.cshtml" Line="27" Column="6" />
+      <File FileName="Src/Presentation/AlfaKargo.App/areas/manage/Views/District/Create.cshtml" Line="19" Column="18" />
+      <File FileName="Src/Presentation/AlfaKargo.App/Views/Shared/_Layout.cshtml" Line="70" Column="27" />
+      <File FileName="Src/Presentation/AlfaKargo.App/areas/manage/Views/Shared/_Layout.cshtml" Line="94" Column="21" />
+      <File FileName="Src/Core/AlfaKuryer.Application/Profiles/MapProfile.cs" Line="31" Column="1" />
+      <File FileName="Src/Core/AlfaKuryer.Domain/Entities/Rate.cs" Line="10" Column="35" />
+      <File FileName="Src/Presentation/AlfaKargo.App/Views/Home/Index.cshtml" Line="87" Column="11" />
+      <File FileName="Src/Core/AlfaKuryer.Application/Dtos/RateDtos/RateGetDto.cs" Line="1" Column="1" />
+      <File FileName="Src/Core/AlfaKuryer.Application/Dtos/RateDtos/RatePostDto.cs" Line="1" Column="1" />
+      <File FileName="Src/Core/AlfaKuryer.Application/Services/RateServices/IRateService.cs" Line="8" Column="2" />
+      <File FileName="Src/Core/AlfaKuryer.Application/Validations/RatePostValidation.cs" Line="14" Column="6" />
+      <File FileName="Src/Core/AlfaKuryer.Application/Validations/HelpPostDtiValidation.cs" Line="11" Column="12" />
+      <File FileName="Src/Core/AlfaKuryer.Application/Validations/DistrictPostDtoValidation.cs" Line="1" Column="1" />
+      <File FileName="Src/Presentation/AlfaKargo.App/areas/manage/Controllers/RateController.cs" Line="17" Column="4" />
+      <File FileName="Src/Presentation/AlfaKargo.App/areas/manage/Views/Rate/Index.cshtml" Line="54" Column="50" />
+      <File FileName="Src/Presentation/AlfaKargo.App/areas/manage/Views/Rate/Update.cshtml" Line="18" Column="41" />
+      <File FileName="Src/Presentation/AlfaKargo.App/areas/manage/Views/Rate/Create.cshtml" Line="76" Column="1" />
+      <File FileName="Src/Presentation/AlfaKargo.App/Controllers/HomeController.cs" Line="31" Column="60" />
+      <File FileName="Src/Presentation/AlfaKargo.App/ViewModels/HomeViewModel.cs" Line="13" Column="32" />
+      <File FileName="Src/Core/AlfaKuryer.Domain/Entities/Slide.cs" Line="11" Column="1" />
+      <File FileName="Src/Core/AlfaKuryer.Application/Dtos/SlideDtos/SlidePostDto.cs" Line="6" Column="15" />
+      <File FileName="Src/Core/AlfaKuryer.Application/Dtos/SlideDtos/SlideGetDto.cs" Line="4" Column="15" />
+      <File FileName="Src/Core/AlfaKuryer.Application/Repositories/ReadRepositories/ISLideReadRepository.cs" Line="8" Column="3" />
+      <File FileName="Src/Core/AlfaKuryer.Application/Repositories/ReadRepositories/IRateReadRepository.cs" Line="1" Column="1" />
+      <File FileName="Src/Core/AlfaKuryer.Application/Repositories/WriteRepositories/ICityWriteRepository.cs" Line="1" Column="1" />
+      <File FileName="Src/Core/AlfaKuryer.Application/Repositories/WriteRepositories/ISlideWriteRepository.cs" Line="9" Column="3" />
+      <File FileName="Src/Core/AlfaKuryer.Application/Services/SlideService/ISlideService.cs" Line="6" Column="18" />
+      <File FileName="Src/Core/AlfaKuryer.Application/Validations/SlidePostDtoValidation.cs" Line="30" Column="1" />
+      <File FileName="Src/Core/AlfaKuryer.Application/Validations/SettingPostDtoValidation.cs" Line="14" Column="12" />
+      <File FileName="Src/Core/AlfaKuryer.Application/Dtos/SettingDtos/SettingPostDto.cs" Line="1" Column="1" />
+      <File FileName="Src/Infrastucture/AlfaKuryer.Persistance/Repositories/WriteRepositories/SlideWriteRepository.cs" Line="16" Column="1" />
+      <File FileName="Src/Infrastucture/AlfaKuryer.Persistance/Repositories/WriteRepositories/SettingWriteRepository.cs" Line="14" Column="1" />
+      <File FileName="Src/Infrastucture/AlfaKuryer.Persistance/Repositories/ReadRepositories/SlideReadRepository.cs" Line="12" Column="2" />
+      <File FileName="Src/Infrastucture/AlfaKuryer.Persistance/Repositories/ReadRepositories/SettingReadRepository.cs" Line="10" Column="5" />
+      <File FileName="Src/Infrastucture/AlfaKuryer.Persistance/Services/SlideService.cs" Line="34" Column="93" />
+      <File FileName="Src/Infrastucture/AlfaKuryer.Persistance/Services/SettingService.cs" Line="46" Column="102" />
+      <File FileName="Src/Presentation/AlfaKargo.App/Controllers/RateController.cs" Line="1" Column="1" />
+      <File FileName="Src/Presentation/AlfaKargo.App/areas/manage/Controllers/SlideController.cs" Line="34" Column="10" />
+      <File FileName="Src/Presentation/AlfaKargo.App/areas/manage/Views/Slide/Index.cshtml" Line="19" Column="1" />
+      <File FileName="Src/Presentation/AlfaKargo.App/areas/manage/Views/Slide/Update.cshtml" Line="15" Column="6" />
+      <File FileName="Src/Presentation/AlfaKargo.App/areas/manage/Views/Slide/Create.cshtml" Line="31" Column="1" />
+      <File FileName="Src/Presentation/AlfaKargo.App/areas/manage/Views/Help/Index.cshtml" Line="48" Column="23" />
+      <File FileName="Src/Core/AlfaKuryer.Application/Dtos/CItyDtos/CityGetDto.cs" Line="1" Column="1" />
+      <File FileName="Src/Core/AlfaKuryer.Application/Dtos/CItyDtos/CityPostDto.cs" Line="1" Column="1" />
+      <File FileName="Src/Core/AlfaKuryer.Application/Dtos/DistrictDtos/DistrictPostDto.cs" Line="4" Column="15" />
+      <File FileName="Src/Presentation/AlfaKargo.App/Resources/SharedResource.az.resx" Line="150" Column="3" />
+      <File FileName="Src/Presentation/AlfaKargo.App/Resources/SharedResource.ru-RU.resx" Line="169" Column="17" />
+      <File FileName="Src/Presentation/AlfaKargo.App/Resources/SharedResource.en-US.resx" Line="171" Column="2" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
-          <Node name="AlfaKargo" expanded="True">
+          <Node name="AlfaKargo" expanded="True" selected="True">
             <Node name="Src" expanded="True">
               <Node name="Core" expanded="True">
                 <Node name="AlfaKuryer.Application" expanded="True">
                   <Node name="Dtos" expanded="True">
-                    <Node name="SettingDtos" expanded="True" />
+                    <Node name="CItyDtos" expanded="True" />
+                    <Node name="SlideDtos" expanded="True" />
                   </Node>
                 </Node>
               </Node>
@@ -42,25 +98,15 @@
                 <Node name="AlfaKuryer.Persistance" expanded="True">
                   <Node name="ServiceRegisterations" expanded="True" />
                   <Node name="Services" expanded="True" />
+                  <Node name="Src" expanded="True" />
                 </Node>
               </Node>
               <Node name="Presentation" expanded="True">
                 <Node name="AlfaKargo.App" expanded="True">
-                  <Node name="areas" expanded="True">
-                    <Node name="manage" expanded="True">
-                      <Node name="Controllers" expanded="True">
-                        <Node name="SettingController.cs" selected="True" />
-                      </Node>
-                      <Node name="Views" expanded="True">
-                        <Node name="Setting" expanded="True" />
-                      </Node>
-                    </Node>
-                    <Node name="ViewModels" expanded="True" />
-                  </Node>
-                  <Node name="wwwroot" expanded="True">
-                    <Node name="assets" expanded="True">
-                      <Node name="imgs" expanded="True" />
-                    </Node>
+                  <Node name="Resources" expanded="True" />
+                  <Node name="Views" expanded="True">
+                    <Node name="Home" expanded="True" />
+                    <Node name="Shared" expanded="True" />
                   </Node>
                 </Node>
               </Node>

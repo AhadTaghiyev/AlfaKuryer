@@ -1,0 +1,33 @@
+﻿@using AlfaKuryer.Application.Dtos.SlideDtos;
+@model SlidePostDto
+
+@{
+    ViewData["Title"] = "Create";
+}
+<div class="card">
+    <div class="card-header">
+        Yenisini əlavə et
+    </div>
+    <div class="card-body">
+
+        <div class="row">
+            <div class="col-md-12">
+                <form asp-action="create" enctype="multipart/form-data">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <div class="col-md-12 mt-4 wrapper">
+                        <input asp-for="formFIle" class="form-control d-none" />
+                        <label class="btn btn-success" for="image">Şəkil Yüklə</label>
+                        <input id="image" type="file" name="PostDto.formFIle" value="" class="d-none imginput" /> <br />
+                        <span asp-validation-for="formFIle" class="text-danger"></span>
+                    </div>
+                    <div class="col-md-12 mt-3">
+                        <a class="btn btn-dark" asp-action="index"><i class="fas fa-undo"></i> Siyahıya geri dön</a>
+                        <input type="submit" value="Əlavə et" class="btn btn-danger" />
+                    </div>
+                </form>
+            </div>
+        </div>
+
+
+    </div>
+</div>

@@ -14,6 +14,17 @@
         },
         "runtime": {
           "AlfaKargo.App.dll": {}
+        },
+        "resources": {
+          "az/AlfaKargo.App.resources.dll": {
+            "locale": "az"
+          },
+          "en-Us/AlfaKargo.App.resources.dll": {
+            "locale": "en-Us"
+          },
+          "ru-RU/AlfaKargo.App.resources.dll": {
+            "locale": "ru-RU"
+          }
         }
       },
       "AutoMapper/12.0.1": {

@@ -6,7 +6,8 @@ using System.Linq.Expressions;
 {
     public interface IReadRepository<T> : IRepository<T> where T : BaseEntity, new()
     {
-        public Task<IQueryable<T>> GetAllAsync(Expression<Func<T, bool>> expression,bool isTracking,bool isReslation, string[] Includes=null);
-        public Task<T> GetAsync(Expression<Func<T, bool>> expression,bool IsTracking, bool isrelation, string[] Includes=null);
+        public Task<IQueryable<T>> GetAllAsync(Expression<Func<T, bool>> expression,bool isTracking,bool isReslation, params string[] Includes);
+        public Task<T> GetAsync(Expression<Func<T, bool>> expression,bool IsTracking, bool isrelation, params string[] Includes);
+        public IQueryable<T> GetQuery(Expression<Func<T, bool>> expression,bool IsTracking, bool isrelation, params string[] Includes);
     }
 }

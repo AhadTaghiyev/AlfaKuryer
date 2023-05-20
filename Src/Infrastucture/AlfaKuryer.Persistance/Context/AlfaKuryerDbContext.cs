@@ -6,11 +6,17 @@ using Microsoft.EntityFrameworkCore;
 
 namespace AlfaKuryer.Persistance.Context
 {
-    public class AlfaKuryerDbContext:DbContext
+    public class AlfaKuryerDbContext : DbContext
     {
-        public AlfaKuryerDbContext(DbContextOptions options):base(options) { }
-       
-        public DbSet<Setting> Settings { get;}
+        public AlfaKuryerDbContext(DbContextOptions options) : base(options) { }
+
+        public DbSet<Setting> Settings { get; }
+        public DbSet<Help> Helps { get; }
+        public DbSet<HelpLanguage> HelpLanguages { get; }
+        public DbSet<City> Cities { get; }
+        public DbSet<District> Districts{get;}
+        public DbSet<Rate> Rates { get; }
+        public DbSet<Slide> Slides { get; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

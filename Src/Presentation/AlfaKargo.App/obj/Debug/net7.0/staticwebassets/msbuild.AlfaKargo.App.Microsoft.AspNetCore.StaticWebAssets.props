@@ -2736,6 +2736,38 @@
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\assets\imgs\Logo\2cbf255f-d0e3-4bd3-b9d8-e509e97a87e1alfa kuryer logo.png))</OriginalItemSpec>
     </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\assets\imgs\Logo\57971b82-6bb8-4857-b390-ee99ed54e270alfa kuryer logo.png))">
+      <SourceType>Package</SourceType>
+      <SourceId>AlfaKargo.App</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/AlfaKargo.App</BasePath>
+      <RelativePath>assets/imgs/Logo/57971b82-6bb8-4857-b390-ee99ed54e270alfa kuryer logo.png</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\assets\imgs\Logo\57971b82-6bb8-4857-b390-ee99ed54e270alfa kuryer logo.png))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\assets\imgs\Logo\582943f9-6bb1-471f-89bf-5b6c06fbd477alfa kuryer logo.png))">
+      <SourceType>Package</SourceType>
+      <SourceId>AlfaKargo.App</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/AlfaKargo.App</BasePath>
+      <RelativePath>assets/imgs/Logo/582943f9-6bb1-471f-89bf-5b6c06fbd477alfa kuryer logo.png</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\assets\imgs\Logo\582943f9-6bb1-471f-89bf-5b6c06fbd477alfa kuryer logo.png))</OriginalItemSpec>
+    </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\assets\imgs\Logo\alfa kuryer favicon.jpeg))">
       <SourceType>Package</SourceType>
       <SourceId>AlfaKargo.App</SourceId>
@@ -2863,6 +2895,22 @@
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\assets\imgs\Logo\alfa kuryer logo.svg))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\assets\imgs\Logo\f3765fef-d2fd-41e0-aa45-a4a619b15e01alfa kuryer logo.png))">
+      <SourceType>Package</SourceType>
+      <SourceId>AlfaKargo.App</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/AlfaKargo.App</BasePath>
+      <RelativePath>assets/imgs/Logo/f3765fef-d2fd-41e0-aa45-a4a619b15e01alfa kuryer logo.png</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\assets\imgs\Logo\f3765fef-d2fd-41e0-aa45-a4a619b15e01alfa kuryer logo.png))</OriginalItemSpec>
     </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\assets\imgs\Logo\f58926a3-c8d8-48e9-b304-db1232bb944dalfa kuryer logo.png))">
       <SourceType>Package</SourceType>

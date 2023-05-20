@@ -1,4 +1,9 @@
-﻿<!DOCTYPE html>
+﻿@inject Microsoft.Extensions.Localization.IStringLocalizer<SharedResource> localizer
+@inject AlfaKuryer.Application.Services.SettingServices.ISettingService settingservice;
+@{
+    AlfaKuryer.Application.Dtos.SettingDtos.SettingGetDto settingGetDto =await  settingservice.Get();
+}
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
@@ -7,10 +12,10 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/assets/css/shared.css">
-    @RenderSection("css",false)
+    @RenderSection("css", false)
 </head>
 <body>
-        @RenderSection("login",false)
+    @RenderSection("login", false)
     <header>
         <div class="top-header py-2">
             <div class="container">
@@ -21,24 +26,26 @@
                                 <a href="tel:*7171" class="d-flex gap-2">
                                     <span class="iconify"
                                           data-icon="healthicons:phone" data-height="16"
-                                          style="color: #7b7b93;"></span>*7171
+                                          style="color: #7b7b93;"></span>@settingGetDto?.PhoneNumber1
                                 </a>
-                                <a asp-controller="info" asp-action="ProhibitedItems">Daşınması qadağan olan məhsullar</a>
-                                <a asp-controller="info" asp-action="faq">Tez-tez verilən suallar</a>
+                                 <a style="color:white;">@localizer["Address"] : @settingGetDto.Adress</a>
                             </div>
                             <div class="top-header-right-side d-flex gap-4 align-items-center">
                                 <a href="#" class="d-flex align-items-center gap-1 lang-all" id="lang-all">
-                                    <span class="lang" id="lang" style="position: relative;">AZ</span>
+                                    <span class="lang" id="lang" style="position: relative;">
+                                        @(localizer["Language"] == "Az" ? "AZ" : (localizer["Language"] == "Ru" ? "RU" : "EN"))
+                                    </span>
+
                                     <div class="lang-drop-down" id="lang-drop-down">
-                                        <span class="aze selected" id="aze">AZ</span>
-                                        <span class="eng" id="eng">EN</span>
-                                        <span class="rus" id="rus">RU</span>
+                                        <a asp-controller="home" asp-action="ChangeLanguage" asp-route-culture="az-AZ"
+                                           class="aze @(localizer["Language"] == "Az" ? "selected" : "")" id="aze">AZ</a>
+                                        <a asp-controller="home" asp-action="ChangeLanguage" asp-route-culture="en-En" class="eng @(localizer["Language"] == "En" ? "selected" : "")" id="eng">EN</a>
+                                        <a asp-controller="home" asp-action="ChangeLanguage" asp-route-culture="ru-RU" class="rus @(localizer["Language"] == "Ru" ? "selected" : "")" id="rus">RU</a>
                                     </div>
-                                    <span class="iconify chevron" id="chevron" data-icon="ci:chevron-big-down"
-                                          style="color: black;"></span>
+
                                 </a>
-                                <a asp-controller="account" asp-action="login" class="sign-in">Daxil ol</a>
-                                <a asp-controller="info" asp-action="register" class="sign-up">Qeydiyyat</a>
+                                <a asp-controller="account" asp-action="login" class="sign-in">@localizer["Login"]</a>
+                                <a asp-controller="account" asp-action="register" class="sign-up">@localizer["Sign up"]</a>
                             </div>
                         </div>
                     </div>
@@ -58,19 +65,19 @@
                             <div class="bottom-header-menu">
                                 <nav>
                                     <ul class="nav d-flex gap-5 align-items-center">
-                                        <li><a asp-controller="rate" asp-action="index">Tariflər</a></li>
-                                        <li><a asp-controller="news" asp-action="index">Xəbərlər</a></li>
-                                        <li><a asp-controller="contact" asp-action="index">Əlaqə</a></li>
+                                        <li><a asp-controller="rate" asp-action="index">@localizer["Tariffs"]</a></li>
+                                        <li><a asp-controller="news" asp-action="index">@localizer["News"]</a></li>
+                                        <li><a asp-controller="contact" asp-action="index">@localizer["Contact Us"]</a></li>
                                         <li style="display: flex">
-                                            <input id="tracking" placeholder="tracking" />
+                                            <input id="tracking" placeholder="@localizer["Order Tracking"]" />
                                             <button class="btn-red"><i class="fa fa-search"></i></button>
                                         </li>
                                     </ul>
                                 </nav>
                             </div>
                             <div class="bottom-header-right-side">
-                                <a asp-controller="account" asp-action="login" class="sign-in">Daxil ol</a>
-                                <a asp-controller="account" asp-action="login" class="sign-in">Qeydiyyat</a>
+                                <a asp-controller="account" asp-action="login" class="sign-in">@localizer["Login"]</a>
+                                <a asp-controller="account" asp-action="register" class="sign-in">@localizer["Sign up"]</a>
                             </div>
 
                             <div class="menu-bar">
@@ -81,7 +88,7 @@
                                     <ul>
                                         <li class="close"><i class="fa-solid fa-xmark"></i></li>
                                         <li style="display: flex">
-                                            <input id="tracking2" placeholder="tracking" />
+                                            <input id="tracking2" placeholder="@localizer["Order Tracking"]" />
                                             <button class="btn-red2"><i class="fa fa-search"></i></button>
                                         </li>
                                         <li>
@@ -93,12 +100,12 @@
                                             </select>
                                         </li>
 
-                            
-                                        <li><a asp-controller="store" asp-action="index">Əməkdaşlar</a></li>
-                                        <li><a asp-controller="news" asp-action="index">Yeniliklər</a></li>
-                                        <li><a asp-controller="contact" asp-action="index">Əlaqə</a></li>
-                                     
-                                       
+
+                                        <li><a asp-controller="rate" asp-action="index">@localizer["Tariffs"]</a></li>
+                                        <li><a asp-controller="news" asp-action="index">@localizer["News"]</a></li>
+                                        <li><a asp-controller="contact" asp-action="index">@localizer["Contact Us"]</a></li>
+
+
                                     </ul>
                                 </div>
                             </div>
@@ -120,7 +127,7 @@
                 </div>
                 <div class="mini-menu2 active-menu">
                     <ul>
-                              <li class="close2"><i class="fa-solid fa-xmark"></i></li>
+                        <li class="close2"><i class="fa-solid fa-xmark"></i></li>
                         <li>
                             <select name="cars" id="cars">
                                 <option value="saab">Az</option>
@@ -129,16 +136,15 @@
                                 <option value="audi">Tr</option>
                             </select>
                         </li>
-
                         <li style="display: flex">
-                            <input id="tracking3" placeholder="tracking" />
+                            <input id="tracking3" placeholder="@localizer["Order Tracking"]" />
                             <button class="btn-red3"><i class="fa fa-search"></i></button>
                         </li>
-                    
-                        <li><a asp-controller="store" asp-action="index">Əməkdaşlar</a></li>
-                        <li><a asp-controller="news" asp-action="index">Yeniliklər</a></li>
-                        <li><a asp-controller="contact" asp-action="index">Əlaqə</a></li>
-                    
+
+                        <li><a asp-controller="rate" asp-action="index">@localizer["Tariffs"]</a></li>
+                        <li><a asp-controller="news" asp-action="index">@localizer["News"]</a></li>
+                        <li><a asp-controller="contact" asp-action="index">@localizer["Contact Us"]</a></li>
+
                     </ul>
                 </div>
             </div>
@@ -153,29 +159,26 @@
             <div class="row">
                 <div class="col-md-12 mt-5 mb-5">
                     <div class="row">
-                        <div class="col-lg-4 col-md-12">
+                        <div class="col-lg-3 col-md-12">
                             <a asp-controller="home" asp-action="index" class="white-logo">
                                 <img class="mb-4" src="~/assets/imgs/index/Logo.jpg" alt="Dynamex Logo" width="160">
                             </a>
                             <p class="mb-5">
                                 <span class="iconify" data-icon="mdi:copyright"></span>
-                                Alfaex.az<br>Bütün hüquqlar qorunur
+                                Alfaex.az<br>@localizer["All rights reserved"]
                             </p>
                             <div class="socials">
-                                <a href="https://www.facebook.com/dynamex.az/" class="social" target="_blank">
+                                <a href="@settingGetDto?.FaceBookLink" class="social" target="_blank">
                                     <span class="iconify" data-icon="cib:facebook-f" data-height="20"
                                           style="color: white;"></span>
                                 </a>
-                                <a href="https://dynamex.az/about-us.html#" class="social" target="_blank">
-                                    <span class="iconify" data-icon="akar-icons:twitter-fill" data-height="20"
-                                          style="color: white;"></span>
-                                </a>
-                                <a href="https://www.instagram.com/dynamic.express/?hl=en" class="social"
+                            
+                                <a href="@settingGetDto?.InstgaramLink" class="social"
                                    target="_blank">
                                     <span class="iconify" data-icon="akar-icons:instagram-fill" data-height="20"
                                           style="color: white;"></span>
                                 </a>
-                                <a href="https://www.youtube.com/channel/UCnNG1fkf-8Wd3SKbS0Ioavg/featured"
+                                <a href="@settingGetDto?.YoutubeLink"
                                    class="social" target="_blank">
                                     <i>
                                         <span class="iconify" data-icon="akar-icons:youtube-fill" data-height="20"
@@ -186,48 +189,65 @@
 
                         </div>
                         <div class="col-lg-2 col-md-6">
-                            <h3>Menu</h3>
+                            <h3>@localizer["Menu"]</h3>
                             <ul class="menu-list">
-                                <li><a asp-controller="about" asp-action="index">Haqqımızda</a></li>
-                                <li><a asp-controller="service" asp-action="index">Xidmətlər</a></li>
-                                <li><a asp-controller="rate" asp-action="index">Tariflər</a></li>
-                                <li><a asp-controller="news" asp-action="index">Xəbərlər</a></li>
-                                <li><a asp-controller="contact" asp-action="index">Əlaqə</a></li>
+                                <li><a asp-controller="about" asp-action="index">@localizer["About"]</a></li>
+                                <li><a asp-controller="service" asp-action="index">@localizer["Services"]</a></li>
+                                <li><a asp-controller="rate" asp-action="index">@localizer["Tariffs"]</a></li>
+                                <li><a asp-controller="news" asp-action="index">@localizer["News"]</a></li>
+                                <li><a asp-controller="contact" asp-action="index">@localizer["Contact Us"]</a></li>
                             </ul>
                         </div>
                         <div class="col-lg-2 col-md-6">
-                            <h3>Kömək</h3>
+                            <h3>@localizer["Help"]</h3>
                             <ul class="help-list">
-                                <li><a asp-controller="about" asp-action="Privacy">Gizlilik siyasəti</a></li>
-                                <li><a asp-controller="about" asp-action="agreement">İstifadəçi Razılaşması</a></li>
-                                <li><a asp-controller="news" asp-action="index">Yeniliklər</a></li>
+                                <li><a asp-controller="about" asp-action="Privacy">@localizer["Privacy policy"]</a></li>
+                                <li><a asp-controller="about" asp-action="agreement">@localizer["User Agreement"]</a></li>
                             </ul>
                         </div>
                         <div class="col-lg-4 col-md-12">
-                            <h3>Əlaqə</h3>
+                            <h3>@localizer["Contact Us"]</h3>
                             <ul class="contact-list">
+
                                 <li>
-                                    <a href="mailto:info@dynamex.az">Problemli şöbə ilə əlaqə: info@alfaex.az</a>
+                                    <a href="#">@settingGetDto?.Adress</a>
                                 </li>
+
                                 <li>
-                                    <a href="mailto:hr@dynamex.az">Əməkdaşlıq üçün : hr@alfaex.az</a>
+                                    <a href="mailto:@settingGetDto?.Email">@settingGetDto?.Email</a>
                                 </li>
+
                                 <li>
-                                    <a href="tel:*7171" class="d-flex gap-2">
+                                    <a href="tel:@settingGetDto?.PhoneNumber1" class="d-flex gap-2">
                                         <span class="iconify" data-icon="healthicons:phone" data-height="16"
                                               style="color: #7b7b93;"></span>
-                                        *7171
+                                        @settingGetDto?.PhoneNumber1
+
+                                    </a>
+                                    <a href="tel:@settingGetDto?.PhoneNumber2" class="d-flex gap-2">
+                                        <span class="iconify" data-icon="healthicons:phone" data-height="16"
+                                              style="color: #7b7b93;"></span>
+                                        @settingGetDto?.PhoneNumber2
+
+                                    </a>
+                                    <a class="d-flex gap-2" href="https://wa.me/@settingGetDto?.PhoneNumber1">
+                                        <i class="fa-brands fa-whatsapp"></i>
+                                        @settingGetDto?.PhoneNumber1
+                                    </a>
+                                    <a class="d-flex gap-2" href="https://wa.me/@settingGetDto?.PhoneNumber2">
+                                        <i class="fa-brands fa-whatsapp"></i>
+                                        @settingGetDto?.PhoneNumber2
                                     </a>
                                 </li>
                             </ul>
-                          
+
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </footer>
-      
+
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/assets/js/shared.js"></script>

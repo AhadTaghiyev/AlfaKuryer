@@ -1,0 +1,36 @@
+﻿@using AlfaKargo.App.areas.ViewModels;
+@using AlfaKuryer.Application.Dtos.SlideDtos;
+@model UpdateVewModel<SlidePostDto,SlideGetDto>
+
+@{
+    ViewData["Title"] = "Update";
+}
+
+<div class="card">
+    <div class="card-header">
+        Düzəliş et
+    </div>
+    <div class="card-body">
+
+        <div class="row">
+            <div class="col-md-12">
+                <form asp-action="update" enctype="multipart/form-data">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <div class="col-md-12 mt-4 wrapper">
+                        <input asp-for="PostDto.formFIle" class="form-control d-none" />
+                        <label class="btn btn-success" for="image">Şəkil Yüklə</label>
+                        <input  id="image" type="file" name="PostDto.FormFile" value="" class="d-none imginput" /> <br />
+                        <img src="~/img/Logo/@Model.GetDto?.Logo" class="editedImage newimage" width="100" height="100" alt="Alternate Text" />
+                        <span asp-validation-for="PostDto.formFIle" class="text-danger"></span>
+                    </div>
+                    <div class="col-md-12 mt-3">
+                        <a class="btn btn-dark" asp-action="index"><i class="fas fa-undo"></i> Siyahıya geri dön</a>
+                        <input type="submit" value="Əlavə et" class="btn btn-danger" />
+                    </div>
+                </form>
+            </div>
+        </div>
+
+
+    </div>
+</div>

@@ -11,8 +11,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace AlfaKuryer.Persistance.Migrations
 {
     [DbContext(typeof(AlfaKuryerDbContext))]
-    [Migration("20230519194430_addedsettingtable")]
-    partial class addedsettingtable
+    [Migration("20230520141843_addedHelpTable")]
+    partial class addedHelpTable
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -21,6 +21,54 @@ namespace AlfaKuryer.Persistance.Migrations
             modelBuilder
                 .HasAnnotation("ProductVersion", "7.0.5")
                 .HasAnnotation("Relational:MaxIdentifierLength", 64);
+
+            modelBuilder.Entity("AlfaKuryer.Domain.Entities.Base.HelpLanguage", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    b.Property<string>("Code")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("Description")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<int>("HelpId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Title")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("HelpId");
+
+                    b.ToTable("HelpLanguages");
+                });
+
+            modelBuilder.Entity("AlfaKuryer.Domain.Entities.Help", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("datetime(6)");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("tinyint(1)");
+
+                    b.Property<DateTime>("UpdatedAt")
+                        .HasColumnType("datetime(6)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Helps");
+                });
 
             modelBuilder.Entity("AlfaKuryer.Domain.Entities.Setting", b =>
                 {
@@ -72,6 +120,22 @@ namespace AlfaKuryer.Persistance.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Settings");
+                });
+
+            modelBuilder.Entity("AlfaKuryer.Domain.Entities.Base.HelpLanguage", b =>
+                {
+                    b.HasOne("AlfaKuryer.Domain.Entities.Help", "Help")
+                        .WithMany("HelpLanguages")
+                        .HasForeignKey("HelpId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Help");
+                });
+
+            modelBuilder.Entity("AlfaKuryer.Domain.Entities.Help", b =>
+                {
+                    b.Navigation("HelpLanguages");
                 });
 #pragma warning restore 612, 618
         }

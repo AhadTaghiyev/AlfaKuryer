@@ -19,4 +19,23 @@
     <ProjectReference Include="..\AlfaKuryer.Domain\AlfaKuryer.Domain.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Remove="Dtos\RateDtos\" />
+    <None Remove="Services\RateServices\" />
+    <None Remove="Dtos\CItyDtos\" />
+    <None Remove="Dtos\DistrictDtos\" />
+    <None Remove="Services\DistrictServices\" />
+    <None Remove="Dtos\SlideDtos\" />
+    <None Remove="Services\SlideService\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Dtos\RateDtos\" />
+    <Folder Include="Services\RateServices\" />
+    <Folder Include="Dtos\CItyDtos\" />
+    <Folder Include="Dtos\DistrictDtos\" />
+    <Folder Include="Services\DistrictServices\" />
+    <Folder Include="Dtos\RateDtos\" />
+    <Folder Include="Dtos\SlideDtos\" />
+    <Folder Include="Services\SlideService\" />
+  </ItemGroup>
 </Project>

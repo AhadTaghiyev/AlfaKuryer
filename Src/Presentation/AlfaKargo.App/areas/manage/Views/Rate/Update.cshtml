@@ -1,0 +1,113 @@
+﻿@using AlfaKargo.App.areas.ViewModels;
+@using AlfaKuryer.Application.Dtos.RateDtos;
+@model UpdateVewModel<RatePostDto,RateGetDto>
+
+@{
+    ViewData["Title"] = "Update";
+}
+
+<div class="card">
+    <div class="card-header">
+        Düzəliş et
+    </div>
+    <div class="card-body">
+
+        <div class="row">
+            <div class="col-md-12">
+
+                <form asp-action="Update" class="row">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <div class="form-group  col-md-6">
+                        <label class="control-label">Haradan</label>
+                        <select asp-for="PostDto.From" class="form-control">
+
+                            @foreach (var item in ViewBag.Cities)
+                            {
+                                if (Model.GetDto?.From == item.Name)
+                                {
+                                    <option selected value="@item.Name">
+                                        @item.Name
+                                    </option>
+                                }
+                                else
+                                {
+                                    <option selected value="@item.Name">
+                                        @item.Name
+                                    </option>
+                                }
+                            }
+                            @foreach (var item in ViewBag.Districts)
+                            {
+                                if (Model.GetDto?.From == item.Name)
+                                {
+                                    <option selected value="@item.Name">
+                                        @item.Name
+                                    </option>
+                                }
+                                else
+                                {
+                                    <option selected value="@item.Name">
+                                        @item.Name
+                                    </option>
+                                }
+                            }
+
+                        </select>
+                        <span asp-validation-for="PostDto.From"></span>
+                    </div>
+
+                    <div class="form-group  col-md-6">
+                        <label class="control-label">Haradan</label>
+                        <select asp-for="PostDto.To" class="form-control">
+
+                            @foreach (var item in ViewBag.Cities)
+                            {
+                                if (Model.GetDto?.To == item.Name)
+                                {
+                                    <option selected value="@item.Name">
+                                        @item.Name
+                                    </option>
+                                }
+                                else
+                                {
+                                    <option selected value="@item.Name">
+                                        @item.Name
+                                    </option>
+                                }
+                            }
+                            @foreach (var item in ViewBag.Districts)
+                            {
+                                if (Model.GetDto?.To == item.Name)
+                                {
+                                    <option selected value="@item.Name">
+                                        @item.Name
+                                    </option>
+                                }
+                                else
+                                {
+                                    <option selected value="@item.Name">
+                                        @item.Name
+                                    </option>
+                                }
+                            }
+
+                        </select>
+                        <span asp-validation-for="PostDto.To"></span>
+                    </div>
+
+                    <div class="form-group col-md-4">
+                        <label class="control-label">Qiymət</label>
+                        <input asp-for="PostDto.Price" value="@Model.GetDto?.Price" class="form-control" />
+                        <span asp-validation-for="PostDto.Price" class="text-danger"></span>
+                    </div>
+                    <div class="col-md-12 mt-3">
+                        <a class="btn btn-dark" asp-action="index"><i class="fas fa-undo"></i> Siyahıya geri dön</a>
+                        <input type="submit" value="Əlavə et" class="btn btn-primary" />
+                    </div>
+                </form>
+            </div>
+        </div>
+
+
+    </div>
+</div>

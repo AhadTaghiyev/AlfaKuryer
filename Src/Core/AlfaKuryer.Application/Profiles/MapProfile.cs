@@ -1,4 +1,9 @@
-﻿using AlfaKuryer.Application.Dtos.SettingDtos;
+﻿using AlfaKuryer.Application.Dtos.CItyDtos;
+using AlfaKuryer.Application.Dtos.DistrictDtos;
+using AlfaKuryer.Application.Dtos.HelpDtos;
+using AlfaKuryer.Application.Dtos.RateDtos;
+using AlfaKuryer.Application.Dtos.SettingDtos;
+using AlfaKuryer.Application.Dtos.SlideDtos;
 using AlfaKuryer.Domain.Entities;
 using AutoMapper;
 
@@ -10,6 +15,16 @@ namespace AlfaKuryer.Application.Profiles
         {
             CreateMap<SettingPostDto, Setting>();
             CreateMap<Setting, SettingGetDto>();
+            CreateMap<RatePostDto, Rate>();
+            CreateMap<Rate, RateGetDto>();
+            CreateMap<Help, HelpGetManageDto>();
+            CreateMap<HelpPostDto, Help>();
+            CreateMap<City, CityGetDto>();
+            CreateMap<CityPostDto, City>();
+            CreateMap<District, DistrictGetDto>();
+            CreateMap<DistrictPostDto, District>();
+            CreateMap<SlidePostDto, Slide>();
+            CreateMap<Slide, SlideGetDto>();
         }
     }
 }

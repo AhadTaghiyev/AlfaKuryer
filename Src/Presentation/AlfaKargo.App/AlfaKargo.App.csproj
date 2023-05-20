@@ -17,6 +17,11 @@
     <Folder Include="areas\manage\Views\Home\" />
     <Folder Include="areas\manage\Views\Shared\" />
     <Folder Include="areas\ViewModels\" />
+    <Folder Include="Resources\" />
+    <Folder Include="areas\manage\Views\Help\" />
+    <Folder Include="areas\manage\Views\City\" />
+    <Folder Include="ViewModels\" />
+    <Folder Include="areas\manage\Views\Slide\" />
   </ItemGroup>
 
   <ItemGroup>
@@ -39,5 +44,10 @@
     <None Remove="areas\manage\Views\Home\" />
     <None Remove="areas\manage\Views\Shared\" />
     <None Remove="areas\ViewModels\" />
+    <None Remove="Resources\" />
+    <None Remove="areas\manage\Views\Help\" />
+    <None Remove="areas\manage\Views\City\" />
+    <None Remove="ViewModels\" />
+    <None Remove="areas\manage\Views\Slide\" />
   </ItemGroup>
 </Project>
