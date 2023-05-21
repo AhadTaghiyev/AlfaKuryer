@@ -1,4 +1,5 @@
-﻿
+﻿@model IEnumerable<AlfaKuryer.Application.Dtos.NewsDtos.NewsGetDto>
+
 @{
     ViewData["Title"] = "Index";
 }
@@ -11,103 +12,17 @@
   
     <div class="container">
         <div class="row gap-4 justify-content-center" style="margin-bottom: 5rem;">
-            <a href="#" class="card col-lg-3 col-md-5 col-sm-12">
-                <img src="/assets/imgs/Logo/alfa kuryer logo.jpeg" alt="">
-                <div class="detail noselect d-flex flex-column justify-content-evenly">
-                    <b class="title d-block">YAY Endirimləri üzərinə 0% komissiya!</b>
-                    <span class="posted-date d-block">28.07.2022</span>
-                </div>
-            </a>
-            <a href="#" class="card col-lg-3 col-md-5 col-sm-12">
-                <img src="/assets/imgs/Logo/alfa kuryer logo.jpeg" alt="">
+            @foreach (var item in Model)
+            {
+                <a asp-controller="news" asp-action="detail" asp-route-title="@item.Title" asp-route-id="@item.Id" class="card col-lg-3 col-md-5 col-sm-12">
+                    <img src="/assets/imgs/news/@item.Image" alt="">
+                    <div class="detail noselect d-flex flex-column justify-content-evenly">
+                        <b class="title d-block">@item.Title</b>
+                        <span class="posted-date d-block">@item.CreatedAt.ToString("MM/dd/yyyy")</span>
+                    </div>
+                </a>
 
-                <div class="detail d-flex flex-column justify-content-evenly">
-                    <b class="title d-block">Yay aylarında 28 may filialımızın iş saatlarını artırdıq.</b>
-                    <span class="posted-date d-block">17.07.2022</span>
-                </div>
-            </a>
-            <a href="#" class="card col-lg-3 col-md-5 col-sm-12">
-                <img src="/assets/imgs/Logo/alfa kuryer logo.jpeg" alt="">
-
-                <div class="detail d-flex flex-column justify-content-evenly">
-                    <b class="title d-block">AlfaKuryer MEMAR ƏCƏMİ təhvil məntəqəsin açdı – Türkiyə və Amerikadan daşınma.</b>
-                    <span class="posted-date d-block">28.06.2022</span>
-                </div>
-            </a>
-            <a href="#" class="card col-lg-3 col-md-5 col-sm-12">
-                <img src="/assets/imgs/Logo/alfa kuryer logo.jpeg" alt="">
-
-                <div class="detail d-flex flex-column justify-content-evenly">
-                    <b class="title d-block">Yay geyimlərinə heç gözləmədiyiniz fürsət təklifi!</b>
-                    <span class="posted-date d-block">28.07.2022</span>
-                </div>
-            </a>
-            <a href="#" class="card col-lg-3 col-md-5 col-sm-12">
-                <img src="/assets/imgs/Logo/alfa kuryer logo.jpeg" alt="">
-
-                <div class="detail d-flex flex-column justify-content-evenly">
-                    <b class="title d-block">
-                        AlfaKuryer BAKIXANOV təhvil məntəqəsin açdı – Türkiyə və Amerikadan daşınma.
-                    </b>
-                    <span class="posted-date d-block">28.07.2022</span>
-                </div>
-            </a>
-            <a href="#" class="card col-lg-3 col-md-5 col-sm-12">
-                <img src="/assets/imgs/Logo/alfa kuryer logo.jpeg" alt="">
-
-                <div class="detail d-flex flex-column justify-content-evenly">
-                    <b class="title d-block">YAY həyacanını 0% komissiya ilə daha da artırdıq - AlfaKuryer.az</b>
-                    <span class="posted-date d-block">22.05.2022</span>
-                </div>
-            </a>
-            <a href="#" class="card col-lg-3 col-md-5 col-sm-12">
-                <img src="/assets/imgs/Logo/alfa kuryer logo.jpeg" alt="">
-
-                <div class="detail d-flex flex-column justify-content-evenly">
-                    <b class="title d-block">Filial və Təhvil məntəqələrimiz yeni iş saatları</b>
-                    <span class="posted-date d-block">20.05.2022</span>
-                </div>
-            </a>
-            <a href="#" class="card col-lg-3 col-md-5 col-sm-12">
-                <img src="/assets/imgs/Logo/alfa kuryer logo.jpeg" alt="">
-
-                <div class="detail d-flex flex-column justify-content-evenly">
-                    <b class="title d-block">Bayram günlərində iş qrafikimiz</b>
-                    <span class="posted-date d-block">30.04.2022</span>
-                </div>
-            </a>
-            <a href="#" class="card col-lg-3 col-md-5 col-sm-12">
-                <img src="/assets/imgs/Logo/alfa kuryer logo.jpeg" alt="">
-
-                <div class="detail d-flex flex-column justify-content-evenly">
-                    <b class="title d-block">Azərbaycanın hər bir nöqtəsində sizlərin Xidmətinizdəyik - AlfaKuryer.az</b>
-                    <span class="posted-date d-block">27.04.2022</span>
-                </div>
-            </a>
-            <a href="#" class="card col-lg-3 col-md-5 col-sm-12">
-                <img src="/assets/imgs/Logo/alfa kuryer logo.jpeg" alt="">
-
-                <div class="detail d-flex flex-column justify-content-evenly">
-                    <b class="title d-block">Müştərilərimizin nəzərinə - AlfaKuryer.az</b>
-                    <span class="posted-date d-block">19.04.2022</span>
-                </div>
-            </a>
-            <a href="#" class="card col-lg-3 col-md-5 col-sm-12">
-                <img src="/assets/imgs/Logo/alfa kuryer logo.jpeg" alt="">
-
-                <div class="detail d-flex flex-column justify-content-evenly">
-                    <b class="title d-block">Sizə 1 YOX, 2 YOX 3 MÖHTƏŞƏM kampaniya təklif edirik!</b>
-                    <span class="posted-date d-block">26.03.2022</span>
-                </div>
-            </a>
-            <a href="#" class="card col-lg-3 col-md-5 col-sm-12">
-                <img src="/assets/imgs/Logo/alfa kuryer logo.jpeg" alt="">
-
-                <div class="detail d-flex flex-column justify-content-evenly">
-                    <b class="title d-block">Novruz 0% komissiya ilə gətirdik - AlfaKuryer.az</b>
-                    <span class="posted-date d-block">16.03.2022</span>
-                </div>
-            </a>
+            }
         </div>
    
     </div>

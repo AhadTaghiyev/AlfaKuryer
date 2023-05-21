@@ -1,12 +1,20 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using AlfaKuryer.Application.Services.RateServices;
+using Microsoft.AspNetCore.Mvc;
 
 namespace AlfaKargo.App.Controllers
 {
     public class RateController : Controller
     {
-        public IActionResult Index()
+        private readonly IRateService _service;
+
+        public RateController(IRateService service)
         {
-            return View();
+            _service = service;
+        }
+
+        public async Task<IActionResult> Index()
+        {
+            return View(await _service.GetAll());
         }
     }
 }

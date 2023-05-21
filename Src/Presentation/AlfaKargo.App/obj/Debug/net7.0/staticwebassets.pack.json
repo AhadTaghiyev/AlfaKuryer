@@ -537,6 +537,10 @@
       "PackagePath": "staticwebassets/assets/css/contact.css"
     },
     {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/assets/css/detail.css",
+      "PackagePath": "staticwebassets/assets/css/detail.css"
+    },
+    {
       "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/assets/css/faq.css",
       "PackagePath": "staticwebassets/assets/css/faq.css"
     },
@@ -761,6 +765,10 @@
       "PackagePath": "staticwebassets/assets/imgs/main/preloader.gif"
     },
     {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/assets/imgs/news/27dcf37c-a741-4967-a31a-42123bbb6195alfa kuryer logo.png",
+      "PackagePath": "staticwebassets/assets/imgs/news/27dcf37c-a741-4967-a31a-42123bbb6195alfa kuryer logo.png"
+    },
+    {
       "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/assets/imgs/news/Yay aylarında 28 may filialımızın iş saatlarını artırdıq.jpg",
       "PackagePath": "staticwebassets/assets/imgs/news/Yay aylarında 28 may filialımızın iş saatlarını artırdıq.jpg"
     },
@@ -781,8 +789,16 @@
       "PackagePath": "staticwebassets/assets/imgs/news/bayram-gunleri.png"
     },
     {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/assets/imgs/news/bce311ab-1f24-4741-8814-c35a9ba85387alfa kuryer logo.png",
+      "PackagePath": "staticwebassets/assets/imgs/news/bce311ab-1f24-4741-8814-c35a9ba85387alfa kuryer logo.png"
+    },
+    {
       "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/assets/imgs/news/bir-yox.jpg",
       "PackagePath": "staticwebassets/assets/imgs/news/bir-yox.jpg"
+    },
+    {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/assets/imgs/news/cdc958ea-048e-4713-834e-55b2733320d3alfa kuryer logo.png",
+      "PackagePath": "staticwebassets/assets/imgs/news/cdc958ea-048e-4713-834e-55b2733320d3alfa kuryer logo.png"
     },
     {
       "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/assets/imgs/news/memar-ecemi-tehvil-mentegesi.png",

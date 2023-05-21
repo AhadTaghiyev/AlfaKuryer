@@ -1,0 +1,23 @@
+﻿@model AlfaKuryer.Application.Dtos.NewsDtos.NewsGetDto
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+@section css{
+    <link rel="stylesheet" href="~/assets/css/detail.css">
+}
+<div class="containe">
+    <div class="news">
+        <div class="image-container">
+            <img src="/assets/imgs/news/@Model?.Image" alt="News Image">
+        </div>
+        <div class="content">
+            <h1 class="title">@Model.Title</h1>
+            <p class="description">
+               @Model.Description
+            </p>
+            <p class="date">@Model.CreatedAt.ToString("MM/dd/yyyy")</p>
+        </div>
+    </div>
+</div>

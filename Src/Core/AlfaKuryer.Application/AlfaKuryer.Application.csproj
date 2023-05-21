@@ -27,6 +27,11 @@
     <None Remove="Services\DistrictServices\" />
     <None Remove="Dtos\SlideDtos\" />
     <None Remove="Services\SlideService\" />
+    <None Remove="Dtos\MessageDto\" />
+    <None Remove="Services\MessageService\" />
+    <None Remove="Dtos\CustomerDtos\" />
+    <None Remove="Services\CustomerService\" />
+    <None Remove="Dtos\BaseUserDto\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Dtos\RateDtos\" />
@@ -37,5 +42,10 @@
     <Folder Include="Dtos\RateDtos\" />
     <Folder Include="Dtos\SlideDtos\" />
     <Folder Include="Services\SlideService\" />
+    <Folder Include="Dtos\MessageDto\" />
+    <Folder Include="Services\MessageService\" />
+    <Folder Include="Dtos\CustomerDtos\" />
+    <Folder Include="Services\CustomerService\" />
+    <Folder Include="Dtos\BaseUserDto\" />
   </ItemGroup>
 </Project>

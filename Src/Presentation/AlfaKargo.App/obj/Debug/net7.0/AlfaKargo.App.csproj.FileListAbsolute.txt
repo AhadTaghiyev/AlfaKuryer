@@ -597,3 +597,9 @@ C:/Users/Ahad/Desktop/AlfaKargo/Src/Presentation/AlfaKargo.App/obj/Debug/net7.0/
 /Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/obj/Debug/net7.0/AlfaKargo.App.pdb
 /Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/obj/Debug/net7.0/AlfaKargo.App.genruntimeconfig.cache
 /Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/obj/Debug/net7.0/ref/AlfaKargo.App.dll
+/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/bin/Debug/net7.0/Microsoft.AspNetCore.Cryptography.Internal.dll
+/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/bin/Debug/net7.0/Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/bin/Debug/net7.0/Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/bin/Debug/net7.0/Microsoft.Extensions.Identity.Core.dll
+/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/bin/Debug/net7.0/Microsoft.Extensions.Identity.Stores.dll
+/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/bin/Debug/net7.0/Microsoft.Extensions.Options.dll

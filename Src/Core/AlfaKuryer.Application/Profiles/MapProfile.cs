@@ -1,6 +1,7 @@
 ﻿using AlfaKuryer.Application.Dtos.CItyDtos;
 using AlfaKuryer.Application.Dtos.DistrictDtos;
 using AlfaKuryer.Application.Dtos.HelpDtos;
+using AlfaKuryer.Application.Dtos.MessageDto;
 using AlfaKuryer.Application.Dtos.RateDtos;
 using AlfaKuryer.Application.Dtos.SettingDtos;
 using AlfaKuryer.Application.Dtos.SlideDtos;
@@ -25,6 +26,8 @@ namespace AlfaKuryer.Application.Profiles
             CreateMap<DistrictPostDto, District>();
             CreateMap<SlidePostDto, Slide>();
             CreateMap<Slide, SlideGetDto>();
+            CreateMap<Message, MessageGetDto>();
+            CreateMap<MessagePostDto, Message>();
         }
     }
 }

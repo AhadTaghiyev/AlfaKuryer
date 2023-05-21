@@ -5,15 +5,19 @@ using AlfaKuryer.Application.Repositories.WriteRepositories;
 using AlfaKuryer.Application.Services.CityServices;
 using AlfaKuryer.Application.Services.DistrictServices;
 using AlfaKuryer.Application.Services.HelpServices;
+using AlfaKuryer.Application.Services.MessageService;
+using AlfaKuryer.Application.Services.NewsServices;
 using AlfaKuryer.Application.Services.RateServices;
 using AlfaKuryer.Application.Services.SettingServices;
 using AlfaKuryer.Application.Services.SlideService;
+using AlfaKuryer.Domain.Entities;
 using AlfaKuryer.Persistance.Context;
 using AlfaKuryer.Persistance.Repositories.ReadRepositories;
 using AlfaKuryer.Persistance.Repositories.WriteRepositories;
 using AlfaKuryer.Persistance.Services;
 using MessageScheduler.Data.Repositories.ReadRepositories;
 using MessageScheduler.Data.Repositories.WriteRepositories;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -58,6 +62,20 @@ namespace AlfaKuryer.Persistance.ServiceRegisterations
             services.AddScoped<ISlideWriteRepository, SlideWriteRepository>();
             services.AddScoped<ISlideService, SlideService>();
             #endregion
+            #region News
+            services.AddScoped<INewsReadRepository, NewsReadRepository>();
+            services.AddScoped<INewsWriteRepository, NewsWriteRepository>();
+            services.AddScoped<INewsService, NewsService>();
+            #endregion
+
+            #region News
+            services.AddScoped<IMessageReadRepository, MessageReadRepository>();
+            services.AddScoped<IMessageWriteRepository, MessageWriteRepository>();
+            services.AddScoped<IMessageService, MessageService>();
+            #endregion
+            services.AddIdentity<ApplicationUser, IdentityRole>()
+            .AddEntityFrameworkStores<AlfaKuryerDbContext>()
+            .AddDefaultTokenProviders();
         }
     }
 }

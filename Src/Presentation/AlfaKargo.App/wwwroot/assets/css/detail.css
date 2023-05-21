@@ -1,0 +1,50 @@
+/* Set container width and center the content */
+.containe {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Style the news container */
+.news {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/* Style the news image container */
+.image-container {
+    flex: 1 0 300px;
+    margin-right: 20px;
+}
+
+    /* Style the news image */
+    .image-container img {
+        width: 100%;
+        height: auto;
+    }
+
+/* Style the news content */
+.content {
+    flex: 2 0 300px;
+}
+
+    /* Style the news title */
+    .content .title {
+        font-size: 24px;
+        font-weight: bold;
+        margin-bottom: 10px;
+        color: #EF3340;
+    }
+
+    /* Style the news description */
+    .content .description {
+        font-size: 16px;
+        line-height: 1.5;
+        margin-bottom: 10px;
+    }
+
+    /* Style the news date */
+    .content .date {
+        font-size: 14px;
+        color: #999;
+    }
