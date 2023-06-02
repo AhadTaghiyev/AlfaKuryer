@@ -19,6 +19,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastucture", "Infrastuct
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AlfaKuryer.Persistance", "Src\Infrastucture\AlfaKuryer.Persistance\AlfaKuryer.Persistance.csproj", "{EE3D7667-44D6-47C4-9638-2DA5A0D0ECD6}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AlfaKuryer.Infrastucture", "Src\Infrastucture\AlfaKuryer.Infrastucture\AlfaKuryer.Infrastucture.csproj", "{CBA0819B-1CEE-4280-8D31-C2BBEDB663C4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -41,6 +43,10 @@ Global
 		{EE3D7667-44D6-47C4-9638-2DA5A0D0ECD6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EE3D7667-44D6-47C4-9638-2DA5A0D0ECD6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EE3D7667-44D6-47C4-9638-2DA5A0D0ECD6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CBA0819B-1CEE-4280-8D31-C2BBEDB663C4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CBA0819B-1CEE-4280-8D31-C2BBEDB663C4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CBA0819B-1CEE-4280-8D31-C2BBEDB663C4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CBA0819B-1CEE-4280-8D31-C2BBEDB663C4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -53,6 +59,7 @@ Global
 		{705250B7-A576-4CD7-9849-67FE8815451D} = {F043DB02-CB0D-4946-9F11-2252367F8D09}
 		{E408F861-3D8D-4111-AC01-1CB105DBB68D} = {E57F5383-756F-41F5-815B-E170903D7F39}
 		{EE3D7667-44D6-47C4-9638-2DA5A0D0ECD6} = {E408F861-3D8D-4111-AC01-1CB105DBB68D}
+		{CBA0819B-1CEE-4280-8D31-C2BBEDB663C4} = {E408F861-3D8D-4111-AC01-1CB105DBB68D}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {1D53DC7C-48EF-4C95-8280-0F8B3DF57A1A}

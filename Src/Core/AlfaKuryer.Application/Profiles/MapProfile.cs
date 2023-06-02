@@ -2,6 +2,8 @@
 using AlfaKuryer.Application.Dtos.DistrictDtos;
 using AlfaKuryer.Application.Dtos.HelpDtos;
 using AlfaKuryer.Application.Dtos.MessageDto;
+using AlfaKuryer.Application.Dtos.OrderDtos;
+using AlfaKuryer.Application.Dtos.PriceDtos;
 using AlfaKuryer.Application.Dtos.RateDtos;
 using AlfaKuryer.Application.Dtos.SettingDtos;
 using AlfaKuryer.Application.Dtos.SlideDtos;
@@ -28,6 +30,10 @@ namespace AlfaKuryer.Application.Profiles
             CreateMap<Slide, SlideGetDto>();
             CreateMap<Message, MessageGetDto>();
             CreateMap<MessagePostDto, Message>();
+            CreateMap<PricePostDto, PriceForOrder>();
+            CreateMap<PriceForOrder, PriceGetDto>();
+            CreateMap<Order, OrderGetDto>();
+            CreateMap<OrderPostDto, Order>();
         }
     }
 }

@@ -17,6 +17,13 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\Core\AlfaKuryer.Application\AlfaKuryer.Application.csproj" />
+    <ProjectReference Include="..\AlfaKuryer.Infrastucture\AlfaKuryer.Infrastucture.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Remove="Extentions\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Extentions\" />
+  </ItemGroup>
 </Project>

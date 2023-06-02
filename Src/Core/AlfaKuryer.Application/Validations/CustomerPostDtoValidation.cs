@@ -28,6 +28,22 @@ namespace AlfaKuryer.Application.Validations
             RuleFor(x => x.DocumentNumber).NotNull().NotEmpty().MinimumLength(8).MaximumLength(8).WithMessage("uzunluq 8 olmalıdır");
             RuleFor(x => x.Fin).NotNull().NotEmpty().MinimumLength(8).MaximumLength(8).WithMessage("uzunluq 8 olmalıdır");
             RuleFor(x => x.Password).NotNull().NotEmpty().MinimumLength(8).WithMessage("minimum uzunluq 8 olmalıdır");
+
+            RuleFor(x => x.Phonenumber).NotNull().NotEmpty().WithMessage("Bos buraxila bilmez").Custom((x, context) =>
+            {
+                Regex regex = new Regex(@"^(\+994)?(994)?(51|55|77|70|60|90|99|050|051|055|077|070|060|090|099)\d{7}$");
+
+                if (!regex.IsMatch(x))
+                    context.AddFailure("düzgün Mobilnömrə ünvanı əlavə edin..");
+            });
+            RuleFor(x => x).Custom((x, context) =>
+            {
+                if (x.Password != x.PasswordVerify)
+                {
+                    context.AddFailure("Şifrə uyğun deyil");
+                }
+            });
+        
         }
 	}
 }

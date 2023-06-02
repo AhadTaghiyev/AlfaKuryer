@@ -44,8 +44,8 @@
         <ul style="background:#EF3340" class="navbar-nav  sidebar sidebar-dark accordion" id="accordionSidebar">
 
             <!-- Sidebar - Brand -->
-            <a class="sidebar-brand d-flex align-items-center justify-content-center" target="_blank" href="/home/">
-                <img src="~/Content/Site/img/core-img/logo-2.png" style="width:100px;" />
+            <a style="background-color:white;" class="sidebar-brand d-flex align-items-center justify-content-center" target="_blank" href="/home/">
+                <img src="~/assets/imgs/Logo/2cbf255f-d0e3-4bd3-b9d8-e509e97a87e1alfa kuryer logo.png" style="width:100px;" />
             </a>
 
             <!-- Divider -->
@@ -94,137 +94,48 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapse4" aria-expanded="true" aria-controls="collapse2">
+                <a class="nav-link" asp-controller="Message" asp-action="index">
                     <i class="fa fa-folder"></i>
-                    <span>Elanlar</span>
+                    <span>Müraciətlət</span>
                 </a>
-                <div id="collapse4" class="collapse" aria-labelledby="heading2" data-parent="#accordionSidebar">
-                    <div class="bg-white py-2 collapse-inner rounded">
-                        <a class="dropdown-item" asp-area="manage" asp-controller="setting" asp-action="index">Tənzimləmələr</a>
-                        <a class="dropdown-item" asp-controller="service" asp-action="index">Xidmətlət</a>
-                        <a class="dropdown-item" href="/admin/buildingtypes/">Əmlak növləri</a>
-                        <a class="dropdown-item" href="/admin/premiumdetails/">Prem. elan xüsusiyyətləri</a>
-                        <a class="dropdown-item" href="/admin/paymentstoads/">Ödənişlər</a>
-                        <a class="dropdown-item" href="/admin/advertisements/CheckPremiums/">Premiumları yoxla</a>
-
-                    </div>
-                </div>
             </li>
-
             <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapse3" aria-expanded="true" aria-controls="collapse1">
+                <a class="nav-link" asp-controller="Account" asp-action="Admins">
+                    <i class="fa fa-folder"></i>
+                    <span>Adminlər</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" asp-controller="Account" asp-action="Companies">
+                    <i class="fa fa-folder"></i>
+                    <span>Şirkətlər</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" asp-controller="Account" asp-action="Users">
                     <i class="fa fa-folder"></i>
                     <span>İstifadəçilər</span>
                 </a>
-                <div id="collapse3" class="collapse" aria-labelledby="heading3" data-parent="#accordionSidebar">
-                    <div class="bg-white py-2 collapse-inner rounded">
-                        <a class="dropdown-item" href="/admin/users/">İstifadəçilər</a>
-                        <a class="dropdown-item" href="/admin/usertypes/">İstifadəçi növləri</a>
-                    </div>
-                </div>
-            </li>
-
-            <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapse7" aria-expanded="true" aria-controls="collapse1">
-                    <i class="fa fa-folder"></i>
-                    <span>Xidmətlər</span>
-                </a>
-                <div id="collapse7" class="collapse" aria-labelledby="heading1" data-parent="#accordionSidebar">
-                    <div class="bg-white py-2 collapse-inner rounded">
-                        <a class="dropdown-item" href="/admin/servicesa/">Xidmətlər</a>
-                        <a class="dropdown-item" href="/admin/servicecompanies/">Firmalar</a>
-                    </div>
-                </div>
             </li>
             <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapse5" aria-expanded="true" aria-controls="collapse1">
+                <a class="nav-link" asp-controller="Account" asp-action="Couriers">
                     <i class="fa fa-folder"></i>
-                    <span>Seo işləri</span>
+                    <span>Kuryerlər</span>
                 </a>
-                <div id="collapse5" class="collapse" aria-labelledby="heading1" data-parent="#accordionSidebar">
-                    <div class="bg-white py-2 collapse-inner rounded">
-                        <a class="dropdown-item" href="/admin/seokeywords/">Açar sözlər</a>
-                        <a class="dropdown-item" href="/admin/seodescriptions/">Açıqlamalar</a>
-                        <a class="dropdown-item" href="/admin/othertags/">Digər etikətlər</a>
-                        <a class="dropdown-item" href="/admin/abouttexts/">Haqqımızda səhifəsi</a>
-                        <a class="dropdown-item" href="/admin/faqs/">FAQ</a>
-                        <a class="dropdown-item" href="/admin/tags//">Etiketlər</a>
-                        <a class="dropdown-item" href="/admin/tagtoadverts//">Etiket-Məhsul</a>
-
-                    </div>
-                </div>
             </li>
-
-            <li class="nav-item d-none">
-                <a class="nav-link" href="/admin/servicetypes/">
+            <li class="nav-item">
+                <a class="nav-link" asp-controller="Price" asp-action="Index">
                     <i class="fa fa-folder"></i>
-                    <span>Xidmət növləri</span>
+                    <span>Qiymətlər</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" asp-controller="Order" asp-action="Index">
+                    <i class="fa fa-folder"></i>
+                    <span>Sifarişlər</span>
                 </a>
             </li>
 
-            <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapse1" aria-expanded="true" aria-controls="collapse1">
-                    <i class="fa fa-folder"></i>
-                    <span>Lokasiyalar</span>
-                </a>
-                <div id="collapse1" class="collapse" aria-labelledby="heading1" data-parent="#accordionSidebar">
-                    <div class="bg-white py-2 collapse-inner rounded">
-                        <a class="dropdown-item" href="/admin/countries/">Ölkələr</a>
-                        <a class="dropdown-item" href="/admin/cities/">Şəhərlər</a>
-                        <a class="dropdown-item" href="/admin/regions/">Rayonlar</a>
-                    </div>
-                </div>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapse122" aria-expanded="true" aria-controls="collapse1">
-                    <i class="fa fa-folder"></i>
-                    <span>Blog</span>
-                </a>
-                <div id="collapse122" class="collapse" aria-labelledby="heading1" data-parent="#accordionSidebar">
-                    <div class="bg-white py-2 collapse-inner rounded">
-                        <a class="dropdown-item" href="/admin/blogitems/">Bloglar</a>
-                        <a class="dropdown-item" href="/admin/BlogItemImages/">Blog şəkilləri</a>
-                    </div>
-                </div>
-            </li>
-
-            <li class="nav-item">
-                <a class="nav-link" href="/admin/homeslideritems/">
-                    <i class="fa fa-folder"></i>
-                    <span>Slayder</span>
-                </a>
-            </li>
-
-            <li class="nav-item">
-                <a class="nav-link" href="/admin/sliderunderads/">
-                    <i class="fa fa-folder"></i>
-                    <span>Reklam slayderi</span>
-                </a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="/admin/customerapplications/">
-                    <i class="fa fa-folder"></i>
-                    <span>Müraciətlər</span>
-                </a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="/admin/languages/">
-                    <i class="fa fa-folder"></i>
-                    <span>Dillər</span>
-                </a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="/admin/generaltexts/edit/">
-                    <i class="fa fa-folder"></i>
-                    <span>Mətnlər</span>
-                </a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="/admin/adminconfigs/">
-                    <i class="fa fa-folder"></i>
-                    <span>Admin tənzimləmələri</span>
-                </a>
-            </li>
 
 
         </ul>

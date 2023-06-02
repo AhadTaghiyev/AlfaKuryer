@@ -7,6 +7,7 @@ namespace AlfaKuryer.Domain.Entities
 	{
 	   public string Name { get; set; }
 		public List<District> Districts { get; set; }
+		public List<ApplicationUserDistrict> ApplicationUserDistricts { get; set; }
 	}
 }
 

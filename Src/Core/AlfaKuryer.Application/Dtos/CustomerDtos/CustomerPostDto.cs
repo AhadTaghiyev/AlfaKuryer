@@ -12,6 +12,7 @@ namespace AlfaKuryer.Application.Dtos.CustomerDtos
         public string Fin { get; set; }
         public string Password { get; set; }
         public string PasswordVerify { get; set; }
+        public string Phonenumber { get; set; }
 
     }
 }

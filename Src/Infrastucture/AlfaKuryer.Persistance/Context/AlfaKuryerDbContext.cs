@@ -1,5 +1,6 @@
 ﻿
 
+using System.Reflection.Emit;
 using AlfaKuryer.Domain.Entities;
 using AlfaKuryer.Domain.Entities.Base;
 using Microsoft.AspNetCore.Identity;
@@ -16,23 +17,54 @@ namespace AlfaKuryer.Persistance.Context
         public DbSet<Help> Helps { get; }
         public DbSet<HelpLanguage> HelpLanguages { get; }
         public DbSet<City> Cities { get; }
-        public DbSet<District> Districts{get;}
+        public DbSet<District> Districts { get; }
         public DbSet<Rate> Rates { get; }
         public DbSet<Slide> Slides { get; }
-        public DbSet<News> News { get;}
+        public DbSet<News> News { get; }
         public DbSet<NewsLanguage> NewsLanguages { get; }
         public DbSet<Message> Messages { get; }
+        public DbSet<ApplicationUserDistrict> ApplicationUserDistricts { get; }
+        public DbSet<Order> Orders { get; }
+        public DbSet<PriceForOrder> PriceForOrders{get;}
 
-        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        protected override void OnModelCreating(ModelBuilder builder)
         {
-            base.OnModelCreating(modelBuilder);
-            modelBuilder.Entity<ApplicationUser>()
-           .HasDiscriminator<string>("UserType")
-           .HasValue<Admin>(nameof(Admin))
-           .HasValue<Customer>(nameof(Customer))
-           .HasValue<Company>(nameof(Company))
-           .HasValue<Courier>(nameof(Courier));
+            builder.Entity<Order>()
+         .HasOne(o => o.OrderFromCity)
+         .WithMany()
+         .HasForeignKey(o => o.OrderFromCityId);
+
+            builder.Entity<Order>()
+                .HasOne(o => o.OrderFromDistrict)
+                .WithMany()
+                .HasForeignKey(o => o.OrderFromDistrictId);
+
+            builder.Entity<Order>()
+                .HasOne(o => o.OrderToCity)
+                .WithMany()
+                .HasForeignKey(o => o.OrderToCityId);
+
+            builder.Entity<Order>()
+                .HasOne(o => o.OrderToDistrict)
+                .WithMany()
+                .HasForeignKey(o => o.OrderToDistrictId);
+            builder.Entity<Order>()
+       .HasOne(o => o.Customer)
+       .WithMany()
+       .HasForeignKey(o => o.CustomerId);
+
+            builder.Entity<Order>()
+                .HasOne(o => o.Courier)
+                .WithMany()
+                .HasForeignKey(o => o.CourierId);
+            base.OnModelCreating(builder);
+
+            builder.Entity<Order>()
+        .HasOne(o => o.ForeignCourier)
+        .WithMany()
+        .HasForeignKey(o => o.ForeignCourierId);
         }
+
 
         public override Task<int> SaveChangesAsync(CancellationToken cancellationToken = default)
         {

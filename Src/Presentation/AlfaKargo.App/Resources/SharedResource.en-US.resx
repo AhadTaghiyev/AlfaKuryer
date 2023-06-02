@@ -156,14 +156,78 @@
     <data name="Help" xml:space="preserve">
     <value>Help</value>
   </data>
+    <data name="Individual" xml:space="preserve">
+    <value>Individual</value>
+  </data>
+    <data name="Entity" xml:space="preserve">
+    <value>Entity</value>
+  </data>
+    <data name="Surname" xml:space="preserve">
+    <value>Surname</value>
+  </data>
+    <data name="Welcome to AlfaKuryer!" xml:space="preserve">
+    <value>Welcome to AlfaKuryer!</value>
+  </data>
+    <data name="Again Password" xml:space="preserve">
+    <value>Again password</value>
+  </data>
+   <data name="Password" xml:space="preserve">
+    <value>Password</value>
+  </data>
+     <data name="User Terms" xml:space="preserve">
+    <value>User Terms</value>
+  </data>
+     <data name="I agree with" xml:space="preserve">
+    <value>i agree with</value>
+  </data>
+
+    <data name="Follow the registration process" xml:space="preserve">
+    <value>Follow the registration process</value>
+  </data>
   <data name="Customer Reviews" xml:space="preserve">
     <value>Customer Reviews</value>
+  </data>
+  <data name="Follow the registration process" xml:space="preserve">
+    <value>Follow the registration process</value>
+  </data>
+     <data name="Company name" xml:space="preserve">
+    <value>Company name</value>
   </data>
   <data name="Menu" xml:space="preserve">
     <value>Menu</value>
   </data>
+   <data name="Name" xml:space="preserve">
+    <value>Name</value>
+  </data>
   <data name="Email" xml:space="preserve">
     <value>Email</value>
+  </data>
+    <data name="Register" xml:space="preserve">
+    <value>Register</value>
+  </data>
+     <data name="Login" xml:space="preserve">
+    <value>Login</value>
+  </data>
+      <data name="Do you have an account?" xml:space="preserve">
+    <value>Do you have an account?</value>
+  </data>
+    <data name="Verify email" xml:space="preserve">
+    <value>Verify email</value>
+  </data>
+   <data name="Forgot your password?" xml:space="preserve">
+    <value>Forgot your password?</value>
+  </data>
+  <data name=" Enter your email address to reset your password." xml:space="preserve">
+    <value>Enter your email address to reset your password.</value>
+  </data>
+     <data name="Send" xml:space="preserve">
+    <value>Send</value>
+  </data>
+    <data name="Reset password" xml:space="preserve">
+    <value>Reset password</value>
+  </data>
+     <data name="Logout" xml:space="preserve">
+    <value>Logout</value>
   </data>
   <data name="All rights reserved" xml:space="preserve">
     <value>All rights reserved</value>

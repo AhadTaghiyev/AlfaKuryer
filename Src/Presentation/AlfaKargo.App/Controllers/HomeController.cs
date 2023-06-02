@@ -3,6 +3,7 @@ using AlfaKargo.App.ViewModels;
 using AlfaKuryer.Application.Services.HelpServices;
 using AlfaKuryer.Application.Services.RateServices;
 using AlfaKuryer.Application.Services.SlideService;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Localization;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
@@ -22,6 +23,8 @@ namespace AlfaKargo.App.Controllers
             _slideService = slideService;
         }
 
+       
+    
         public async Task<IActionResult> Index()
         {
             HomeViewModel homeViewModel = new HomeViewModel

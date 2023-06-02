@@ -1,0 +1,52 @@
+﻿@using AlfaKuryer.Domain.Entities;
+@model IEnumerable<ApplicationUser>
+@{
+    ViewData["Title"] = "Index";
+}
+
+<div class="card">
+    <div class="card-header">
+        Şirkətlər
+    </div>
+    <div class="card-body">
+
+       
+
+        <table class="table" data-emrah="partners">
+            <thead>
+                <tr>
+                    <th>
+                        Ad
+                    </th>
+                    <th>
+                        Email
+                    </th>
+
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr data-id="@item.Id">
+                        <td>
+                            @item.Name
+                        </td>
+                        <td>
+                            @item.Email
+                        </td>
+
+                        <td>
+                            <a class="btn btn-danger" onclick="return confirm('Silmək istədiyinizdən əminsiniz?');" asp-action="DeleteConfirmed" asp-route-UserId="@item.Id"><i class="fas fa-trash-alt"></i></a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+
+
+
+
+    </div>
+</div>
+

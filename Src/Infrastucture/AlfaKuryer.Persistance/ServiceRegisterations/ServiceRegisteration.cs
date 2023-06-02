@@ -5,8 +5,11 @@ using AlfaKuryer.Application.Repositories.WriteRepositories;
 using AlfaKuryer.Application.Services.CityServices;
 using AlfaKuryer.Application.Services.DistrictServices;
 using AlfaKuryer.Application.Services.HelpServices;
+using AlfaKuryer.Application.Services.IdentityServices;
 using AlfaKuryer.Application.Services.MessageService;
 using AlfaKuryer.Application.Services.NewsServices;
+using AlfaKuryer.Application.Services.OrderServices;
+using AlfaKuryer.Application.Services.PriceService;
 using AlfaKuryer.Application.Services.RateServices;
 using AlfaKuryer.Application.Services.SettingServices;
 using AlfaKuryer.Application.Services.SlideService;
@@ -15,6 +18,8 @@ using AlfaKuryer.Persistance.Context;
 using AlfaKuryer.Persistance.Repositories.ReadRepositories;
 using AlfaKuryer.Persistance.Repositories.WriteRepositories;
 using AlfaKuryer.Persistance.Services;
+using Hangfire;
+using Hangfire.MySql.Core;
 using MessageScheduler.Data.Repositories.ReadRepositories;
 using MessageScheduler.Data.Repositories.WriteRepositories;
 using Microsoft.AspNetCore.Identity;
@@ -28,9 +33,10 @@ namespace AlfaKuryer.Persistance.ServiceRegisterations
     {
         public static void AddPersistenceRegistration(this IServiceCollection services, IConfiguration config)
         {
+            string con = config.GetConnectionString("Default");
             services.AddDbContext<AlfaKuryerDbContext>(option =>
             {
-                option.UseMySQL(config.GetConnectionString("Default"));
+                option.UseMySQL(con);
             });
             #region Settings
             services.AddScoped<ISettingReadRepository, SettingReadRepository>();
@@ -72,10 +78,49 @@ namespace AlfaKuryer.Persistance.ServiceRegisterations
             services.AddScoped<IMessageReadRepository, MessageReadRepository>();
             services.AddScoped<IMessageWriteRepository, MessageWriteRepository>();
             services.AddScoped<IMessageService, MessageService>();
+          
             #endregion
-            services.AddIdentity<ApplicationUser, IdentityRole>()
-            .AddEntityFrameworkStores<AlfaKuryerDbContext>()
-            .AddDefaultTokenProviders();
+            #region Users
+
+            services.AddIdentity<ApplicationUser, IdentityRole>(opt =>
+            {
+                opt.SignIn.RequireConfirmedEmail = true;
+                opt.User.RequireUniqueEmail = false;
+                opt.Lockout.AllowedForNewUsers = true;
+                opt.Lockout.MaxFailedAccessAttempts = 5;
+                opt.Lockout.DefaultLockoutTimeSpan = TimeSpan.FromMinutes(5);
+            })
+          .AddEntityFrameworkStores<AlfaKuryerDbContext>()
+          .AddDefaultTokenProviders();
+            services.AddScoped<IIdentityService,IdentityService>();
+
+            #endregion
+            services.AddHttpContextAccessor();
+
+            #region Hangfire
+            services.AddHangfire(config =>
+            {
+
+                config.UseStorage(new MySqlStorage(con,
+                    new MySqlStorageOptions
+                    {
+                        TablePrefix = "Hangfire" // Specify a custom table prefix if desired
+                    }));
+            });
+
+            services.AddHangfireServer();
+            #endregion
+            #region Price
+            services.AddScoped<IPriceReadRepository, PriceReadRepository>();
+            services.AddScoped<IPriceWriteRepository, PriceWriteRepository>();
+            services.AddScoped<IPriceService,PriceService>();
+            #endregion
+            #region Order
+            services.AddScoped<IOrderReadRepository, OrderReadRepository>();
+            services.AddScoped<IOrderWriteRepository, OrderWriteRepository>();
+            services.AddScoped<IOrderService, OrderService>();
+            #endregion
+   
         }
     }
 }

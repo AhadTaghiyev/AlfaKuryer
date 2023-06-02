@@ -9,5 +9,6 @@ using System.Linq.Expressions;
         public Task<IQueryable<T>> GetAllAsync(Expression<Func<T, bool>> expression,bool isTracking,bool isReslation, params string[] Includes);
         public Task<T> GetAsync(Expression<Func<T, bool>> expression,bool IsTracking, bool isrelation, params string[] Includes);
         public IQueryable<T> GetQuery(Expression<Func<T, bool>> expression,bool IsTracking, bool isrelation, params string[] Includes);
+
     }
 }

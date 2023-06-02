@@ -126,8 +126,61 @@
     <data name="Sign up" xml:space="preserve">
     <value>Qeydiyyat</value>
   </data>
+     <data name="Reset password" xml:space="preserve">
+    <value>Şifrəni yenilə</value>
+  </data>
       <data name="News" xml:space="preserve">
     <value>Xəbərlər</value>
+  </data>
+    <data name="Surname" xml:space="preserve">
+    <value>Soyad</value>
+  </data>
+
+    <data name="Welcome to AlfaKuryer!" xml:space="preserve">
+    <value>AlfaKuryer-ə xoş gəlmişsiniz!</value>
+  </data>
+   <data name="Again Password" xml:space="preserve">
+    <value>Təkrar şifrə</value>
+  </data>
+   <data name="Password" xml:space="preserve">
+    <value>Şifrə</value>
+  </data>
+     <data name="Follow the registration process" xml:space="preserve">
+    <value>Qeydiyyat prosesini izləyin</value>
+  </data>
+   <data name="Register" xml:space="preserve">
+    <value>Qeydiyyat</value>
+  </data>
+    <data name="Login" xml:space="preserve">
+    <value>Daxil olun</value>
+  </data>
+        <data name="Do you have an account?" xml:space="preserve">
+    <value>Hesabınız var?</value>
+  </data>
+  <data name="Verify email" xml:space="preserve">
+    <value>Emaili təsdiqləyin</value>
+  </data>
+ 
+   <data name=" Enter your email address to reset your password." xml:space="preserve">
+    <value>Şifrənizin yenilənməsi üçün email adresinizi daxil edin.</value>
+  </data>
+    <data name="Forgot your password?" xml:space="preserve">
+    <value>Şifrəni unutmusunuz?</value>
+  </data>
+   <data name="Logout" xml:space="preserve">
+    <value>Çıxış</value>
+  </data>
+  <data name="Follow the registration process" xml:space="preserve">
+    <value>Qeydiyyat prosesini izləyin</value>
+  </data>
+   <data name="Company name" xml:space="preserve">
+    <value>Şirkət adı</value>
+  </data>
+    <data name="User Terms" xml:space="preserve">
+    <value>İstifadəçi Şərtləri</value>
+  </data>
+     <data name="I agree with" xml:space="preserve">
+    <value>ilə razıyam</value>
   </data>
       <data name="How does it work?" xml:space="preserve">
     <value>Necə işləyir?</value>
@@ -137,6 +190,12 @@
   </data>
     <data name="Order Tracking" xml:space="preserve">
     <value>Sifariş İzləmə</value>
+  </data>
+  <data name="Individual" xml:space="preserve">
+    <value>Fiziki şəxs</value>
+  </data>
+    <data name="Entity" xml:space="preserve">
+    <value>Hüquqi şəxs</value>
   </data>
     <data name="Products prohibited from transportation" xml:space="preserve">
     <value>Daşınması qadağan olan məhsullar</value>
@@ -171,11 +230,17 @@
   <data name="FullName" xml:space="preserve">
     <value>Ad Soyad</value>
   </data>
+  <data name="Name" xml:space="preserve">
+    <value>Ad</value>
+  </data>
   <data name="Home" xml:space="preserve">
     <value>Əsas səhifə</value>
   </data>
   <data name="House Cleaning" xml:space="preserve">
     <value>Ev Təmizliyi</value>
+  </data>
+    <data name="Send" xml:space="preserve">
+    <value>Göndər</value>
   </data>
   <data name="In the cleaning area" xml:space="preserve">
     <value>Təmizlik sahəsində</value>

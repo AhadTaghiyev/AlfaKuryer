@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "rX1BmIScTtzN44DGdd++X//XOjM58o7E1XmaYxCiFz0=",
+  "Hash": "LGEHWiu9saPLlOGLRrpTMSwUFWpr/ssp5vRE9rQ+kQw=",
   "Source": "AlfaKargo.App",
   "BasePath": "_content/AlfaKargo.App",
   "Mode": "Default",
@@ -3009,6 +3009,23 @@
       "OriginalItemSpec": "wwwroot/assets/imgs/Logo/57971b82-6bb8-4857-b390-ee99ed54e270alfa kuryer logo.png"
     },
     {
+      "Identity": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/assets/imgs/Logo/57ab0b23-4b6d-4ec5-975b-83e6cf56a946alfa kuryer logo.png",
+      "SourceId": "AlfaKargo.App",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/",
+      "BasePath": "_content/AlfaKargo.App",
+      "RelativePath": "assets/imgs/Logo/57ab0b23-4b6d-4ec5-975b-83e6cf56a946alfa kuryer logo.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/assets/imgs/Logo/57ab0b23-4b6d-4ec5-975b-83e6cf56a946alfa kuryer logo.png"
+    },
+    {
       "Identity": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/assets/imgs/Logo/582943f9-6bb1-471f-89bf-5b6c06fbd477alfa kuryer logo.png",
       "SourceId": "AlfaKargo.App",
       "SourceType": "Discovered",
@@ -3024,6 +3041,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot/assets/imgs/Logo/582943f9-6bb1-471f-89bf-5b6c06fbd477alfa kuryer logo.png"
+    },
+    {
+      "Identity": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/assets/imgs/Logo/936837d9-c1da-42d8-92a4-c6b6112d8a41alfa kuryer logo.png",
+      "SourceId": "AlfaKargo.App",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/",
+      "BasePath": "_content/AlfaKargo.App",
+      "RelativePath": "assets/imgs/Logo/936837d9-c1da-42d8-92a4-c6b6112d8a41alfa kuryer logo.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/assets/imgs/Logo/936837d9-c1da-42d8-92a4-c6b6112d8a41alfa kuryer logo.png"
     },
     {
       "Identity": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/assets/imgs/Logo/alfa kuryer favicon.jpeg",
@@ -3162,6 +3196,23 @@
       "OriginalItemSpec": "wwwroot/assets/imgs/Logo/alfa kuryer logo.svg"
     },
     {
+      "Identity": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/assets/imgs/Logo/e546f53f-33e1-4653-baf1-db2d2b254a75alfa kuryer logo.png",
+      "SourceId": "AlfaKargo.App",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/",
+      "BasePath": "_content/AlfaKargo.App",
+      "RelativePath": "assets/imgs/Logo/e546f53f-33e1-4653-baf1-db2d2b254a75alfa kuryer logo.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/assets/imgs/Logo/e546f53f-33e1-4653-baf1-db2d2b254a75alfa kuryer logo.png"
+    },
+    {
       "Identity": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/assets/imgs/Logo/f3765fef-d2fd-41e0-aa45-a4a619b15e01alfa kuryer logo.png",
       "SourceId": "AlfaKargo.App",
       "SourceType": "Discovered",
@@ -3194,6 +3245,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot/assets/imgs/Logo/f58926a3-c8d8-48e9-b304-db1232bb944dalfa kuryer logo.png"
+    },
+    {
+      "Identity": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/assets/imgs/Logo/white-logo.jpeg",
+      "SourceId": "AlfaKargo.App",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/",
+      "BasePath": "_content/AlfaKargo.App",
+      "RelativePath": "assets/imgs/Logo/white-logo.jpeg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/assets/imgs/Logo/white-logo.jpeg"
     },
     {
       "Identity": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/assets/imgs/main/app-store.png",
@@ -3313,6 +3381,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot/assets/imgs/news/27dcf37c-a741-4967-a31a-42123bbb6195alfa kuryer logo.png"
+    },
+    {
+      "Identity": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/assets/imgs/news/778cd519-cfb2-485b-a846-6190421c3b8calfa kuryer logo.png",
+      "SourceId": "AlfaKargo.App",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/",
+      "BasePath": "_content/AlfaKargo.App",
+      "RelativePath": "assets/imgs/news/778cd519-cfb2-485b-a846-6190421c3b8calfa kuryer logo.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/assets/imgs/news/778cd519-cfb2-485b-a846-6190421c3b8calfa kuryer logo.png"
     },
     {
       "Identity": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/assets/imgs/news/azin-her-noqtesinde.png",
@@ -6220,6 +6305,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot/lib/jquery/LICENSE.txt"
+    },
+    {
+      "Identity": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/Template/Verify.html",
+      "SourceId": "AlfaKargo.App",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/",
+      "BasePath": "_content/AlfaKargo.App",
+      "RelativePath": "Template/Verify.html",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/Template/Verify.html"
     }
   ]
 }

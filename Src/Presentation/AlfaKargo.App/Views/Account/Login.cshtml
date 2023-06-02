@@ -1,4 +1,6 @@
-﻿
+﻿@inject Microsoft.Extensions.Localization.IStringLocalizer<SharedResource> localizer
+@using AlfaKuryer.Application.Dtos.IdentityDtos;
+@model LoginDto
 @{
     ViewData["Title"] = "Login";
 }
@@ -16,18 +18,19 @@
                 </div>
                 <div class="m-header">
                     <span class="m-title">
-                        Şifrəni unutmusunuz?
+                        @localizer["Forgot your password?"]
                     </span>
                     <p class="m-hint">
-                        Şifrənizin yenilənməsi üçün email adresinizi daxil edin.
+                        @localizer["Enter your email address to reset your password."]
                     </p>
                 </div>
                 <div class="m-body">
-                    <form action="" class="">
-                        <input type="email" required placeholder="Email">
+                    <form id="forgetPasswordForm" class="resform">
+                        <div class="res text text-danger" style="display:none"></div>
+                        <input type="email" name="email" required placeholder="Email">
                         <div class="btn-wrap d-flex justify-content-center">
                             <button class="register btn" type="submit">
-                                Göndər
+                                @localizer["send"]
                             </button>
                         </div>
                     </form>
@@ -41,9 +44,9 @@
 <section id="intro">
     <div class="container">
         <div class="row">
-         
+
             <div class="faq-description d-flex justify-content-center">
-                <p>Heabınıza daxil olun!</p>
+                <p>@localizer["Login"]</p>
             </div>
         </div>
     </div>
@@ -53,34 +56,30 @@
         <div class="row">
             <div class="col-lg-7 col-md-12 left">
                 <div class="title">
-                    <b>Daxil ol</b>
+                    <b>@localizer["Login"]</b>
                 </div>
                 <div class="form">
-                    <form action="post" class="form-group">
+                    <form method="post" class="form-group">
+                        <div class="alert alert-danger" asp-validation-summary="ModelOnly"></div>
                         <div class="email">
-                            <label for="Email">Email</label> <br>
-                            <input type="email" id="Email"> <br>
-                            <span class="error" style="display: none;">Email boş qoyula bilməz</span>
+                            <label for="email"> @localizer["Email"]</label> <br>
+                            <input type="email" asp-for="Email" required> <br>
                         </div>
                         <div class="password">
-                            <label for="Password">Şifrə</label> <br>
-                            <input type="password" id="Password"> <br>
-                            <span class="error" style="display: none;">Şifrə boş qoyula bilməz</span>
+                            <label for="Password">@localizer["Password"]</label> <br>
+                            <input type="password" asp-for="Password" required> <br>
                         </div>
-                        <div class="remember">
-                            <input type="checkbox" id="Remember">
-                            <label for="Remember">Məni xatırla</label>
-                        </div>
+
                         <button type="submit">Daxil ol</button>
-                        <span href="" class="reset" style="cursor: pointer; font-size: 13px; font-weight: 500;">Şifrəni yenilə</span>
+                        <span href="" class="reset" style="cursor: pointer; font-size: 13px; font-weight: 500;">@localizer["Reset password"]</span>
                     </form>
                 </div>
             </div>
             <div class="col-lg-5 right">
-              
+
                 <div class="text">
-                    <span>Hesabınız yoxdur?</span>
-                    <a asp-controller="account" asp-action="register">Qeydiyyatdan keçin!</a>
+                    <span>@localizer["Do you have an account?"]</span>
+                    <a asp-controller="account" asp-action="register">@localizer["Register"]</a>
                 </div>
             </div>
         </div>
@@ -88,5 +87,44 @@
 </section>
 @section Scripts{
     <script src="~/assets/js/reset-modal.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
+    <script>// Get the form element
+        const form = document.getElementById('forgetPasswordForm');
+
+        // Add an event listener to the form submit event
+        form.addEventListener('submit', function (event) {
+            event.preventDefault(); // Prevent the default form submission
+
+            // Get the email input value
+            const email = document.querySelector('input[name="email"]').value;
+
+            // Create a FormData object
+            const formData = new FormData();
+            formData.append('email', email);
+
+            // Make the fetch request to the action
+            fetch('/account/ForgetPassword', {
+                method: 'POST',
+                body: formData
+            })
+                .then(response => response.json())
+                .then(data => {
+                    // Handle the response from the server
+                    if (data.status === 200) {
+                        swal("davam etmək üçün emailinizə göndərilən linkə tıklayın mail 1 dəqiqə ərzində göndəriləcək");
+                    } else {
+                        // Error: Do something with the error message
+                        const errorMessage = data.message;
+                        // Display the error message in the specified element
+                        const errorElement = document.querySelector('.res.text-danger');
+                        errorElement.textContent = errorMessage;
+                        errorElement.style.display = 'block';
+                    }
+                })
+                .catch(error => {
+                    // Handle any errors that occurred during the request
+                    console.error('Error:', error);
+                });
+        });</script>
 }

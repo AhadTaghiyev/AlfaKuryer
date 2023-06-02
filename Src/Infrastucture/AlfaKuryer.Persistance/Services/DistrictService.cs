@@ -44,7 +44,7 @@ namespace AlfaKuryer.Persistance.Services
 
             IEnumerable<DistrictGetDto> getDtos = new HashSet<DistrictGetDto>();
 
-            getDtos = query.Select(x => new DistrictGetDto { Name = x.Name, Id=x.Id}).ToHashSet<DistrictGetDto>();
+            getDtos = query.Select(x => new DistrictGetDto { Name = x.Name, CityId=x.CityId, Id =x.Id}).ToHashSet<DistrictGetDto>();
             return getDtos;
         }
 

@@ -1,0 +1,80 @@
+﻿@using AlfaKuryer.Application.Dtos.OrderDtos;
+@model IEnumerable<OrderGetDto>
+@{
+    ViewData["Title"] = "Index";
+}
+
+<div class="card">
+    <div class="card-header">
+        Sifarişlərim
+    </div>
+    <div class="card-body">
+
+        <div class="text-center mb-3 mt-3">
+            <a asp-action="Create" class="btn btn-success">
+                <i class="fas fa-plus"></i> Yenisini əlavə et
+            </a>
+        </div>
+
+        <table class="table" data-emrah="partners">
+            <thead>
+                <tr>
+                    <th>
+                        Sifariş nömrəsi
+                    </th>
+                    <th>
+                        Qiymət
+                    </th>
+
+                    <th>
+                        Hardan
+                    </th>
+
+                    <th>
+                        Adress
+                    </th>
+                    <th>
+                        Kimdən
+                    </th>
+                    <th>
+                        Sifariş tarixi
+                    </th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model.OrderByDescending(x=>x.Id))
+                {
+                    <tr data-id="@item.Id">
+                        <td>
+                            @item.Id
+                        </td>
+                        <td>
+                            @item.Price AZN
+                        </td>
+                        <td>
+                            @item.OrderFromDistrict?.Name
+                        </td>
+                        <td>
+                            @item.FromAdress
+                        </td>
+                        <td>
+                            @item.Customer?.Name @item?.Customer?.Surname
+                        </td>
+                        <td>
+                            @item?.CreatedDate.ToString("dd:MM:yyyy");
+                        </td>
+                        <td>
+                            <a class="btn-danger" asp-area="courier" asp-controller="order" asp-action="accept" asp-route-id="@item.Id">Qəbul et</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+
+
+
+
+    </div>
+</div>
+

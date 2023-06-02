@@ -22,6 +22,14 @@
     <Folder Include="areas\manage\Views\City\" />
     <Folder Include="ViewModels\" />
     <Folder Include="areas\manage\Views\Slide\" />
+    <Folder Include="wwwroot\Template\" />
+    <Folder Include="areas\manage\Views\Account\" />
+    <Folder Include="areas\panel\" />
+    <Folder Include="areas\panel\Controllers\" />
+    <Folder Include="areas\panel\Views\" />
+    <Folder Include="areas\panel\Views\Order\" />
+    <Folder Include="areas\manage\Views\Order\" />
+    <Folder Include="areas\courier\Views\" />
   </ItemGroup>
 
   <ItemGroup>
@@ -49,5 +57,15 @@
     <None Remove="areas\manage\Views\City\" />
     <None Remove="ViewModels\" />
     <None Remove="areas\manage\Views\Slide\" />
+    <None Remove="areas\manage\Views\Account\" />
+    <None Remove="areas\panel\" />
+    <None Remove="areas\panel\Controllers\" />
+    <None Remove="areas\panel\Views\" />
+    <None Remove="areas\panel\Views\City %28copy%29\" />
+    <None Remove="areas\manage\Views\Order\" />
+    <None Remove="areas\Courier\Views\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Remove="wwwroot\Template\" />
   </ItemGroup>
 </Project>

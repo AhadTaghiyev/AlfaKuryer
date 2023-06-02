@@ -30,8 +30,13 @@
     <None Remove="Dtos\MessageDto\" />
     <None Remove="Services\MessageService\" />
     <None Remove="Dtos\CustomerDtos\" />
-    <None Remove="Services\CustomerService\" />
     <None Remove="Dtos\BaseUserDto\" />
+    <None Remove="Dtos\IdentityDtos\" />
+    <None Remove="Services\IdentityServices\" />
+    <None Remove="Dtos\PriceDtos\" />
+    <None Remove="Services\PriceService\" />
+    <None Remove="Dtos\Order\" />
+    <None Remove="Services\OrderServices\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Dtos\RateDtos\" />
@@ -45,7 +50,12 @@
     <Folder Include="Dtos\MessageDto\" />
     <Folder Include="Services\MessageService\" />
     <Folder Include="Dtos\CustomerDtos\" />
-    <Folder Include="Services\CustomerService\" />
     <Folder Include="Dtos\BaseUserDto\" />
+    <Folder Include="Dtos\IdentityDtos\" />
+    <Folder Include="Services\IdentityServices\" />
+    <Folder Include="Dtos\PriceDtos\" />
+    <Folder Include="Services\PriceService\" />
+    <Folder Include="Dtos\OrderDtos\" />
+    <Folder Include="Services\OrderServices\" />
   </ItemGroup>
 </Project>

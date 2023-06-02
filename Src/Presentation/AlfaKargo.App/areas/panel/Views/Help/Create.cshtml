@@ -1,0 +1,53 @@
+﻿@using AlfaKuryer.Application.Dtos.HelpDtos;
+@model HelpPostDto
+<div class="card">
+    <div class="card-header">
+        Yenisini əlavə et
+    </div>
+    <div class="card-body">
+
+        <div class="row">
+            <div class="col-md-12">
+
+                <form asp-action="Create" class="row">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+                    <div class="form-group  col-md-6">
+                        <label class="control-label">BaşlıqAz</label>
+                        <input asp-for="TitleAz" class="form-control" />
+                    </div>
+                    <div class="form-group  col-md-6">
+                        <label class="control-label">BaşlıqEn</label>
+                        <input asp-for="TitleEn" class="form-control" />
+                    </div>
+
+                    <div class="form-group  col-md-6">
+                        <label class="control-label">BaşlıqRu</label>
+                        <input asp-for="TitleRu" class="form-control" />
+                    </div>
+
+                    <div class="form-group  col-md-6">
+                        <label class="control-label">TəsvirAz</label>
+                        <input asp-for="DescriptionAz" class="form-control" />
+                    </div>
+                    <div class="form-group  col-md-6">
+                        <label class="control-label">TəsvirEn</label>
+                        <input asp-for="DescriptionEn" class="form-control" />
+                    </div>
+
+                    <div class="form-group  col-md-6">
+                        <label class="control-label">TəsvirRu</label>
+                        <input asp-for="DescriptionRu" class="form-control" />
+                    </div>
+
+                    <div class="col-md-12 mt-3">
+                        <a class="btn btn-dark" asp-action="index"><i class="fas fa-undo"></i> Siyahıya geri dön</a>
+                        <input type="submit" value="Əlavə et" class="btn btn-primary" />
+                    </div>
+                </form>
+            </div>
+        </div>
+
+
+    </div>
+</div>

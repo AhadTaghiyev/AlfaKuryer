@@ -1,0 +1,73 @@
+﻿@using AlfaKargo.App.areas.ViewModels;
+@using AlfaKuryer.Application.Dtos.SettingDtos;
+@model UpdateVewModel<SettingPostDto,SettingGetDto>
+
+@{
+    ViewData["Title"] = "Update";
+}
+
+<div class="card">
+    <div class="card-header">
+        Düzəliş et
+    </div>
+    <div class="card-body">
+
+        <div class="row">
+            <div class="col-md-12">
+                <form asp-action="update" enctype="multipart/form-data">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <div class="form-group col-md-4">
+                        <label asp-for="PostDto.Adress" class="control-label"></label>
+                        <input asp-for="PostDto.Adress" value="@Model.GetDto?.Adress" class="form-control" />
+                        <span asp-validation-for="PostDto.Adress" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-group col-md-4">
+                        <label class="control-label">Əlaqə nömrəsi</label>
+                        <input asp-for="PostDto.PhoneNumber1" value="@Model.GetDto?.PhoneNumber1"  class="form-control" />
+                        <span asp-validation-for="PostDto.PhoneNumber1" class="text-danger"></span>
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label class="control-label">Əlaqə nömrəsi</label>
+                        <input asp-for="PostDto.PhoneNumber2" value="@Model.GetDto?.PhoneNumber2"  class="form-control" />
+                        <span asp-validation-for="PostDto.PhoneNumber2" class="text-danger"></span>
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label class="control-label">Email</label>
+                        <input asp-for="PostDto.Email" value="@Model.GetDto?.Email"  class="form-control" />
+                        <span asp-validation-for="PostDto.Email" class="text-danger"></span>
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label asp-for="PostDto.InstgaramLink" class="control-label"></label>
+                        <input asp-for="PostDto.InstgaramLink" value="@Model.GetDto?.InstgaramLink"  class="form-control" />
+                        <span asp-validation-for="PostDto.InstgaramLink" class="text-danger"></span>
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label asp-for="PostDto.FaceBookLink" class="control-label"></label>
+                        <input asp-for="PostDto.FaceBookLink" value="@Model.GetDto?.FaceBookLink"  class="form-control" />
+                        <span asp-validation-for="PostDto.FaceBookLink" class="text-danger"></span>
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label asp-for="PostDto.YoutubeLink" class="control-label"></label>
+                        <input asp-for="PostDto.YoutubeLink" value="@Model.GetDto?.YoutubeLink"  class="form-control" />
+                        <span asp-validation-for="PostDto.YoutubeLink" class="text-danger"></span>
+                    </div>
+
+                    <div class="col-md-12 mt-4 wrapper">
+                        <input asp-for="PostDto.FormFile" class="form-control d-none" />
+                        <label class="btn btn-success" for="image">Şəkil Yüklə</label>
+                        <input  id="image" type="file" name="PostDto.FormFile" value="" class="d-none imginput" /> <br />
+                        <img src="~/img/Logo/@Model.GetDto?.Logo" class="editedImage newimage" width="100" height="100" alt="Alternate Text" />
+                        <span asp-validation-for="PostDto.FormFile" class="text-danger"></span>
+                    </div>
+                    <div class="col-md-12 mt-3">
+                        <a class="btn btn-dark" asp-action="index"><i class="fas fa-undo"></i> Siyahıya geri dön</a>
+                        <input type="submit" value="Əlavə et" class="btn btn-primary" />
+                    </div>
+                </form>
+            </div>
+        </div>
+
+
+    </div>
+</div>

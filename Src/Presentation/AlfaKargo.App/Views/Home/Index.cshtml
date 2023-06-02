@@ -1,8 +1,14 @@
 ﻿@inject Microsoft.Extensions.Localization.IStringLocalizer<SharedResource> localizer
-@model AlfaKargo.App.ViewModels.HomeViewModel 
+@model AlfaKargo.App.ViewModels.HomeViewModel
 @{
     ViewData["Title"] = "Home Page";
 }
+
+@if (TempData["verify"]?.ToString() == "verify")
+{
+    <div style="display:none" class="verify">@localizer["Verify email"]</div>
+}
+
 
 
 @section css{
@@ -21,7 +27,7 @@
                     <div class="card align-items-center border-0 w-100">
                         <h5 class="card-title">@item?.Title</h5>
                         <p class="card-text">
-                           @item?.Description
+                            @item?.Description
                         </p>
                         <div class="more d-flex align-items-end h-100">
                             <a asp-controller="news" asp-action="index">Ətraflı</a>
@@ -62,7 +68,7 @@
 
                 </div>
             </div>
-           
+
         </div>
     </div>
 </section>
@@ -91,5 +97,10 @@
     <script src="~/assets/js/index.js"></script>
     <script src="~/assets/js/calculator.js"></script>
     <script src="~/assets/js/rates.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script>const verify = document.querySelector(".verify")
+        if (verify != undefined) {
+            swal(verify.innerHTML);
+        }</script>
 
 }
