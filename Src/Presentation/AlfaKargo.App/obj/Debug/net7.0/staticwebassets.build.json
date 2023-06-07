@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "LGEHWiu9saPLlOGLRrpTMSwUFWpr/ssp5vRE9rQ+kQw=",
+  "Hash": "tAGher+gNO974NoDkNMJVb4IfsX6fdnFakN3du8+sG0=",
   "Source": "AlfaKargo.App",
   "BasePath": "_content/AlfaKargo.App",
   "Mode": "Default",
@@ -2414,6 +2414,23 @@
       "OriginalItemSpec": "wwwroot/assets/css/news.css"
     },
     {
+      "Identity": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/assets/css/panel.css",
+      "SourceId": "AlfaKargo.App",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/",
+      "BasePath": "_content/AlfaKargo.App",
+      "RelativePath": "assets/css/panel.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/assets/css/panel.css"
+    },
+    {
       "Identity": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/assets/css/privacy-policy.css",
       "SourceId": "AlfaKargo.App",
       "SourceType": "Discovered",
@@ -3638,6 +3655,23 @@
       "OriginalItemSpec": "wwwroot/assets/imgs/news/Yeni-is-saatlari.png"
     },
     {
+      "Identity": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/assets/imgs/qrcodes/qr.png",
+      "SourceId": "AlfaKargo.App",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/",
+      "BasePath": "_content/AlfaKargo.App",
+      "RelativePath": "assets/imgs/qrcodes/qr.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/assets/imgs/qrcodes/qr.png"
+    },
+    {
       "Identity": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/assets/imgs/rates/calc_circle.png",
       "SourceId": "AlfaKargo.App",
       "SourceType": "Discovered",
@@ -4265,6 +4299,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot/assets/js/news.js"
+    },
+    {
+      "Identity": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/assets/js/panel.js",
+      "SourceId": "AlfaKargo.App",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/",
+      "BasePath": "_content/AlfaKargo.App",
+      "RelativePath": "assets/js/panel.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/assets/js/panel.js"
     },
     {
       "Identity": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/assets/js/prohibited-items.js",
@@ -6305,6 +6356,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot/lib/jquery/LICENSE.txt"
+    },
+    {
+      "Identity": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/Payment/certificate.pfx",
+      "SourceId": "AlfaKargo.App",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/",
+      "BasePath": "_content/AlfaKargo.App",
+      "RelativePath": "Payment/certificate.pfx",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/Payment/certificate.pfx"
     },
     {
       "Identity": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/Template/Verify.html",

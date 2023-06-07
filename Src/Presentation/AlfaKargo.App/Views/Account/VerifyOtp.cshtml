@@ -1,0 +1,45 @@
+﻿@inject Microsoft.Extensions.Localization.IStringLocalizer<SharedResource> localizer
+@model AlfaKuryer.Application.Dtos.IdentityDtos.OtpDto
+@{
+    ViewData["Title"] = "Login";
+}
+
+@section css{
+    <link rel="stylesheet" href="~/assets/css/login.css">
+
+}
+
+<section id="intro">
+    <div class="container">
+        <div class="row">
+
+            <div class="faq-description d-flex justify-content-center">
+                <p>@localizer["Enter the verification code sent to your phone"]</p>
+            </div>
+        </div>
+    </div>
+</section>
+<section id="login">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-7 col-md-12 left">
+                <div class="title">
+                    <b>@localizer["Confirm"]</b>
+                </div>
+                <div class="form">
+                    <form method="post"  class="form-group">
+                        <div class="alert alert-danger" asp-validation-summary="ModelOnly"></div>
+                        <div class="email">
+                          
+                            <input type="text" asp-for="@Model.Otp" required> <br>
+                        </div>
+                        <button type="submit">@localizer["Confirm"]</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+@section Scripts{
+    <script src="~/assets/js/reset-modal.js"></script>
+ }

@@ -1,0 +1,190 @@
+﻿
+@inject Microsoft.Extensions.Localization.IStringLocalizer<SharedResource> localizer
+@using AlfaKuryer.Application.Dtos.OrderDtos;
+
+
+@model OrderGetDto
+@{
+    ViewData["Title"] = "Sifarişlərim";
+    int i = 0;
+}
+@section css{
+    <link rel="stylesheet" href="~/assets/css/panel.css">
+
+}
+<section id="main-part">
+
+    <div class="container">
+        <div class="navigation">
+            <div class="userBx">
+                <div class="imgBx">
+                    <img src="~/assets/imgs/Logo/alfa kuryer logo.png" alt="">
+                </div>
+                <p class="username">@User.Identity.Name</p>
+            </div>
+            <div class="menuToggle"></div>
+            <ul class="menu">
+                <li><a asp-controller="account" asp-action="update"><i class="fa-solid fa-address-card"></i> Məlumatlar</a></li>
+                <li><a asp-controller="order" asp-action="index"><i class="fa-solid fa-box-open"></i> Bağlamalar</a></li>
+                <li><a asp-controller="order" asp-action="history"><i class="fa-solid fa-calendar-days"></i> Sifariş Tarixçəsi</a></li>
+                <li><a asp-controller="order" asp-action="createorder"><i class="fa-solid fa-dolly"></i> Sifariş ver</a></li>
+            </ul>
+        </div>
+
+        <div class="row d-flex justify-content-center">
+            <aside class="sidebar" class="col-4">
+
+                <div class="sidebar-header">
+
+                    <div class="account-image">
+                        <img src="~/assets/imgs/Logo/alfa kuryer logo.png" alt="">
+                    </div>
+                    <div class="account-info">
+                        <p><span>ID:</span> @User.Identity.Name</p>
+                    </div>
+
+                </div>
+
+                <div class="sidebar-body">
+
+                    <ul class="istifadeci">
+                        <li><a asp-controller="account" asp-action="update"><i class="fa-solid fa-address-card"></i> Məlumatlar</a></li>
+                        <li><a asp-controller="order" asp-action="index"><i class="fa-solid fa-box-open"></i> Bağlamalar</a></li>
+                        <li><a asp-controller="order" asp-action="history"><i class="fa-solid fa-calendar-days"></i> Sifariş Tarixçəsi</a></li>
+                        <li><a asp-controller="order" asp-action="createorder"><i class="fa-solid fa-dolly"></i> Sifariş ver</a></li>
+                    </ul>
+                </div>
+
+            </aside>
+            <article class="content col-8">
+                <div class="row">
+
+
+
+                    <form action="" class="form-account">
+                        <div class="container">
+                            <div class="row">
+                                <div class="name-surname col-12">
+                                    <div class="name col-5">
+                                        <label for="" class="form-label">Sifariş nömrəsi</label>
+                                        <input type="text" class="form-control" asp-for="Id" placeholder="Hasnı şəhərdən" disabled>
+                                    </div>
+                                   
+                                        <div class="surname col-5">
+                                            <label for="" class="form-label">Sifariş tarixi</label>
+                                            <input type="text" class="form-control" value="@Model.CreatedDate.ToString("dd:MM:yyyy:HH:mm")"  disabled>
+                                        </div>
+                                    
+                                </div>
+                                <div class="name-surname col-12">
+                                    <div class="name col-5">
+                                        <label for="" class="form-label">Hasnı şəhərdən</label>
+                                        <input type="text" class="form-control" asp-for="OrderFromCity.Name" placeholder="Hasnı şəhərdən" disabled>
+                                    </div>
+                                    @if (Model.OrderFromDistrict != null)
+                                    {
+                                        <div class="surname col-5">
+                                            <label for="" class="form-label">Hansı Rayondan</label>
+                                            <input type="text" class="form-control" asp-for="OrderFromDistrict.Name" placeholder="Hansı Rayondan" disabled>
+                                        </div>
+                                    }
+                                </div>
+                                <div class="name-surname col-12">
+                                    <div class="surname col-5">
+                                        <label for="" class="form-label">Haradan Address Mənzil</label>
+                                        <input type="text" class="form-control" asp-for="FromAdress" placeholder="Haradan Address Mənzil" disabled>
+                                    </div>
+                                    <div class="name col-5">
+                                        <label for="" class="form-label">Hasnı şəhərə</label>
+                                        <input type="text" class="form-control" asp-for="OrderToCity.Name" placeholder="Hasnı şəhərə" disabled>
+                                    </div>
+
+                                </div>
+                                <div class="name-surname col-12">
+
+                                    @if (Model.OrderToDistrict != null)
+                                    {
+                                        <div class="surname col-5">
+                                            <label for="" class="form-label">Hansı Rayona</label>
+                                            <input type="text" class="form-control" asp-for="OrderToDistrict.Name" placeholder="Hansı Rayona" disabled>
+                                        </div>
+                                    }
+                                    <div class="name col-5">
+                                        <label for="" class="form-label">Hara Address Mənzil</label>
+                                        <input type="text" class="form-control" asp-for="ToAdress" placeholder="Hara Address Mənzil" disabled>
+                                    </div>
+                                </div>
+                                <div class="name-surname col-12">
+
+                                    <div class="surname col-5">
+                                        <label for="" class="form-label">Qəbul edənin Ad Soyadı</label>
+                                        <input type="text" class="form-control" asp-for="ToFullName" placeholder="Qəbul edənin Ad Soyadı" disabled>
+                                    </div>
+                                    <div class="name col-5">
+                                        <label for="" class="form-label">Qəbul edənin telefon nömrəsi</label>
+                                        <input type="text" class="form-control" asp-for="ToPhoneNumber" placeholder="Qəbul edənin telefon nömrəsi" disabled>
+                                    </div>
+                                </div>
+                                <div class="name-surname col-12">
+
+                                    <div class="surname col-5">
+                                        <label for="" class="form-label">Bağlama sayı</label>
+                                        <input type="text" class="form-control" asp-for="PackageCount" placeholder="Bağlama sayı" disabled>
+                                    </div>
+                                    <div class="name col-5">
+                                        <label for="" class="form-label">Bağlama çəkisi</label>
+                                        <input type="text" class="form-control" asp-for="Kq" placeholder="Bağlama çəkisi" disabled>
+                                    </div>
+                                </div>
+                                @if (Model.Courier != null)
+                                {
+                                    <div class="name-surname col-12">
+
+                                        <div class="surname col-5">
+                                            <label for="" class="form-label">Kuryerin Ad Soyadı</label>
+                                            <input type="text" class="form-control" value="@Model.Courier.Name @Model.Courier.Surname" placeholder="Kuryerin Ad Soyadı" disabled>
+                                        </div>
+                                        <div class="name col-5">
+                                            <label for="" class="form-label">Kuryerin nömrəsi</label>
+                                            <input type="text" class="form-control" asp-for="Courier.PhoneNumber" placeholder="Kuryerin nömrəsi" disabled>
+                                        </div>
+                                    </div>
+                                }
+
+
+
+                                <div class="upload-image">
+                                    <a style="cursor:pointer;color:black;padding:10px;" class="qr">
+                                        <i style="font-size:20px;" class="fa-solid fa-print"></i>
+                                    </a>
+                                    <div class="odenis-usulu">
+                                        <p><strong>Odenis usulu:</strong>@(Model.IsCash?"Kart":"Nəğd")</p>
+                                    </div>
+                                </div>
+
+
+
+
+                            </div>
+                        </div>
+
+                    </form>
+
+
+                </div>
+            </article>
+        </div>
+    </div>
+</section>
+
+@section Scripts{
+    <script src="~/assets/js/panel.js"></script>
+    <script>
+        document.querySelector(".qr").addEventListener("click", () => {
+            printPage();
+        })
+        function printPage() {
+            window.print();
+        }</script>
+
+}

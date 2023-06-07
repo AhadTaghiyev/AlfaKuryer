@@ -1,0 +1,108 @@
+﻿@using AlfaKuryer.Application.Dtos.OrderDtos;
+@model OrderGetDto
+<div class="card">
+    <div class="card-header">
+        Yeni sifariş
+    </div>
+    <div class="card-body">
+
+        <div class="row">
+            <div class="col-md-12">
+
+                <form class="row">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <div class="form-group col-md-6">
+                        <label class="control-label">Hansı Şəhərdən</label>
+                        <input class="form-control" disabled asp-for="OrderFromCity.Name" />
+                    </div>
+                    @if (Model.OrderFromDistrict != null)
+                    {
+                        <div class="form-group col-md-6">
+                            <label class="control-label">Hansı Rayondan</label>
+                            <input class="form-control" disabled asp-for="OrderFromDistrict.Name" />
+                        </div>
+                    }
+
+
+
+                    <div class="form-group  col-md-6">
+                        <label class="control-label">Haradan Adress mənzil</label>
+                        <input class="form-control" disabled asp-for="FromAdress"></input>
+                    </div>
+
+
+                    @if (Model.OrderToCity != null)
+                    {
+                        <div class="form-group col-md-6">
+                            <label class="control-label">Hansı Şəhərə</label>
+                            <input class="form-control" disabled asp-for="OrderToCity.Name" />
+                        </div>
+                    }
+
+                    @if (Model.OrderToDistrict != null)
+                    {
+                        <div class="form-group col-md-6">
+                            <label class="control-label">Hansı Şəhərə</label>
+                            <input class="form-control" disabled asp-for="OrderToDistrict.Name" />
+                        </div>
+                    }
+
+
+                    <div class="form-group  col-md-6">
+                        <label class="control-label">Haraya Adress mənzil </label>
+                        <input disabled asp-for="ToAdress" class="form-control" />
+                    </div>
+                    <div class="form-group  col-md-6">
+                        <label class="control-label">qəbul edənin Ad Soyad</label>
+                        <input disabled  asp-for="ToFullName" class="form-control" />
+                        <span asp-validation-for="ToPhoneNumber"></span>
+                    </div>
+                    <div class="form-group  col-md-6">
+                        <label class="control-label">qəbul edənin telefon nömrəsi</label>
+                        <input disabled asp-for="ToPhoneNumber" class="form-control" />
+                    </div>
+                    <div class="form-group  col-md-6">
+                        <label class="control-label">Bağlama Sayı</label>
+                        <input disabled asp-for="PackageCount" class="form-control" />
+                    </div>
+                    <div class="form-group  col-md-6">
+                        <label class="control-label">Bağlama çəkisi</label>
+                        <input disabled asp-for="Kq" class="form-control" />
+                    </div>
+                    <div class="form-group  col-md-6">
+                        <label class="control-label">Qiymət</label>
+                        <input disabled value="@Model.Price AZN" class="form-control" />
+                    </div>
+                    @if (Model.Courier != null)
+                    {
+                        <div class="form-group  col-md-6">
+                            <label class="control-label">Təhvil alan kuriyer</label>
+                            <input disabled asp-for="Courier.Name" class="form-control" />
+                        </div>
+                    }
+                    @if (Model.ForeignCourier != null)
+                    {
+                        <div class="form-group  col-md-6">
+                            <label class="control-label">Təhvil verən kuriyer</label>
+                            <input disabled asp-for="ForeignCourier.Name" class="form-control" />
+                        </div>
+                    }
+                    <div class="form-group  col-md-6">
+                        <label class="control-label">Sifariş verən</label>
+                        <input disabled asp-for="Customer.Name" class="form-control" />
+                    </div>
+                    <div class="form-group  col-md-6">
+                        <label class="control-label">Sifariş verən Əlaqə nömrədi</label>
+                        <input disabled asp-for="Customer.PhoneNumber" class="form-control" />
+                    </div>
+
+                    <div class="col-md-12 mt-3">
+                        <a class="btn btn-dark" asp-action="index"><i class="fas fa-undo"></i> Siyahıya geri dön</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+
+    </div>
+</div>

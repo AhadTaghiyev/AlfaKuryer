@@ -33,8 +33,7 @@
                         </div>
 
                     </div>
-                    <form method="post" class="form col-12 natural-person" style="@(Model == null || (Model != null && Model.IsCompany==false) ? "display:block;" : "display:none;")"
->
+                    <form method="post" class="form col-12 natural-person" style="@(Model == null || (Model != null && Model.IsCompany==false) ? "display:block;" : "display:none;")">
                         <div class="alert alert-danger" asp-validation-summary="ModelOnly"></div>
                         <div class="form-comp">
                             <div class="form-group col-5 d-flex flex-column">
@@ -51,11 +50,24 @@
                                 <input type="email" asp-for="Email" placeholder="@localizer["Email"]" required>
                                 <span class="text text-danger" asp-validation-for="Email"></span>
                             </div>
-                            <div class="form-group col-5 d-flex flex-column">
-                                <input type="password" asp-for="Password" placeholder="@localizer["Password"]" required>
-                                <span class="text text-danger" asp-validation-for="Password"></span>
+                            <div class="form-group col-5 d-flex">
+                                <select asp-for="PhoneCode" class="id-type" required>
+                                    <option value="99450">050</option>
+                                    <option value="99451">051</option>
+                                    <option value="99455">055</option>
+                                    <option value="99499">099</option>
+                                    <option value="99470">070</option>
+                                    <option value="99477">077</option>
+                                    <option value="99460">060</option>
+                                    <option value="99410">010</option>
+                                </select>
+                                <input type="text" asp-for="PhoneNumber" placeholder="@localizer["PhoneNumber"]" required>
+                                <span class="text text-danger" asp-validation-for="PhoneNumber"></span>
                             </div>
+
+
                             <input hidden asp-for="Role" value="User" />
+
                         </div>
 
                         <div class="form-comp">
@@ -64,7 +76,21 @@
                                 <input type="password" asp-for="VerifyPassword" placeholder="@localizer["Again Password"]" required>
                                 <span class="text text-danger" asp-validation-for="VerifyPassword"></span>
                             </div>
-                            <input hidden asp-for="IsCompany" value="false"/>
+                            <div class="form-group col-5 d-flex flex-column">
+                                <input type="password" asp-for="Password" placeholder="@localizer["Password"]" required>
+                                <span class="text text-danger" asp-validation-for="Password"></span>
+                            </div>
+                            <input hidden asp-for="IsCompany" value="false" />
+                        </div>
+                        <div class="form-comp">
+                            <div class="form-group col-5 d-flex flex-column">
+
+                                <select asp-for="Method" required>
+                                    <option value="email">Bildirişləri email ilə al</option>
+                                    <option value="phone">Bildirişləri telefon ilə al</option>
+                                </select>
+                            </div>
+
                         </div>
                         <div class="form-comp">
                             <div class="form-group col-5 d-flex align-items-center gap-2">
@@ -108,12 +134,31 @@
                                 <input type="password" asp-for="Password" placeholder="@localizer["Password"]" required>
                                 <span class="text text-danger" asp-validation-for="Password"></span>
                             </div>
+                            <div class="form-group col-5 d-flex">
+                                <select asp-for="PhoneCode" class="id-type" required>
+                                    <option value="99450">050</option>
+                                    <option value="99451">051</option>
+                                    <option value="99455">055</option>
+                                    <option value="99499">099</option>
+                                    <option value="99470">070</option>
+                                    <option value="99477">077</option>
+                                    <option value="99460">060</option>
+                                    <option value="99410">010</option>
+                                </select>
+                                <input type="text" asp-for="PhoneNumber" placeholder="@localizer["PhoneNumber"]" required>
+                                <span class="text text-danger" asp-validation-for="PhoneNumber"></span>
+                            </div>
+
+
+                            <input checked hidden asp-for="IsCompany" value="true" />
+                            <input hidden asp-for="Role" value="Company" />
+                            <input hidden asp-for="Method" value="email" />
+                        </div>
+                        <div class="form-comp">
                             <div class="form-group col-5 d-flex flex-column">
                                 <input type="password" asp-for="VerifyPassword" placeholder="@localizer["Again Password"]" required>
                                 <span class="text text-danger" asp-validation-for="VerifyPassword"></span>
                             </div>
-                            <input checked hidden asp-for="IsCompany" value="true"/>
-                            <input hidden asp-for="Role" value="Company" />
                         </div>
                         <div class="form-comp">
                             <div class="form-group col-5 d-flex align-items-center gap-2">

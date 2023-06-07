@@ -5,7 +5,8 @@ namespace AlfaKuryer.Application.Dtos.RateDtos
 	{
 		public string From { get; set; }
 		public string To { get; set; }
-		public double Price { get; set; }
+        public string DeliveryMethod { get; set; }
+        public double Price { get; set; }
 	}
 }
 

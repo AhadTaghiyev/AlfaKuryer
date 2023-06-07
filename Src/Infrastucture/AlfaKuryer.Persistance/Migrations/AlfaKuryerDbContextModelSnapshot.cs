@@ -19,6 +19,35 @@ namespace AlfaKuryer.Persistance.Migrations
                 .HasAnnotation("ProductVersion", "7.0.5")
                 .HasAnnotation("Relational:MaxIdentifierLength", 64);
 
+            modelBuilder.Entity("AlfaKuryer.Domain.Entities.Adress", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    b.Property<string>("ApplicationUserId")
+                        .HasColumnType("varchar(255)");
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("datetime(6)");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("tinyint(1)");
+
+                    b.Property<DateTime>("UpdatedAt")
+                        .HasColumnType("datetime(6)");
+
+                    b.Property<string>("UserAdres")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ApplicationUserId");
+
+                    b.ToTable("Adresses");
+                });
+
             modelBuilder.Entity("AlfaKuryer.Domain.Entities.ApplicationUser", b =>
                 {
                     b.Property<string>("Id")
@@ -27,14 +56,17 @@ namespace AlfaKuryer.Persistance.Migrations
                     b.Property<int>("AccessFailedCount")
                         .HasColumnType("int");
 
+                    b.Property<bool>("AccountIsCompleet")
+                        .HasColumnType("tinyint(1)");
+
                     b.Property<string>("Adress")
                         .HasColumnType("longtext");
 
                     b.Property<DateTime>("Birthday")
                         .HasColumnType("datetime(6)");
 
-                    b.Property<bool?>("Citizen")
-                        .HasColumnType("tinyint(1)");
+                    b.Property<string>("Citizen")
+                        .HasColumnType("longtext");
 
                     b.Property<int?>("CityId")
                         .HasColumnType("int");
@@ -45,6 +77,12 @@ namespace AlfaKuryer.Persistance.Migrations
                     b.Property<string>("ConcurrencyStamp")
                         .IsConcurrencyToken()
                         .HasColumnType("longtext");
+
+                    b.Property<double?>("CourierSalaryForFast")
+                        .HasColumnType("double");
+
+                    b.Property<double?>("CourierSalaryForSimple")
+                        .HasColumnType("double");
 
                     b.Property<string>("DocumentNo")
                         .HasColumnType("longtext");
@@ -65,6 +103,9 @@ namespace AlfaKuryer.Persistance.Migrations
                     b.Property<DateTimeOffset?>("LockoutEnd")
                         .HasColumnType("datetime(6)");
 
+                    b.Property<bool?>("MessgaeBy")
+                        .HasColumnType("tinyint(1)");
+
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasColumnType("longtext");
@@ -76,6 +117,9 @@ namespace AlfaKuryer.Persistance.Migrations
                     b.Property<string>("NormalizedUserName")
                         .HasMaxLength(256)
                         .HasColumnType("varchar(256)");
+
+                    b.Property<string>("OtpCode")
+                        .HasColumnType("longtext");
 
                     b.Property<string>("PasswordHash")
                         .HasColumnType("longtext");
@@ -355,6 +399,9 @@ namespace AlfaKuryer.Persistance.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
+                    b.Property<string>("ApplicationUserId")
+                        .HasColumnType("varchar(255)");
+
                     b.Property<string>("CourierId")
                         .HasColumnType("varchar(255)");
 
@@ -372,46 +419,55 @@ namespace AlfaKuryer.Persistance.Migrations
                         .IsRequired()
                         .HasColumnType("longtext");
 
-                    b.Property<bool?>("IsAccepted")
+                    b.Property<bool>("IsAccepted")
                         .HasColumnType("tinyint(1)");
 
-                    b.Property<bool?>("IsCourierArrive")
+                    b.Property<bool>("IsCash")
                         .HasColumnType("tinyint(1)");
 
-                    b.Property<bool?>("IsCourierArriveForTake")
+                    b.Property<bool>("IsCourierArrive")
                         .HasColumnType("tinyint(1)");
 
-                    b.Property<bool?>("IsCourierOnRoad")
+                    b.Property<bool>("IsCourierArriveForTake")
                         .HasColumnType("tinyint(1)");
 
-                    b.Property<bool?>("IsCourierTaked")
+                    b.Property<bool>("IsCourierOnRoad")
+                        .HasColumnType("tinyint(1)");
+
+                    b.Property<bool>("IsCourierTaked")
                         .HasColumnType("tinyint(1)");
 
                     b.Property<bool>("IsDeleted")
                         .HasColumnType("tinyint(1)");
 
-                    b.Property<bool?>("IsDelivered")
+                    b.Property<bool>("IsDelivered")
                         .HasColumnType("tinyint(1)");
 
-                    b.Property<bool?>("IsForeignCourierAccepted")
+                    b.Property<bool>("IsFast")
                         .HasColumnType("tinyint(1)");
 
-                    b.Property<bool?>("IsInCity")
+                    b.Property<bool>("IsForeignCourierAccepted")
                         .HasColumnType("tinyint(1)");
 
-                    b.Property<bool?>("IsInForeignCity")
+                    b.Property<bool>("IsInCity")
                         .HasColumnType("tinyint(1)");
 
-                    b.Property<bool?>("IsInStorage")
+                    b.Property<bool>("IsInForeignCity")
                         .HasColumnType("tinyint(1)");
 
-                    b.Property<bool?>("IsOnRoad")
+                    b.Property<bool>("IsInStorage")
                         .HasColumnType("tinyint(1)");
 
-                    b.Property<bool?>("IsOnroadToForeignCity")
+                    b.Property<bool>("IsOnRoad")
                         .HasColumnType("tinyint(1)");
 
-                    b.Property<bool?>("IsOutStorage")
+                    b.Property<bool>("IsOnroadToForeignCity")
+                        .HasColumnType("tinyint(1)");
+
+                    b.Property<bool>("IsOutStorage")
+                        .HasColumnType("tinyint(1)");
+
+                    b.Property<bool>("IsPaid")
                         .HasColumnType("tinyint(1)");
 
                     b.Property<double>("Kq")
@@ -452,6 +508,8 @@ namespace AlfaKuryer.Persistance.Migrations
 
                     b.HasKey("Id");
 
+                    b.HasIndex("ApplicationUserId");
+
                     b.HasIndex("CourierId");
 
                     b.HasIndex("CustomerId");
@@ -479,6 +537,9 @@ namespace AlfaKuryer.Persistance.Migrations
                         .HasColumnType("datetime(6)");
 
                     b.Property<bool>("IsDeleted")
+                        .HasColumnType("tinyint(1)");
+
+                    b.Property<bool>("IsFast")
                         .HasColumnType("tinyint(1)");
 
                     b.Property<double>("Kq")
@@ -512,6 +573,10 @@ namespace AlfaKuryer.Persistance.Migrations
 
                     b.Property<DateTime>("CreatedAt")
                         .HasColumnType("datetime(6)");
+
+                    b.Property<string>("DeliveryMethod")
+                        .IsRequired()
+                        .HasColumnType("longtext");
 
                     b.Property<string>("From")
                         .IsRequired()
@@ -609,6 +674,46 @@ namespace AlfaKuryer.Persistance.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Slides");
+                });
+
+            modelBuilder.Entity("AlfaKuryer.Domain.Entities.UserPayment", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("datetime(6)");
+
+                    b.Property<string>("CustomerId")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<DateTime>("DateTime")
+                        .HasColumnType("datetime(6)");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("tinyint(1)");
+
+                    b.Property<bool>("IsPay")
+                        .HasColumnType("tinyint(1)");
+
+                    b.Property<int>("OrderNumber")
+                        .HasColumnType("int");
+
+                    b.Property<string>("StatusId")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<double>("TotalPrice")
+                        .HasColumnType("double");
+
+                    b.Property<DateTime>("UpdatedAt")
+                        .HasColumnType("datetime(6)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("UserPayments");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
@@ -739,6 +844,15 @@ namespace AlfaKuryer.Persistance.Migrations
                     b.ToTable("AspNetUserTokens", (string)null);
                 });
 
+            modelBuilder.Entity("AlfaKuryer.Domain.Entities.Adress", b =>
+                {
+                    b.HasOne("AlfaKuryer.Domain.Entities.ApplicationUser", "ApplicationUser")
+                        .WithMany("Adresses")
+                        .HasForeignKey("ApplicationUserId");
+
+                    b.Navigation("ApplicationUser");
+                });
+
             modelBuilder.Entity("AlfaKuryer.Domain.Entities.ApplicationUser", b =>
                 {
                     b.HasOne("AlfaKuryer.Domain.Entities.City", "City")
@@ -806,6 +920,10 @@ namespace AlfaKuryer.Persistance.Migrations
 
             modelBuilder.Entity("AlfaKuryer.Domain.Entities.Order", b =>
                 {
+                    b.HasOne("AlfaKuryer.Domain.Entities.ApplicationUser", null)
+                        .WithMany("Orders")
+                        .HasForeignKey("ApplicationUserId");
+
                     b.HasOne("AlfaKuryer.Domain.Entities.ApplicationUser", "Courier")
                         .WithMany()
                         .HasForeignKey("CourierId");
@@ -908,7 +1026,11 @@ namespace AlfaKuryer.Persistance.Migrations
 
             modelBuilder.Entity("AlfaKuryer.Domain.Entities.ApplicationUser", b =>
                 {
+                    b.Navigation("Adresses");
+
                     b.Navigation("ApplicationUserDistricts");
+
+                    b.Navigation("Orders");
                 });
 
             modelBuilder.Entity("AlfaKuryer.Domain.Entities.City", b =>

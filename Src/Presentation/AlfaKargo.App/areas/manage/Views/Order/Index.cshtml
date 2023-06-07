@@ -4,9 +4,16 @@
     ViewData["Title"] = "Index";
 }
 
+
+<style>
+    th, td {
+        font-size: 9px;
+    }
+</style>
+
 <div class="card">
     <div class="card-header">
-        Sifarişlərim
+        Sifarişlər
     </div>
     <div class="card-body">
 
@@ -16,7 +23,8 @@
             </a>
         </div>
 
-        <table class="table" data-emrah="partners">
+
+        <table class="table" data-emrah="products">
             <thead>
                 <tr>
                     <th>
@@ -38,10 +46,14 @@
                     <th>
                         Kimə
                     </th>
+                    <th>
+                        Tarix
+                    </th>
+                    <th>Ətraflı gör</th>
                 </tr>
             </thead>
             <tbody>
-                @foreach (var item in Model.OrderByDescending(x=>x.Id))
+                @foreach (var item in Model.OrderByDescending(x => x.Id))
                 {
                     <tr data-id="@item.Id">
                         <td>
@@ -62,7 +74,12 @@
                         <td>
                             @item.ToFullName
                         </td>
-
+                        <td>
+                            @item.CreatedDate.ToString("dd:MM:yyyy:hh:mm");
+                        </td>
+                        <td>
+                            <a asp-action="detail" asp-route-id="@item.Id">Ətraflı</a>
+                        </td>
                     </tr>
                 }
             </tbody>
@@ -70,7 +87,9 @@
 
 
 
-
     </div>
 </div>
+
+<script>const active = document.querySelector(".active");
+    console.log(active);</script>
 

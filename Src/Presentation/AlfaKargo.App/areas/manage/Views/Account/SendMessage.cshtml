@@ -1,0 +1,36 @@
+﻿@using AlfaKuryer.Application.Dtos.IdentityDtos;
+@model SendMailToUsers
+<div class="card">
+    <div class="card-header">
+        Yenisini əlavə et
+    </div>
+    <div class="card-body">
+
+        <div class="row">
+            <div class="col-md-12">
+
+                <form asp-action="SendMessage" class="row">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <div class="form-group  col-md-6">
+                        <label class="control-label">Mesaj başlığı</label>
+                        <input asp-for="Subject" class="form-control" />
+                        <span asp-validation-for="Subject"></span>
+                    </div>
+                    <div class="form-group  col-md-6">
+                        <label class="control-label">Mesaj</label>
+                        <textarea asp-for="Mail" class="form-control" ></textarea>
+                        <span asp-validation-for="Mail"></span>
+                    </div>
+              
+               
+                    <div class="col-md-12 mt-3">
+                        <a class="btn btn-dark" asp-action="Admins"><i class="fas fa-undo"></i> Siyahıya geri dön</a>
+                        <input type="submit" value="Göndər" class="btn btn-primary" />
+                    </div>
+                </form>
+            </div>
+        </div>
+
+
+    </div>
+</div>

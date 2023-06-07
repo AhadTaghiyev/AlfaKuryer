@@ -33,6 +33,24 @@ namespace AlfaKuryer.Infrastucture.ExtornerlServices
             smtp.Send(mail);
         }
 
+        public async Task SendAll(string to,string subject,string message)
+        {
+            MailMessage mail = new MailMessage();
+            mail.From = new MailAddress(_configuration.GetSection("Keys")["Email"], "message app");
+            mail.To.Add(new MailAddress(to));
+            mail.Subject = "subject";
+            mail.Body = message;
+            mail.IsBodyHtml = false;
+
+            SmtpClient smtp = new SmtpClient();
+            smtp.Host = "smtp.gmail.com";
+            smtp.Port = 587;
+            smtp.EnableSsl = true;
+            smtp.DeliveryMethod = SmtpDeliveryMethod.Network;
+            smtp.Credentials = new NetworkCredential(_configuration.GetSection("Keys")["Email"], _configuration.GetSection("Keys")["Secret"]);
+            smtp.Send(mail);
+        }
+
 
     }
 }

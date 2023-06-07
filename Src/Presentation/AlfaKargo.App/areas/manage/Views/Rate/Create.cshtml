@@ -15,52 +15,29 @@
 
                 <form asp-action="Create" class="row">
                     <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-                    <div class="form-group  col-md-6">
+
+                    <div class="form-group col-md-4">
                         <label class="control-label">Haradan</label>
-                        <select asp-for="From" class="form-control">
-
-                            @foreach (var item in ViewBag.Cities)
-                            {
-                                <option value="@item.Name">
-                                    @item.Name
-                                </option>
-                            }
-                            @foreach (var item in ViewBag.Districts)
-                            {
-                                <option value="@item.Name">
-                                    @item.Name
-                                </option>
-                            }
-
-                        </select>
-                        <span asp-validation-for="From"></span>
+                        <input asp-for="From" class="form-control" />
+                        <span asp-validation-for="From" class="text-danger"></span>
                     </div>
 
-                    <div class="form-group  col-md-6">
-                        <label class="control-label">Haradan</label>
-                        <select asp-for="To" class="form-control">
 
-                            @foreach (var item in ViewBag.Cities)
-                            {
-                                <option value="@item.Name">
-                                    @item.Name
-                                </option>
-                            }
-                            @foreach (var item in ViewBag.Districts)
-                            {
-                                <option value="@item.Name">
-                                    @item.Name
-                                </option>
-                            }
-
-                        </select>
-                        <span asp-validation-for="To"></span>
+                    <div class="form-group col-md-4">
+                        <label class="control-label">Haraya</label>
+                        <input asp-for="To" class="form-control" />
+                        <span asp-validation-for="To" class="text-danger"></span>
                     </div>
 
                     <div class="form-group col-md-4">
                         <label class="control-label">Qiymət</label>
-                        <input asp-for="Price"  class="form-control" />
+                        <input asp-for="Price" class="form-control" />
                         <span asp-validation-for="Price" class="text-danger"></span>
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label class="control-label">Üsul</label>
+                        <input asp-for="DeliveryMethod" class="form-control" />
+                        <span asp-validation-for="DeliveryMethod" class="text-danger"></span>
                     </div>
                     <div class="col-md-12 mt-3">
                         <a class="btn btn-dark" asp-action="index"><i class="fas fa-undo"></i> Siyahıya geri dön</a>

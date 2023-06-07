@@ -184,6 +184,9 @@
     <data name="Verify email" xml:space="preserve">
     <value>Подтвердить Email</value>
   </data>
+      <data name="Enter the verification code sent to your phone" xml:space="preserve">
+    <value>Введите проверочный код, отправленный на ваш телефон</value>
+  </data>
     <data name="Forgot your password?" xml:space="preserve">
     <value>Забыли пароль?</value>
   </data>
@@ -192,6 +195,9 @@
   </data>
        <data name="Tariffs" xml:space="preserve">
     <value>Тарифы</value>
+  </data>
+   <data name="Confirm" xml:space="preserve">
+    <value>подтверждать код</value>
   </data>
    <data name="Reset password" xml:space="preserve">
     <value>Сброс пароля</value>

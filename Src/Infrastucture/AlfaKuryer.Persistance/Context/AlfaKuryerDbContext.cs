@@ -26,6 +26,8 @@ namespace AlfaKuryer.Persistance.Context
         public DbSet<ApplicationUserDistrict> ApplicationUserDistricts { get; }
         public DbSet<Order> Orders { get; }
         public DbSet<PriceForOrder> PriceForOrders{get;}
+        public DbSet<Adress> Adresses { get; }
+        public DbSet<UserPayment> UserPayments { get; }
 
         protected override void OnModelCreating(ModelBuilder builder)
         {

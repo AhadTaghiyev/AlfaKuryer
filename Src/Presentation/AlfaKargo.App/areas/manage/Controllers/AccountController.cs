@@ -103,6 +103,8 @@ namespace AlfaKargo.App.areas.manage.Controllers
             return Redirect(nameof(Couriers));
         }
 
+
+
         public async Task<IActionResult> DeleteConfirmed(string UserId)
         {
             await _identity.ChangeStatus(UserId);
@@ -113,6 +115,17 @@ namespace AlfaKargo.App.areas.manage.Controllers
             ViewBag.Cities = await _cityservice.GetAll();
             ViewBag.Districts = await _districtservice.GetAll();
             return View();
+        }
+
+        public async Task<IActionResult> SendMessage()
+        {
+            return View();
+        }
+        [HttpPost]
+        public async Task<IActionResult> SendMessage(SendMailToUsers sendMailTo)
+        {
+            await _identity.SendMessageToAllUsers(sendMailTo);
+            return RedirectToAction("index","home");
         }
     }
 }

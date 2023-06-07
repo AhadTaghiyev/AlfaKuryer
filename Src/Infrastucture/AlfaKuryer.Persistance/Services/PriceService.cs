@@ -36,7 +36,7 @@ namespace AlfaKuryer.Persistance.Services
 
             IEnumerable<PriceGetDto> getDtos = new HashSet<PriceGetDto>();
 
-            getDtos = query.Select(x => new PriceGetDto { Price = x.Price,Id=x.Id,Kq=x.Kq,Location=x.Location,MinPrice=x.MinPrice,UntilKq=x.UntilKq }).ToHashSet<PriceGetDto>();
+            getDtos = query.Select(x => new PriceGetDto { Price = x.Price,Id=x.Id,Kq=x.Kq,Location=x.Location,MinPrice=x.MinPrice,UntilKq=x.UntilKq,IsFast=x.IsFast }).ToHashSet<PriceGetDto>();
             return getDtos;
         }
 

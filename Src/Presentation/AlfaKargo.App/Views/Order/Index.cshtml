@@ -1,0 +1,119 @@
+﻿
+@inject Microsoft.Extensions.Localization.IStringLocalizer<SharedResource> localizer
+@using AlfaKuryer.Application.Dtos.OrderDtos;
+
+
+@model IEnumerable<OrderGetDto>
+@{
+    ViewData["Title"] = "Sifarişlərim";
+    int i = 0;
+}
+@if (TempData["verify"]?.ToString() == "verify")
+{
+    <div style="display:none" class="verify">Sifarişiniz uğurla tamamlandı diqqətinizə çatdıraq ki iş rejmimiz 09:00-dan axşam 17:00-a qədərdir və sifarişin çatdırılması 24 saat ərzində gerçəkləşdiriləcək</div>
+}
+
+@section css{
+    <link rel="stylesheet" href="~/assets/css/panel.css">
+
+}
+<section id="main-part">
+
+    <div class="container">
+        <div class="navigation">
+            <div class="userBx">
+                <div class="imgBx">
+                    <img src="~/assets/imgs/Logo/alfa kuryer logo.png" alt="">
+                </div>
+                <p class="username">@User.Identity.Name</p>
+            </div>
+            <div class="menuToggle"></div>
+            <ul class="menu">
+                <li><a asp-controller="account" asp-action="update"><i class="fa-solid fa-address-card"></i> Məlumatlar</a></li>
+                <li><a asp-controller="order" asp-action="index"><i class="fa-solid fa-box-open"></i> Bağlamalar</a></li>
+                <li><a asp-controller="order" asp-action="history"><i class="fa-solid fa-calendar-days"></i> Sifariş Tarixçəsi</a></li>
+                <li><a asp-controller="order" asp-action="createorder"><i class="fa-solid fa-dolly"></i> Sifariş ver</a></li>
+            </ul>
+        </div>
+
+        <div class="row d-flex justify-content-center">
+            <aside class="sidebar" class="col-4">
+
+                <div class="sidebar-header">
+
+                    <div class="account-image">
+                        <img src="~/assets/imgs/Logo/alfa kuryer logo.png" alt="">
+                    </div>
+                    <div class="account-info">
+                        <p><span>ID:</span> @User.Identity.Name</p>
+                    </div>
+
+                </div>
+
+                <div class="sidebar-body">
+
+                    <ul class="istifadeci">
+                        <li><a asp-controller="account" asp-action="update"><i class="fa-solid fa-address-card"></i> Məlumatlar</a></li>
+                        <li><a asp-controller="order" asp-action="index"><i class="fa-solid fa-box-open"></i> Bağlamalar</a></li>
+                        <li><a asp-controller="order" asp-action="history"><i class="fa-solid fa-calendar-days"></i> Sifariş Tarixçəsi</a></li>
+                        <li><a asp-controller="order" asp-action="createorder"><i class="fa-solid fa-dolly"></i> Sifariş ver</a></li>
+                    </ul>
+                </div>
+
+            </aside>
+            <article class="content col-8">
+                <div class="row">
+
+
+                    <div class="sifaris-table">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Sifariş nömrəsi</th>
+                                    <th scope="col">Qiymət</th>
+                                    <th scope="col">Hardan</th>
+                                    <th scope="col">Haraya</th>
+                                    <th scope="col">Kimdən</th>
+                                    <th scope="col">Kimə</th>
+                                    <th scope="col">Ətraflı</th>
+
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in Model)
+                                {
+                                    <tr>
+                                        <th>@item.Id</th>
+                                        <td>@item.Price Azn</td>
+                                        <td>@item.OrderFromCity?.Name</td>
+                                        <td>@item.OrderToCity?.Name</td>
+                                        <td>@item.Customer.Name</td>
+                                        <td>@item.ToFullName</td>
+                                        <td><a asp-controller="order" asp-action="track" asp-route-id="@item.Id">İzlə</a></td>
+                                        <td><a asp-controller="order" asp-action="detail" asp-route-id="@item.Id">Ətraflı</a></td>
+
+
+                                    </tr>
+                                }
+
+
+
+                            </tbody>
+                        </table>
+                    </div>
+
+
+                </div>
+            </article>
+        </div>
+    </div>
+</section>
+
+@section Scripts{
+    <script src="~/assets/js/panel.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script>const verify = document.querySelector(".verify")
+        if (verify != undefined) {
+            swal(verify.innerHTML);
+        }</script>
+}

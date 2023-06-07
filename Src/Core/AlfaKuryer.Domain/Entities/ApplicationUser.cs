@@ -12,7 +12,7 @@ namespace AlfaKuryer.Domain.Entities
         public string Name { get; set; }
         public string? Surname { get; set; }
         public DateTime Birthday { get; set; }
-        public bool? Citizen { get; set; }
+        public string? Citizen { get; set; }
         public string? DocumentNo { get; set; }
         public string? Identification { get; set; }
         public string? CompanyTin { get; set; }
@@ -22,6 +22,12 @@ namespace AlfaKuryer.Domain.Entities
         public List<ApplicationUserDistrict> ApplicationUserDistricts { get; set; }
         public int? CityId { get; set; }
         public City City { get; set; }
-       
+        public bool? MessgaeBy { get; set;  }
+        public string? OtpCode { get; set; }
+        public List<Adress> Adresses { get; set; }
+        public bool AccountIsCompleet { get; set; }
+        public List<Order> Orders { get; set; }
+        public  double? CourierSalaryForSimple { get; set; }
+        public  double? CourierSalaryForFast { get; set; }
     }
 }

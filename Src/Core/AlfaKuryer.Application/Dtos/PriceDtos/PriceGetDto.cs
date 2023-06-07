@@ -9,6 +9,7 @@ namespace AlfaKuryer.Application.Dtos.PriceDtos
         public double UntilKq { get; set; }
         public double MinPrice { get; set; }
         public bool Location { get; set; }
+        public bool IsFast { get; set; }
     }
 }
 

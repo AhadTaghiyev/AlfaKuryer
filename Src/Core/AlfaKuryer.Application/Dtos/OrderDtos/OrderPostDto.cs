@@ -14,6 +14,8 @@ namespace AlfaKuryer.Application.Dtos.OrderDtos
         public int? OrderToDistrictId { get; set; }
         public int PackageCount { get; set; }
         public string ToFullName { get; set; }
+        public bool IsFast { get; set; }
+        public string Payment { get; set; }
     }
 }
 

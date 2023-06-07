@@ -1,0 +1,105 @@
+﻿
+@inject Microsoft.Extensions.Localization.IStringLocalizer<SharedResource> localizer
+@using AlfaKuryer.Application.Dtos.OrderDtos;
+
+
+@model IEnumerable<OrderGetDto>
+@{
+    ViewData["Title"] = "Sifarişlərim";
+    int i = 0;
+}
+@section css{
+    <link rel="stylesheet" href="~/assets/css/panel.css">
+
+}
+
+<section id="main-part">
+
+    <div class="container">
+        <div class="navigation">
+            <div class="userBx">
+                <div class="imgBx">
+                    <img src="~/assets/imgs/Logo/alfa kuryer logo.png" alt="">
+                </div>
+                <p class="username">@User.Identity.Name</p>
+            </div>
+            <div class="menuToggle"></div>
+            <ul class="menu">
+                <li><a asp-controller="courier" asp-action="accept"><i class="fa-solid fa-box-open"></i> Bağlamalar</a></li>
+                <li><a asp-controller="courier" asp-action="index"><i class="fa-solid fa-box-open"></i>Qəbul etdiklərim</a></li>
+                <li><a asp-controller="courier" asp-action="history"><i class="fa-solid fa-calendar-days"></i> Tamamlanmış Bağlamalar</a></li>
+            </ul>
+        </div>
+
+        <div class="row d-flex justify-content-center">
+            <aside class="sidebar" class="col-4">
+
+                <div class="sidebar-header">
+
+                    <div class="account-image">
+                        <img src="~/assets/imgs/Logo/alfa kuryer logo.png" alt="">
+                    </div>
+                    <div class="account-info">
+                        <p><span>ID:</span> @User.Identity.Name</p>
+                    </div>
+
+                </div>
+
+                <div class="sidebar-body">
+                    <ul class="kuryer">
+                        <li><a asp-controller="courier" asp-action="accept"><i class="fa-solid fa-box-open"></i> Bağlamalar</a></li>
+                        <li><a asp-controller="courier" asp-action="index"><i class="fa-solid fa-box-open"></i>Qəbul etdiklərim</a></li>
+                        <li><a asp-controller="courier" asp-action="history"><i class="fa-solid fa-calendar-days"></i> Tamamlanmış Bağlamalar</a></li>
+                    </ul>
+
+                </div>
+
+            </aside>
+            <article class="content col-8">
+                <div class="row">
+                    <div class="cards">
+                        @foreach (var item in Model)
+                        {
+                            <div class="card">
+                                <div class="card-header">
+                                    <h3 class="order-number">Sifariş nömrəsi: @item.Id</h3>
+                                    <p class="customer-name"><strong>@item.Customer.Name</strong></p>
+                                    <p class="customer-location"><strong>Hansi Rayondan:</strong> @item.OrderFromDistrict?.Name </p>
+                                </div>
+                                <div class="card-body">
+                                    <p class="address">
+                                        <strong>Adress:</strong> @item.FromAdress
+                                    </p>
+                                    <p class="payment-method"><strong>Ödeme Yöntemi:</strong> Nagd</p>
+                                    <p class="customer-phone"><strong>Sipariş Veren Telefon Numarası:</strong>@item.Customer.PhoneNumber</p>
+                                    <p class="order-date"><strong>Sipariş Verildiği Tarih:</strong>@item.CreatedDate.ToString("dd:MM:yyyy:hh:mm")</p>
+                                    <p class="parcel-count"><strong>Bağlama Sayısı:</strong> @item.PackageCount</p>
+                                    <p class="parcel-weight"><strong>Bağlama Ağırlığı:</strong>@item.Kq kg</p>
+                                </div>
+                                <div class="card-footer">
+                                    
+                                    @if (item.IsAccepted == false)
+                                    {
+                                        <a asp-controller="courier" asp-action="AcceptOrder" asp-route-id="@item.Id" class="accept-btn">Qebul et</a>
+                                    }
+                                    else
+                                    {
+                                        <a asp-controller="courier" asp-action="InForeignCity" asp-route-id="@item.Id" class="accept-btn">Təhvil alındı</a>
+                                    }
+                                </div>
+                            </div>
+                        }
+
+                    </div>
+
+                </div>
+            </article>
+        </div>
+    </div>
+</section>
+
+@section Scripts{
+    <script src="~/assets/js/panel.js"></script>
+
+
+}

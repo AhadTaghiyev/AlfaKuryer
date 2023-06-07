@@ -7,6 +7,7 @@ namespace AlfaKuryer.Domain.Entities
 	{
 		public string From { get; set; }
 		public string To { get; set; }
+		public string DeliveryMethod { get; set; }
 		public double Price { get; set; }
 	}
 }

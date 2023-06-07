@@ -521,6 +521,10 @@
       "PackagePath": "staticwebassets/Admin/vendor/jquery/jquery.slim.min.map"
     },
     {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/Payment/certificate.pfx",
+      "PackagePath": "staticwebassets/Payment/certificate.pfx"
+    },
+    {
       "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/Template/Verify.html",
       "PackagePath": "staticwebassets/Template/Verify.html"
     },
@@ -559,6 +563,10 @@
     {
       "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/assets/css/news.css",
       "PackagePath": "staticwebassets/assets/css/news.css"
+    },
+    {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/assets/css/panel.css",
+      "PackagePath": "staticwebassets/assets/css/panel.css"
     },
     {
       "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/assets/css/privacy-policy.css",
@@ -849,6 +857,10 @@
       "PackagePath": "staticwebassets/assets/imgs/news/yayheyacani.jpg"
     },
     {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/assets/imgs/qrcodes/qr.png",
+      "PackagePath": "staticwebassets/assets/imgs/qrcodes/qr.png"
+    },
+    {
       "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/assets/imgs/rates/calc_circle.png",
       "PackagePath": "staticwebassets/assets/imgs/rates/calc_circle.png"
     },
@@ -995,6 +1007,10 @@
     {
       "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/assets/js/news.js",
       "PackagePath": "staticwebassets/assets/js/news.js"
+    },
+    {
+      "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/assets/js/panel.js",
+      "PackagePath": "staticwebassets/assets/js/panel.js"
     },
     {
       "Id": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/wwwroot/assets/js/prohibited-items.js",

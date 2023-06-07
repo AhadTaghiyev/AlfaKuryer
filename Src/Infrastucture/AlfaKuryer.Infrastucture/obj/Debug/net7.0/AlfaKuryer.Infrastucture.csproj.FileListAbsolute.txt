@@ -10,3 +10,6 @@
 /Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Infrastucture/AlfaKuryer.Infrastucture/obj/Debug/net7.0/refint/AlfaKuryer.Infrastucture.dll
 /Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Infrastucture/AlfaKuryer.Infrastucture/obj/Debug/net7.0/AlfaKuryer.Infrastucture.pdb
 /Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Infrastucture/AlfaKuryer.Infrastucture/obj/Debug/net7.0/ref/AlfaKuryer.Infrastucture.dll
+/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Infrastucture/AlfaKuryer.Infrastucture/bin/Debug/net7.0/AlfaKuryer.Domain.dll
+/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Infrastucture/AlfaKuryer.Infrastucture/bin/Debug/net7.0/AlfaKuryer.Domain.pdb
+/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Infrastucture/AlfaKuryer.Infrastucture/obj/Debug/net7.0/AlfaKuryer.Infrastucture.csproj.CopyComplete

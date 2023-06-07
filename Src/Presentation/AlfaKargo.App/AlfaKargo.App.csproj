@@ -24,12 +24,12 @@
     <Folder Include="areas\manage\Views\Slide\" />
     <Folder Include="wwwroot\Template\" />
     <Folder Include="areas\manage\Views\Account\" />
-    <Folder Include="areas\panel\" />
-    <Folder Include="areas\panel\Controllers\" />
-    <Folder Include="areas\panel\Views\" />
-    <Folder Include="areas\panel\Views\Order\" />
     <Folder Include="areas\manage\Views\Order\" />
-    <Folder Include="areas\courier\Views\" />
+    <Folder Include="Views\Order\" />
+    <Folder Include="Views\Courier\" />
+    <Folder Include="wwwroot\assets\imgs\qrcodes\" />
+    <Folder Include="wwwroot\Payment\" />
+    <Folder Include="wwwroot\Admin\vendor\jquery\" />
   </ItemGroup>
 
   <ItemGroup>
@@ -58,14 +58,16 @@
     <None Remove="ViewModels\" />
     <None Remove="areas\manage\Views\Slide\" />
     <None Remove="areas\manage\Views\Account\" />
-    <None Remove="areas\panel\" />
-    <None Remove="areas\panel\Controllers\" />
-    <None Remove="areas\panel\Views\" />
     <None Remove="areas\panel\Views\City %28copy%29\" />
     <None Remove="areas\manage\Views\Order\" />
     <None Remove="areas\Courier\Views\" />
+    <None Remove="Views\Order\" />
+    <None Remove="Views\Courier\" />
   </ItemGroup>
   <ItemGroup>
     <Content Remove="wwwroot\Template\" />
+    <Content Remove="wwwroot\assets\imgs\qrcodes\" />
+    <Content Remove="wwwroot\Payment\" />
+    <Content Remove="wwwroot\Admin\vendor\jquery\" />
   </ItemGroup>
 </Project>

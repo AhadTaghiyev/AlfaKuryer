@@ -23,6 +23,23 @@ namespace AlfaKargo.App.areas.manage.Controllers
         {
             return View(await _serice.GetAll());
         }
+
+        public async Task<IActionResult> Storage()
+        {
+            return View(await _serice.GetInStorage());
+        }
+
+        public async Task<IActionResult> OutStorage(int id)
+        {
+            await _serice.OutStorage(id);
+            return RedirectToAction(nameof(Storage));
+        }
+        
+
+        public async Task<IActionResult> Detail(int id)
+        {
+            return View(await _serice.GetOrderById(id));
+        }
     }
 }
 

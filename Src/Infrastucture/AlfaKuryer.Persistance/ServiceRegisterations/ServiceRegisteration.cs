@@ -9,6 +9,7 @@ using AlfaKuryer.Application.Services.IdentityServices;
 using AlfaKuryer.Application.Services.MessageService;
 using AlfaKuryer.Application.Services.NewsServices;
 using AlfaKuryer.Application.Services.OrderServices;
+using AlfaKuryer.Application.Services.PaymentServices;
 using AlfaKuryer.Application.Services.PriceService;
 using AlfaKuryer.Application.Services.RateServices;
 using AlfaKuryer.Application.Services.SettingServices;
@@ -120,7 +121,16 @@ namespace AlfaKuryer.Persistance.ServiceRegisterations
             services.AddScoped<IOrderWriteRepository, OrderWriteRepository>();
             services.AddScoped<IOrderService, OrderService>();
             #endregion
-   
+
+            #region Adress
+            services.AddScoped<IAdressReadRepository, AdressReadRepository>();
+            services.AddScoped<IAdressWriteRepository, AdressWriteRepository>();
+            #endregion
+            #region Adress
+            services.AddScoped<IUserPaymentReadRepository, UserPaymentReadRepository>();
+            services.AddScoped<IUserPaymentWriteRepository, UserPaymentWriteRepository>();
+            services.AddTransient<IPaymentService, PaymentService>();
+            #endregion
         }
     }
 }

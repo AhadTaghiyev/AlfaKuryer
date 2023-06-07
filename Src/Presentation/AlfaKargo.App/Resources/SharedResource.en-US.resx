@@ -138,11 +138,17 @@
     <data name="News" xml:space="preserve">
     <value>News</value>
   </data>
+    <data name="Enter the verification code sent to your phone" xml:space="preserve">
+    <value>Enter the verification code sent to your phone</value>
+  </data>
        <data name="Tariffs" xml:space="preserve">
     <value>Tariffs</value>
   </data>
   <data name="Blog" xml:space="preserve">
     <value>Blog</value>
+  </data>
+   <data name="Confirm" xml:space="preserve">
+    <value>Confirm Code</value>
   </data>
   <data name="Contact Us" xml:space="preserve">
     <value>Contact Us</value>

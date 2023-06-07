@@ -1,0 +1,87 @@
+﻿
+@inject Microsoft.Extensions.Localization.IStringLocalizer<SharedResource> localizer
+@using AlfaKuryer.Application.Dtos.OrderDtos;
+
+
+@model OrderGetDto
+@{
+    ViewData["Title"] = "Sifarişlərim";
+    int i = 0;
+}
+@section css{
+    <link rel="stylesheet" href="~/assets/css/panel.css">
+
+}
+<section id="main-part">
+
+    <div class="container">
+        <div class="navigation">
+            <div class="userBx">
+                <div class="imgBx">
+                    <img src="~/assets/imgs/Logo/alfa kuryer logo.png" alt="">
+                </div>
+                <p class="username">@User.Identity.Name</p>
+            </div>
+            <div class="menuToggle"></div>
+            <ul class="menu">
+                <li><a asp-controller="account" asp-action="update"><i class="fa-solid fa-address-card"></i> Məlumatlar</a></li>
+                <li><a asp-controller="order" asp-action="index"><i class="fa-solid fa-box-open"></i> Bağlamalar</a></li>
+                <li><a asp-controller="order" asp-action="history"><i class="fa-solid fa-calendar-days"></i> Sifariş Tarixçəsi</a></li>
+                <li><a asp-controller="order" asp-action="createorder"><i class="fa-solid fa-dolly"></i> Sifariş ver</a></li>
+            </ul>
+        </div>
+
+        <div class="row d-flex justify-content-center">
+            <aside class="sidebar" class="col-4">
+
+                <div class="sidebar-header">
+
+                    <div class="account-image">
+                        <img src="~/assets/imgs/Logo/alfa kuryer logo.png" alt="">
+                    </div>
+                    <div class="account-info">
+                        <p><span>ID:</span> @User.Identity.Name</p>
+                    </div>
+
+                </div>
+
+                <div class="sidebar-body">
+
+                    <ul class="istifadeci">
+                        <li><a asp-controller="account" asp-action="update"><i class="fa-solid fa-address-card"></i> Məlumatlar</a></li>
+                        <li><a asp-controller="order" asp-action="index"><i class="fa-solid fa-box-open"></i> Bağlamalar</a></li>
+                        <li><a asp-controller="order" asp-action="history"><i class="fa-solid fa-calendar-days"></i> Sifariş Tarixçəsi</a></li>
+                        <li><a asp-controller="order" asp-action="createorder"><i class="fa-solid fa-dolly"></i> Sifariş ver</a></li>
+                    </ul>
+                </div>
+
+            </aside>
+            <article class="content col-8">
+                <div class="row">
+                    <div class="progress-container">
+                        <div class="step-progress">
+                            <div class="step @(Model.IsAccepted==true?"active":"")"><i class="uil uil-check"></i> <p class="text">Sifariş qəbul edildi</p></div>
+                            <div class="step @(Model.IsCourierOnRoad==true?"active":"")"><i class="uil uil-check"></i> <p class="text">Kuryer sizə tərəf yollanır</p></div>
+                            <div class="step @(Model.IsCourierArriveForTake==true?"active":"")"><i class="uil uil-check"></i> <p class="text">Kuryer çatdı</p></div>
+                            <div class="step @(Model.IsCourierTaked==true?"active":"")"><i class="uil uil-check"></i> <p class="text">Kuryer götürdü</p></div>
+                            <div class="step @(Model.IsInStorage==true?"active":"")"><i class="uil uil-check"></i>  <p class="text">Bağlama depoda</p></div>
+                            <div class="step @(Model.IsOutStorage==true?"active":"")"><i class="uil uil-check"></i> <p class="text">Bağlama depodan çıxdı</p></div>
+                            <div class="step @(Model.IsOnroadToForeignCity==true?"active":"")"><i class="uil uil-check"></i> <p class="text">Bağlama rayon istiqamətindədir</p></div>
+                            <div class="step @(Model.IsInForeignCity==true?"active":"")"><i class="uil uil-check"></i> <p class="text">Bağlama Gəncədə</p></div>
+                            <div class="step @(Model.IsOnRoad==true?"active":"")"><i class="uil uil-check"></i><p class="text">Bağlama sizə tərəf gəlir</p></div>
+                            <div class="step @(Model.IsCourierArrive==true?"active":"")"><i class="uil uil-check"></i> <p class="text">Çatdı</p></div>
+                            <div class="step @(Model.IsDelivered==true?"active":"")"><i class="uil uil-check"></i> <p class="text">Sifariş tamamıandı</p></div>
+                        </div>
+                    </div>
+
+                </div>
+            </article>
+        </div>
+    </div>
+</section>
+
+@section Scripts{
+    <script src="~/assets/js/panel.js"></script>
+
+
+}

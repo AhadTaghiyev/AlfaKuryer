@@ -37,8 +37,6 @@ namespace AlfaKargo.App.areas.manage.Controllers
         [HttpGet]
         public async Task<IActionResult> Create()
         {
-            ViewBag.Cities =await _cityService.GetAll();
-            ViewBag.Districts =await _districtService.GetAll();
             return View();
         }
 
@@ -48,8 +46,6 @@ namespace AlfaKargo.App.areas.manage.Controllers
         {
             if (!ModelState.IsValid)
             {
-                ViewBag.Cities = await _cityService.GetAll();
-                ViewBag.Districts = await _districtService.GetAll();
                 return View();
             }
 
@@ -62,8 +58,6 @@ namespace AlfaKargo.App.areas.manage.Controllers
         {
             UpdateVewModel<RatePostDto, RateGetDto> vewModel = new();
             vewModel.GetDto = await _service.Get(id);
-            ViewBag.Cities = await _cityService.GetAll();
-            ViewBag.Districts = await _districtService.GetAll();
             return View(vewModel);
         }
 
@@ -74,8 +68,6 @@ namespace AlfaKargo.App.areas.manage.Controllers
             if (!ModelState.IsValid)
             {
                 vewModel.GetDto = await _service.Get(id);
-                ViewBag.Cities = await _cityService.GetAll();
-                ViewBag.Districts = await _districtService.GetAll();
                 return View(vewModel);
             }
             await _service.Update(id,vewModel.PostDto);

@@ -160,7 +160,12 @@
   <data name="Verify email" xml:space="preserve">
     <value>Emaili təsdiqləyin</value>
   </data>
- 
+   <data name="Confirm" xml:space="preserve">
+    <value>Təsdiq Kodu</value>
+  </data>
+    <data name="Enter the verification code sent to your phone" xml:space="preserve">
+    <value>Telefonunuza göndərilən təsdiq kodunu daxil edin</value>
+  </data>
    <data name=" Enter your email address to reset your password." xml:space="preserve">
     <value>Şifrənizin yenilənməsi üçün email adresinizi daxil edin.</value>
   </data>
@@ -258,7 +263,7 @@
     <value>Üstünlüklərimiz</value>
   </data>
   <data name="PhoneNumber" xml:space="preserve">
-    <value>PhoneNumber</value>
+    <value>Telefon</value>
   </data>
   <data name="Pool Cleaning" xml:space="preserve">
     <value>Hovuz Təmizliyi</value>

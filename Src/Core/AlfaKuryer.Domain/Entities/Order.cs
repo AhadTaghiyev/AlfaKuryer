@@ -29,19 +29,22 @@ namespace AlfaKuryer.Domain.Entities
         public double Price { get; set; }
         public double Kq { get; set; }
         public int PackageCount { get; set; }
-        public bool? IsInCity { get; set; }
-        public bool? IsAccepted { get; set; }
-        public bool? IsCourierOnRoad { get; set; }
-        public bool? IsCourierArriveForTake { get; set; }
-        public bool? IsCourierTaked { get; set; }
-        public bool? IsInStorage { get; set; }
-        public bool? IsOutStorage { get; set; }
-        public bool? IsOnroadToForeignCity { get; set; }
-        public bool? IsForeignCourierAccepted { get; set; }
-        public bool? IsInForeignCity { get; set; }
-        public bool? IsOnRoad { get; set; }
-        public bool? IsCourierArrive { get; set; }
-        public bool? IsDelivered { get; set; }
+        public bool IsInCity { get; set; }
+        public bool IsAccepted { get; set; }
+        public bool IsCourierOnRoad { get; set; }
+        public bool IsCourierArriveForTake { get; set; }
+        public bool IsCourierTaked { get; set; }
+        public bool IsInStorage { get; set; }
+        public bool IsOutStorage { get; set; }
+        public bool IsOnroadToForeignCity { get; set; }
+        public bool IsForeignCourierAccepted { get; set; }
+        public bool IsInForeignCity { get; set; }
+        public bool IsOnRoad { get; set; }
+        public bool IsCourierArrive { get; set; }
+        public bool IsDelivered { get; set; }
+        public bool IsCash { get; set; }
+        public bool IsFast { get; set; }
+        public bool IsPaid { get; set; }
     }
 }
 

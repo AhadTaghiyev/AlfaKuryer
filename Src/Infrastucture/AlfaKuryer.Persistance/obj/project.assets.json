@@ -1807,6 +1807,7 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v7.0",
         "dependencies": {
+          "AlfaKuryer.Domain": "1.0.0",
           "Hangfire.AspNetCore": "1.8.2",
           "Hangfire.Core": "1.8.2",
           "Hangfire.MySql.Core": "2.2.5"

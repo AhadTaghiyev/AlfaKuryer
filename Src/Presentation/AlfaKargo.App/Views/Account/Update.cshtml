@@ -1,0 +1,179 @@
+﻿@inject Microsoft.Extensions.Localization.IStringLocalizer<SharedResource> localizer
+@using AlfaKargo.App.ViewModels;
+@using AlfaKuryer.Application.Dtos.IdentityDtos;
+@using AlfaKuryer.Domain.Entities;
+
+@model UpdateVewModel<UpdateDto, ApplicationUser>
+@{
+    ViewData["Title"] = "Login";
+    int i = 0;
+}
+
+@section css{
+    <link rel="stylesheet" href="~/assets/css/panel.css">
+
+}
+<section id="main-part">
+
+    <div class="container">
+        <div class="navigation">
+            <div class="userBx">
+                <div class="imgBx">
+                    <img src="~/assets/imgs/Logo/alfa kuryer logo.png" alt="">
+                </div>
+                <p class="username">@Model.GetDto.UserName</p>
+            </div>
+            <div class="menuToggle"></div>
+            <ul class="menu">
+                <li><a asp-controller="account" asp-action="update"><i class="fa-solid fa-address-card"></i> Məlumatlar</a></li>
+                <li><a asp-controller="order" asp-action="index"><i class="fa-solid fa-box-open"></i> Bağlamalar</a></li>
+                <li><a asp-controller="order" asp-action="history"><i class="fa-solid fa-calendar-days"></i> Sifariş Tarixçəsi</a></li>
+                <li><a asp-controller="order" asp-action="createorder"><i class="fa-solid fa-dolly"></i> Sifariş ver</a></li>
+            </ul>
+        </div>
+
+        <div class="row d-flex justify-content-center">
+            <aside class="sidebar" class="col-4">
+
+                <div class="sidebar-header">
+
+                    <div class="account-image">
+                        <img src="~/assets/imgs/Logo/alfa kuryer logo.png" alt="">
+                    </div>
+                    <div class="account-info">
+                        <p><span>ID:</span> @Model.GetDto.UserName</p>
+                    </div>
+
+                </div>
+
+                <div class="sidebar-body">
+               
+                    <ul class="istifadeci">
+                        <li><a asp-controller="account" asp-action="update"><i class="fa-solid fa-address-card"></i> Məlumatlar</a></li>
+                        <li><a asp-controller="order" asp-action="index"><i class="fa-solid fa-box-open"></i> Bağlamalar</a></li>
+                        <li><a asp-controller="order" asp-action="history"><i class="fa-solid fa-calendar-days"></i> Sifariş Tarixçəsi</a></li>
+                        <li><a asp-controller="order" asp-action="createorder"><i class="fa-solid fa-dolly"></i> Sifariş ver</a></li>
+                    </ul> 
+                </div>
+            </aside>
+            <article class="content col-8">
+                <div class="row">
+
+                    <form method="post" class="form-account">
+                        <div class="container">
+                            <div class="row">
+                                <div class="name-surname col-12">
+                                    <div class="name col-5 ">
+                                        <label for="" class="form-label ">Ad</label>
+                                        <input disabled type="text" class="form-control" value="@Model.GetDto?.Name" placeholder="Ad">
+                                    </div>
+                                    <div class="surname col-5 ">
+                                        <label for="" class="form-label">Soyad</label>
+                                        <input disabled type="text" class="form-control" value="@Model.GetDto?.Name" placeholder="Surname">
+                                    </div>
+                                </div>
+                                @if (User.IsInRole("User"))
+                                {
+                                    <div class="birth-Citizen col-12">
+                                        <div class="birth col-5">
+                                            <label for="" class="form-label">Dogum günü</label>
+                                            <input type="datetime-local" asp-for="PostDto.Birthday" class="form-control" value="@Model.GetDto?.Birthday.ToString("yyyy-MM-ddT00:00")"
+                                                   placeholder="Ad günü">
+                                            <span class="text text-danger" asp-validation-for="PostDto.Birthday"></span>
+                                        </div>
+                                        <div class="citizen col-5">
+                                            <label for="" class="form-label">Vətəndaşıq</label>
+                                         
+                                            <select id="toDistrict" asp-for="PostDto.Citizen" class="form-select" aria-label="Default select example">
+                                                <option value="Aze">Azərbaycan</option>
+                                                <option value="Xarici">Xarici</option>
+
+                                            </select>
+                                        </div>
+                                    </div>
+                                }
+                                @if (User.IsInRole("User"))
+                                {
+                                    <div class="identification-voen col-12">
+                                        <div class="identification col-5">
+                                            <label for="" class="form-label">Fin nömrəsi</label>
+                                            <input type="text" class="form-control" asp-for="PostDto.Identification" value="@Model.GetDto?.Identification" placeholder="fin">
+                                        </div>
+                                        <div class="city col-5">
+                                            <label for="" class="form-label">Şəxsiyyət seriya nömrəsi</label>
+                                            <input type="text" class="form-control" asp-for="PostDto.DocumentNo" value="@Model.GetDto?.DocumentNo" placeholder="Seriya">
+                                        </div>
+                                    </div>
+                                }
+                                @if (User.IsInRole("Company"))
+                                {
+                                    <div class="voen col-12">
+                                        <label for="" class="form-label">Voen</label>
+                                        <input type="number" class="form-control" placeholder="Voen">
+                                    </div>
+                                }
+
+
+
+                                @if (!User.IsInRole("Courier"))
+                                {
+                                    <div id="inputs-container col-12">
+                                        <div id="inputRow" class="input-row  col-12">
+                                            <label for="">Address</label>
+                                            @if (Model.GetDto.Adresses.Count() == 0)
+                                            {
+                                                <div class="addresses col-12">
+
+                                                    <input type="text" asp-for="@Model.PostDto.Adress" class="input-field col-11 form-control" placeholder="Address" />
+                                                    <span class="plus-icon fa-solid fa-plus"></span>
+                                                </div>
+                                            }
+
+                                            @foreach (var item in Model.GetDto.Adresses)
+                                            {
+                                                i++;
+                                                <div class="addresses col-12">
+
+                                                    <input type="text" asp-for="@Model.PostDto.Adress" value="@item.UserAdres" class="input-field col-11 form-control" placeholder="Address" />
+                                                    @if (i > 1)
+                                                    {
+
+
+                                                        <span class="minus-icon fa-solid fa-minus" onclick="removeAddress(this)"></span>
+                                                    }
+                                                    else
+                                                    {
+                                                        <span class="plus-icon fa-solid fa-plus"></span>
+                                                    }
+
+                                                </div>
+                                            }
+
+                                        </div>
+                                    </div>
+                                }
+                                @if (!User.IsInRole("Courier"))
+                                {
+                                    <div class="edit-form col-12">
+                                        <button type="submit">Duzelis et</button>
+                                    </div>
+                                }
+
+                            </div>
+                        </div>
+
+                    </form>
+
+
+                </div>
+            </article>
+        </div>
+    </div>
+</section>
+
+@section Scripts{
+    <script src="~/assets/js/panel.js"></script>
+
+
+}
+

@@ -31,6 +31,17 @@ namespace AlfaKuryer.Application.Validations
                 }
 
             });
+            RuleFor(x => x).Custom((x, context) =>
+            {
+                Regex regex = new Regex(@"^(994)(51|50|55|77|10|70|60|90|99)\d{7}$");
+
+
+                if (!regex.IsMatch(x.PhoneCode+x.PhoneNumber))
+                {
+                    context.AddFailure("PhoneNumber", "Düzgün formatda telefon əlavə edin");
+                }
+
+            });
             RuleFor(x => x.Password).NotEmpty().NotNull().MinimumLength(8).WithMessage("minium uzunluq 8 olmalıdır");
 
             RuleFor(x => x).Custom((x, context) =>
@@ -60,6 +71,17 @@ namespace AlfaKuryer.Application.Validations
                     if (x.Ids == null || x.Ids.Count() == 0)
                     {
                         context.AddFailure("Rayon seçimi məcburidir");
+                    }
+                }
+            });
+
+            RuleFor(x => x).Custom((x, context) =>
+            {
+                if (x.Role == "User")
+                {
+                    if (x.Method != "email" && x.Method != "phone")
+                    {
+                        context.AddFailure("Bütün hüquqlar alfaex tərəfindən qorunur");
                     }
                 }
             });

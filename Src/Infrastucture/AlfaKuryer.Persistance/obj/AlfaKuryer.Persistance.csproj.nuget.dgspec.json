@@ -170,7 +170,11 @@
         "frameworks": {
           "net7.0": {
             "targetAlias": "net7.0",
-            "projectReferences": {}
+            "projectReferences": {
+              "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Core/AlfaKuryer.Domain/AlfaKuryer.Domain.csproj": {
+                "projectPath": "/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Core/AlfaKuryer.Domain/AlfaKuryer.Domain.csproj"
+              }
+            }
           }
         },
         "warningProperties": {
