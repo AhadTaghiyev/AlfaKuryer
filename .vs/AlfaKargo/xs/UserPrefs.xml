@@ -1,56 +1,71 @@
 ﻿<Properties StartupConfiguration="{739921F7-E59A-429C-A769-E0E5F831EB8B}|https">
-  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore>
+      <Breakpoint enabled="false" file="/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Infrastucture/AlfaKuryer.Persistance/Services/NewsService.cs" relfile="Src/Infrastucture/AlfaKuryer.Persistance/Services/NewsService.cs" line="116" column="1" />
+      <Breakpoint enabled="false" file="/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/areas/panel/Controllers/OrderController.cs" relfile="Src/Presentation/AlfaKargo.App/areas/panel/Controllers/OrderController.cs" line="42" column="1" />
+      <Breakpoint enabled="false" file="/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/areas/panel/Controllers/OrderController.cs" relfile="Src/Presentation/AlfaKargo.App/areas/panel/Controllers/OrderController.cs" line="43" column="1" />
+      <Breakpoint enabled="false" file="/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Infrastucture/AlfaKuryer.Persistance/Services/IdentityService.cs" relfile="Src/Infrastucture/AlfaKuryer.Persistance/Services/IdentityService.cs" line="170" column="1" />
+      <Breakpoint enabled="false" file="/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/areas/manage/Controllers/AccountController.cs" relfile="Src/Presentation/AlfaKargo.App/areas/manage/Controllers/AccountController.cs" line="110" column="1" />
+      <Breakpoint enabled="false" file="/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/Controllers/CourierController.cs" relfile="Src/Presentation/AlfaKargo.App/Controllers/CourierController.cs" line="39" column="1" />
+      <Breakpoint enabled="false" file="/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/Controllers/CourierController.cs" relfile="Src/Presentation/AlfaKargo.App/Controllers/CourierController.cs" line="49" column="1" />
+      <Breakpoint file="/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Infrastucture/AlfaKuryer.Persistance/Services/HelpService.cs" relfile="Src/Infrastucture/AlfaKuryer.Persistance/Services/HelpService.cs" line="60" column="1" />
+      <Breakpoint file="/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/Controllers/OrderController.cs" relfile="Src/Presentation/AlfaKargo.App/Controllers/OrderController.cs" line="128" column="1" />
+    </BreakpointStore>
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.ItemProperties.Src.Presentation.AlfaKargo.App PreferredExecutionTarget="/Applications/Google Chrome.app" />
   <MonoDevelop.Ide.Workbench ActiveDocument="Src/Presentation/AlfaKargo.App/appsettings.json">
     <Files>
-      <File FileName="Src/Infrastucture/AlfaKuryer.Persistance/Services/HelpService.cs" Line="100" Column="1" />
-      <File FileName="Src/Presentation/AlfaKargo.App/Views/Contact/Index.cshtml" Line="24" Column="20" />
-      <File FileName="Src/Presentation/AlfaKargo.App/Resources/SharedModelResource.az.resx" Line="18" Column="24" />
-      <File FileName="Src/Presentation/AlfaKargo.App/Resources/SharedResource.az.resx" Line="266" Column="22" />
-      <File FileName="Src/Presentation/AlfaKargo.App/Resources/SharedResource.en-US.resx" Line="268" Column="15" />
-      <File FileName="Src/Presentation/AlfaKargo.App/Resources/SharedResource.ru-RU.resx" Line="268" Column="15" />
-      <File FileName="Src/Presentation/AlfaKargo.App/Views/Shared/_Layout.cshtml" Line="98" Column="66" />
-      <File FileName="Src/Presentation/AlfaKargo.App/Views/Account/Login.cshtml" Line="130" Column="2" />
-      <File FileName="Src/Presentation/AlfaKargo.App/Views/Account/Register.cshtml" Line="158" Column="65" />
-      <File FileName="Src/Presentation/AlfaKargo.App/Views/Account/Update.cshtml" Line="89" Column="65" />
-      <File FileName="Src/Core/AlfaKuryer.Application/Dtos/IdentityDtos/UpdateDto.cs" Line="1" Column="1" />
-      <File FileName="Src/Presentation/AlfaKargo.App/Views/Home/Index.cshtml" Line="99" Column="49" />
-      <File FileName="Src/Presentation/AlfaKargo.App/Views/Rate/Index.cshtml" Line="41" Column="49" />
-      <File FileName="Src/Presentation/AlfaKargo.App/Controllers/HomeController.cs" Line="65" Column="6" />
-      <File FileName="Src/Presentation/AlfaKargo.App/wwwroot/assets/css/register.css" Line="177" Column="33" />
-      <File FileName="Src/Presentation/AlfaKargo.App/wwwroot/assets/css/panel.css" Line="787" Column="18" />
-      <File FileName="Src/Presentation/AlfaKargo.App/wwwroot/assets/css/shared.css" Line="572" Column="11" />
-      <File FileName="Src/Presentation/AlfaKargo.App/Views/Order/CreateOrder.cshtml" Line="142" Column="67" />
-      <File FileName="Src/Presentation/AlfaKargo.App/Views/Order/Index.cshtml" Line="32" Column="87" />
-      <File FileName="Src/Presentation/AlfaKargo.App/Controllers/OrderController.cs" Line="128" Column="1" />
-      <File FileName="Src/Presentation/AlfaKargo.App/Controllers/CourierController.cs" Line="83" Column="1" />
-      <File FileName="Src/Infrastucture/AlfaKuryer.Persistance/Services/OrderService.cs" Line="312" Column="40" />
-      <File FileName="Src/Presentation/AlfaKargo.App/Views/Order/TrackPublic.cshtml" Line="38" Column="23" />
-      <File FileName="Src/Presentation/AlfaKargo.App/areas/manage/Views/Account/Login.cshtml" Line="24" Column="70" />
-      <File FileName="Src/Presentation/AlfaKargo.App/areas/manage/Views/Account/Admins.cshtml" Line="1" Column="1" />
-      <File FileName="Src/Presentation/AlfaKargo.App/areas/manage/Controllers/AccountController.cs" Line="43" Column="51" />
-      <File FileName="Src/Presentation/AlfaKargo.App/areas/ViewModels/LoginVM.cs" Line="7" Column="39" />
-      <File FileName="Src/Infrastucture/AlfaKuryer.Persistance/Services/IdentityService.cs" Line="195" Column="1" />
-      <File FileName="Src/Core/AlfaKuryer.Application/Services/IdentityServices/IIdentityService.cs" Line="30" Column="3" />
-      <File FileName="Src/Presentation/AlfaKargo.App/areas/manage/Controllers/CityController.cs" Line="16" Column="1" />
-      <File FileName="Src/Presentation/AlfaKargo.App/areas/manage/Controllers/DistrictController.cs" Line="18" Column="44" />
-      <File FileName="Src/Presentation/AlfaKargo.App/areas/manage/Controllers/HelpController.cs" Line="17" Column="44" />
-      <File FileName="Src/Presentation/AlfaKargo.App/areas/manage/Controllers/HomeController.cs" Line="8" Column="48" />
-      <File FileName="Src/Presentation/AlfaKargo.App/areas/manage/Controllers/NewsController.cs" Line="17" Column="44" />
-      <File FileName="Src/Presentation/AlfaKargo.App/areas/manage/Controllers/OrderController.cs" Line="71" Column="52" />
-      <File FileName="Src/Presentation/AlfaKargo.App/areas/manage/Controllers/PriceController.cs" Line="17" Column="44" />
-      <File FileName="Src/Presentation/AlfaKargo.App/areas/manage/Controllers/RateController.cs" Line="20" Column="44" />
-      <File FileName="Src/Presentation/AlfaKargo.App/areas/manage/Controllers/SettingController.cs" Line="11" Column="44" />
-      <File FileName="Src/Presentation/AlfaKargo.App/areas/manage/Controllers/SlideController.cs" Line="19" Column="44" />
-      <File FileName="Src/Presentation/AlfaKargo.App/Controllers/AboutController.cs" Line="1" Column="1" />
-      <File FileName="Src/Presentation/AlfaKargo.App/Controllers/AccountController.cs" Line="19" Column="10" />
-      <File FileName="Src/Presentation/AlfaKargo.App/Program.cs" Line="101" Column="1" />
-      <File FileName="Src/Infrastucture/AlfaKuryer.Persistance/Context/AlfaKuryerDbContext.cs" Line="1" Column="1" />
-      <File FileName="Src/Infrastucture/AlfaKuryer.Persistance/ServiceRegisterations/ServiceRegisteration.cs" Line="99" Column="23" />
-      <File FileName="Src/Presentation/AlfaKargo.App/areas/manage/Views/Shared/_Layout.cshtml" Line="151" Column="25" />
-      <File FileName="Src/Presentation/AlfaKargo.App/areas/manage/Views/Order/Storage.cshtml" Line="19" Column="19" />
-      <File FileName="Src/Infrastucture/AlfaKuryer.Infrastucture/ExtornerlServices/MailService.cs" Line="18" Column="2" />
-      <File FileName="Src/Presentation/AlfaKargo.App/appsettings.json" Line="13" Column="23" />
+      <File FileName="Src/Infrastucture/AlfaKuryer.Persistance/Services/HelpService.cs" />
+      <File FileName="Src/Presentation/AlfaKargo.App/Views/Contact/Index.cshtml" />
+      <File FileName="Src/Presentation/AlfaKargo.App/Resources/SharedModelResource.az.resx" />
+      <File FileName="Src/Presentation/AlfaKargo.App/Resources/SharedResource.az.resx" />
+      <File FileName="Src/Presentation/AlfaKargo.App/Resources/SharedResource.en-US.resx" />
+      <File FileName="Src/Presentation/AlfaKargo.App/Resources/SharedResource.ru-RU.resx" />
+      <File FileName="Src/Presentation/AlfaKargo.App/Views/Shared/_Layout.cshtml" />
+      <File FileName="Src/Presentation/AlfaKargo.App/Views/Account/Login.cshtml" />
+      <File FileName="Src/Presentation/AlfaKargo.App/Views/Account/Register.cshtml" />
+      <File FileName="Src/Presentation/AlfaKargo.App/Views/Account/Update.cshtml" />
+      <File FileName="Src/Core/AlfaKuryer.Application/Dtos/IdentityDtos/UpdateDto.cs" />
+      <File FileName="Src/Presentation/AlfaKargo.App/Views/Home/Index.cshtml" />
+      <File FileName="Src/Presentation/AlfaKargo.App/Views/Rate/Index.cshtml" />
+      <File FileName="Src/Presentation/AlfaKargo.App/Controllers/HomeController.cs" />
+      <File FileName="Src/Presentation/AlfaKargo.App/wwwroot/assets/css/register.css" />
+      <File FileName="Src/Presentation/AlfaKargo.App/wwwroot/assets/css/panel.css" />
+      <File FileName="Src/Presentation/AlfaKargo.App/wwwroot/assets/css/shared.css" />
+      <File FileName="Src/Presentation/AlfaKargo.App/Views/Order/CreateOrder.cshtml" />
+      <File FileName="Src/Presentation/AlfaKargo.App/Views/Order/Index.cshtml" />
+      <File FileName="Src/Presentation/AlfaKargo.App/Controllers/OrderController.cs" />
+      <File FileName="Src/Presentation/AlfaKargo.App/Controllers/CourierController.cs" />
+      <File FileName="Src/Infrastucture/AlfaKuryer.Persistance/Services/OrderService.cs" />
+      <File FileName="Src/Presentation/AlfaKargo.App/Views/Order/TrackPublic.cshtml" />
+      <File FileName="Src/Presentation/AlfaKargo.App/areas/manage/Views/Account/Login.cshtml" />
+      <File FileName="Src/Presentation/AlfaKargo.App/areas/manage/Views/Account/Admins.cshtml" />
+      <File FileName="Src/Presentation/AlfaKargo.App/areas/manage/Controllers/AccountController.cs" />
+      <File FileName="Src/Presentation/AlfaKargo.App/areas/ViewModels/LoginVM.cs" />
+      <File FileName="Src/Infrastucture/AlfaKuryer.Persistance/Services/IdentityService.cs" />
+      <File FileName="Src/Core/AlfaKuryer.Application/Services/IdentityServices/IIdentityService.cs" />
+      <File FileName="Src/Presentation/AlfaKargo.App/areas/manage/Controllers/CityController.cs" />
+      <File FileName="Src/Presentation/AlfaKargo.App/areas/manage/Controllers/DistrictController.cs" />
+      <File FileName="Src/Presentation/AlfaKargo.App/areas/manage/Controllers/HelpController.cs" />
+      <File FileName="Src/Presentation/AlfaKargo.App/areas/manage/Controllers/HomeController.cs" />
+      <File FileName="Src/Presentation/AlfaKargo.App/areas/manage/Controllers/NewsController.cs" />
+      <File FileName="Src/Presentation/AlfaKargo.App/areas/manage/Controllers/OrderController.cs" />
+      <File FileName="Src/Presentation/AlfaKargo.App/areas/manage/Controllers/PriceController.cs" />
+      <File FileName="Src/Presentation/AlfaKargo.App/areas/manage/Controllers/RateController.cs" />
+      <File FileName="Src/Presentation/AlfaKargo.App/areas/manage/Controllers/SettingController.cs" />
+      <File FileName="Src/Presentation/AlfaKargo.App/areas/manage/Controllers/SlideController.cs" />
+      <File FileName="Src/Presentation/AlfaKargo.App/Controllers/AboutController.cs" />
+      <File FileName="Src/Presentation/AlfaKargo.App/Controllers/AccountController.cs" />
+      <File FileName="Src/Presentation/AlfaKargo.App/Program.cs" />
+      <File FileName="Src/Infrastucture/AlfaKuryer.Persistance/Context/AlfaKuryerDbContext.cs" />
+      <File FileName="Src/Infrastucture/AlfaKuryer.Persistance/ServiceRegisterations/ServiceRegisteration.cs" />
+      <File FileName="Src/Presentation/AlfaKargo.App/areas/manage/Views/Shared/_Layout.cshtml" />
+      <File FileName="Src/Presentation/AlfaKargo.App/areas/manage/Views/Order/Storage.cshtml" />
+      <File FileName="Src/Infrastucture/AlfaKuryer.Infrastucture/ExtornerlServices/MailService.cs" />
+      <File FileName="Src/Presentation/AlfaKargo.App/appsettings.json" Line="9" Column="14" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -100,19 +115,4 @@
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
-  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.ItemProperties.Src.Presentation.AlfaKargo.App PreferredExecutionTarget="/Applications/Google Chrome.app" />
-  <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore>
-      <Breakpoint enabled="false" file="/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Infrastucture/AlfaKuryer.Persistance/Services/NewsService.cs" relfile="Src/Infrastucture/AlfaKuryer.Persistance/Services/NewsService.cs" line="116" column="1" />
-      <Breakpoint enabled="false" file="/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/areas/panel/Controllers/OrderController.cs" relfile="Src/Presentation/AlfaKargo.App/areas/panel/Controllers/OrderController.cs" line="42" column="1" />
-      <Breakpoint enabled="false" file="/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/areas/panel/Controllers/OrderController.cs" relfile="Src/Presentation/AlfaKargo.App/areas/panel/Controllers/OrderController.cs" line="43" column="1" />
-      <Breakpoint enabled="false" file="/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Infrastucture/AlfaKuryer.Persistance/Services/IdentityService.cs" relfile="Src/Infrastucture/AlfaKuryer.Persistance/Services/IdentityService.cs" line="170" column="1" />
-      <Breakpoint enabled="false" file="/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/areas/manage/Controllers/AccountController.cs" relfile="Src/Presentation/AlfaKargo.App/areas/manage/Controllers/AccountController.cs" line="110" column="1" />
-      <Breakpoint enabled="false" file="/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/Controllers/CourierController.cs" relfile="Src/Presentation/AlfaKargo.App/Controllers/CourierController.cs" line="39" column="1" />
-      <Breakpoint enabled="false" file="/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/Controllers/CourierController.cs" relfile="Src/Presentation/AlfaKargo.App/Controllers/CourierController.cs" line="49" column="1" />
-      <Breakpoint file="/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Infrastucture/AlfaKuryer.Persistance/Services/HelpService.cs" relfile="Src/Infrastucture/AlfaKuryer.Persistance/Services/HelpService.cs" line="60" column="1" />
-      <Breakpoint file="/Users/ehedtagiyev/Desktop/AlfaKuryer-main/Src/Presentation/AlfaKargo.App/Controllers/OrderController.cs" relfile="Src/Presentation/AlfaKargo.App/Controllers/OrderController.cs" line="128" column="1" />
-    </BreakpointStore>
-  </MonoDevelop.Ide.DebuggingService.Breakpoints>
 </Properties>
