@@ -245,9 +245,7 @@
   font-size: 15px;
   font-weight: 600;
 }
-#delivery .rate-wrapper .rate .detail .normal .price::after {
-  content: "USD";
-}
+
 #delivery .rate-wrapper .rate .detail .liquid .title {
   font-size: 14px;
   color: #7b7b93;
@@ -257,9 +255,7 @@
   font-size: 15px;
   font-weight: 600;
 }
-#delivery .rate-wrapper .rate .detail .liquid .price::after {
-  content: "USD";
-}
+
 
 #news .news-left {
   margin-top: 5rem;

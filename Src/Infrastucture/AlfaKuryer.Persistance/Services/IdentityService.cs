@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Linq.Expressions;
 using AlfaKuryer.Application.Dtos.AdresDtos;
+using AlfaKuryer.Application.Dtos.CassirDtos;
 using AlfaKuryer.Application.Dtos.IdentityDtos;
 using AlfaKuryer.Application.Dtos.MessageDto;
+using AlfaKuryer.Application.Dtos.SalaryDtos;
 using AlfaKuryer.Application.Repositories.ReadRepositories;
 using AlfaKuryer.Application.Repositories.WriteRepositories;
 using AlfaKuryer.Application.Services.IdentityServices;
@@ -63,9 +65,13 @@ namespace AlfaKuryer.Persistance.Services
                 Email = dto.Email,
                 PhoneNumber=dto.PhoneCode+dto.PhoneNumber,
                 Role=dto.Role,
-                MessgaeBy=dto.Method=="email"?true:false
+                CourierSalaryForFast=dto.CourierFastleSalary,
+                CourierSalaryForSimple=dto.CourierSimpleSalary,
+                MessgaeBy=dto.Method=="email"?true:false,
+                CityId=dto.CityId
             };
-            if (user.Role == "Admin" || user.Role == "SuperAdmin" || user.Role == "Courier")
+
+            if (user.Role == "Admin" || user.Role == "SuperAdmin" || user.Role == "Courier"||user.Role=="Cassir")
             {
                 user.EmailConfirmed = true;
             }
@@ -184,9 +190,36 @@ namespace AlfaKuryer.Persistance.Services
             await _signManager.SignOutAsync();
         }
 
-        
 
-        public async Task<string> Signin(LoginDto dto)
+        public async Task<string> SigninAdmin(LoginDto dto)
+        {
+            if (string.IsNullOrWhiteSpace(dto.Email) || string.IsNullOrWhiteSpace(dto.Password))
+            {
+                return "Email və ya şifrə boş ola bilməz";
+            }
+            var user = await _userManager.FindByEmailAsync(dto.Email);
+            if (user == null || user.Status == false||user.Role=="User"||user.Role=="Company")
+            {
+                return "Email və ya şifrə yalnışdır";
+            }
+            if (!user.EmailConfirmed)
+            {
+                return "Hesabınız təsdiqləyin";
+            }
+
+            var result = await _signManager.PasswordSignInAsync(user, dto.Password, true, false);
+            if (!result.Succeeded)
+            {
+
+                if (!result.IsLockedOut)
+                {
+                    return "Email və ya şifrə yalnışdır";
+                }
+            }
+            return "";
+        }
+
+            public async Task<string> Signin(LoginDto dto)
         {
             if (string.IsNullOrWhiteSpace(dto.Email) || string.IsNullOrWhiteSpace(dto.Password))
             {
@@ -195,7 +228,7 @@ namespace AlfaKuryer.Persistance.Services
 
             var user=await _userManager.FindByEmailAsync(dto.Email);
 
-            if (user == null || user.Status == false)
+            if (user == null || user.Status == false||user.Role=="Admin"||user.Role=="SuperAdmin"||user.Role=="Cassir")
             {
                 return "Email və ya şifrə yalnışdır";
             }
@@ -317,7 +350,7 @@ namespace AlfaKuryer.Persistance.Services
                 throw new ItemNotFound("Item not foud");
 
             user.Birthday = dto.Birthday;
-            user.CompanyTin = user.CompanyTin;
+            user.CompanyTin = dto.CompanyTin;
             user.DocumentNo = dto.DocumentNo;
             user.Identification = dto.Identification;
             user.Citizen = dto.Citizen;
@@ -390,9 +423,48 @@ namespace AlfaKuryer.Persistance.Services
 
         }
 
-        
-        
-     
+        public async Task<IEnumerable<SalaryDto>> GetSalaries(string id)
+        {
+            var user = await _userManager.Users.Where(x => x.Id == id).Include(x => x.CourierBalances.OrderByDescending(x=>x.Id)).FirstOrDefaultAsync();
+
+            IEnumerable<SalaryDto> salaryDtos = new HashSet<SalaryDto>();
+
+            salaryDtos = user.CourierBalances.Select(x => new SalaryDto
+            {
+                ApplicationUser = user,
+                ApplicationUserId = user.Id,
+                CouruyerSalary = x.CouruyerSalary,
+                Id = x.Id,
+                OrderNumber=x.OrderNumber,
+                OrderPrice=x.OrderPrice,
+                IsFast=x.IsFast,
+                IsCash=x.IsCash,
+                PriceDate=x.CreatedAt
+              
+            }).ToList();
+            return salaryDtos;
+        }
+
+        public async Task<IEnumerable<CassirBalanceGetDto>> GetCassirBalance(string id)
+        {
+            var user = await _userManager.Users.Where(x => x.Id == id).Include(x => x.CassirBalances.OrderByDescending(x => x.Id)).FirstOrDefaultAsync();
+
+            IEnumerable<CassirBalanceGetDto> salaryDtos = new HashSet<CassirBalanceGetDto>();
+
+            salaryDtos = user.CassirBalances.Select(x => new CassirBalanceGetDto
+            {
+                ApplicationUser = user,
+                ApplicationUserId = user.Id,
+                Id = x.Id,
+                OrderPrice = x.OrderPrice,
+                IsFast = x.IsFast,
+                IsCash = x.IsCash,
+                CreatedDate = x.CreatedAt,
+                OdrerNumber=x.OrderNumber
+
+            }).ToList();
+            return salaryDtos;
+        }
     }
 }
 

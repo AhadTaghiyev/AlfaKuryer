@@ -76,7 +76,7 @@
                                 {
                                     <div class="birth-Citizen col-12">
                                         <div class="birth col-5">
-                                            <label for="" class="form-label">Dogum günü</label>
+                                            <label for="" class="form-label">Doğum günü</label>
                                             <input type="datetime-local" asp-for="PostDto.Birthday" class="form-control" value="@Model.GetDto?.Birthday.ToString("yyyy-MM-ddT00:00")"
                                                    placeholder="Ad günü">
                                             <span class="text text-danger" asp-validation-for="PostDto.Birthday"></span>
@@ -86,7 +86,7 @@
                                          
                                             <select id="toDistrict" asp-for="PostDto.Citizen" class="form-select" aria-label="Default select example">
                                                 <option value="Aze">Azərbaycan</option>
-                                                <option value="Xarici">Xarici</option>
+                                                <option value="Foreign">Xarici</option>
 
                                             </select>
                                         </div>
@@ -109,7 +109,7 @@
                                 {
                                     <div class="voen col-12">
                                         <label for="" class="form-label">Voen</label>
-                                        <input type="number" class="form-control" placeholder="Voen">
+                                        <input asp-for="PostDto.CompanyTin" value="@Model.GetDto.CompanyTin" class="form-control" placeholder="Voen">
                                     </div>
                                 }
 
@@ -155,7 +155,7 @@
                                 @if (!User.IsInRole("Courier"))
                                 {
                                     <div class="edit-form col-12">
-                                        <button type="submit">Duzelis et</button>
+                                        <button type="submit">Duzəliş et</button>
                                     </div>
                                 }
 

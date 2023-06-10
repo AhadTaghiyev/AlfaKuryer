@@ -43,7 +43,14 @@ namespace AlfaKargo.App.Controllers
 
             return Redirect(Request.Headers["Referer"].ToString());
         }
+        public IActionResult ChangeLanguageJson(string culture)
+        {
+            Response.Cookies.Append(CookieRequestCultureProvider.DefaultCookieName,
+                CookieRequestCultureProvider.MakeCookieValue(new RequestCulture(culture)),
+                new CookieOptions() { Expires = DateTimeOffset.UtcNow.AddYears(1) });
 
+            return Json("ok");
+        }
         public IActionResult Privacy()
         {
             return View();
@@ -54,5 +61,7 @@ namespace AlfaKargo.App.Controllers
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
+
+     
     }
 }

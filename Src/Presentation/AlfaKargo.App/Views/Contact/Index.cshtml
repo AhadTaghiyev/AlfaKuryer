@@ -21,9 +21,7 @@
         <div class="row">
             <div class="col-lg-5 col-md-12 info">
                 <div class="info-title">
-                    <b>
-                        @localizer["Contact Us"]
-                    </b>
+                   
                 </div>
 
                 <div class="socials d-flex col-11">
@@ -38,41 +36,47 @@
                             <span class="iconify" data-icon="akar-icons:youtube-fill" data-height="20" style="color: white;"></span>
                         </i>
                     </a>
+                    <a href="https://wa.me/@Model?.PhoneNumber1" class="social">
+                        <i>
+                            <span class="iconify" data-icon="akar-icons:whatsapp-fill" data-height="20" style="color: white;"></span>
+                        </i>
+                    </a>
+
+
                 </div>
             </div>
             <div class="col-lg-7 col-md-12 form">
                 <div class="form-title">
-                    <b>Sualınız var? Bizə yazın!</b>
                 </div>
                 <div class="form-content">
                     <form id="form">
-                        <div class="name-surname col-12 d-flex">
-                            <div class="col-6 name form-group">
-                                <label for="FullName">Ad Soyad</label>
+                        <div class="name-surname col-12 ">
+                            <div class="col-12 name form-group">
+                                <label for="FullName">@localizer["FullName"]</label>
                                 <input type="text" name="FullName" id="FullName">
                                 <span class="name-err d-flex justify-content-start">Ad boş qoyula bilməz</span>
                             </div>
-                            <div class="col-6 name form-group">
-                                <label for="Subject">Basliq</label>
+                            <div class="col-12 name form-group">
+                                <label for="Subject">@localizer["Title"]</label>
                                 <input type="text" name="Subject" id="Subject">
                                 <span class="name-err d-flex justify-content-start">Ad boş qoyula bilməz</span>
                             </div>
                         </div>
 
-                        <div class="costumer-contacts form-group col-12 d-flex">
-                            <div class="col-6 tel form-group">
-                                <label for="PhoneNumber">Telefon</label>
+                        <div class="costumer-contacts form-group col-12 ">
+                            <div class="col-12  tel form-group">
+                                <label for="PhoneNumber">@localizer["PhoneNumber"]</label>
                                 <input type="tel" name="PhoneNumber" id="PhoneNumber">
                                 <span class="tel-err d-flex justify-content-start">Telefon boş qoyula bilməz</span>
                             </div>
-                            <div class="col-6 email form-group">
-                                <label for="Email">Email</label>
+                            <div class="col-12 email form-group">
+                                <label for="Email">@localizer["Email"]</label>
                                 <input type="Email" name="Email" id="Email">
                                 <span class="Email d-flex justify-content-start">Email boş qoyula bilməz</span>
                             </div>
                         </div>
                         <div class="col-12 message form-group">
-                            <label for="Content">Mesaj</label>
+                            <label for="Content">@localizer["Message"]</label>
                             <textarea name="Content" id="text-Content"></textarea>
                             <span class="msg-err d-flex justify-content-start">Mesaj boş qoyula bilməz</span>
                         </div>
@@ -88,6 +92,7 @@
         </div>
     </div>
 </section>
+
 <section id="maps">
 </section>
 @section Scripts{

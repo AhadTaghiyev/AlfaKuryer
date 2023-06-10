@@ -47,7 +47,7 @@ namespace AlfaKuryer.Persistance.Services
 
             IEnumerable<RateGetDto> getDtos = new HashSet<RateGetDto>();
 
-            getDtos = query.Select(x=>new RateGetDto { From=x.From,To=x.To,Price=x.Price,Id=x.Id,}).ToHashSet<RateGetDto>();
+            getDtos = query.Select(x=>new RateGetDto { From=x.From,To=x.To,Price=x.Price,Id=x.Id,DeliveryMethod=x.DeliveryMethod}).ToHashSet<RateGetDto>();
             return getDtos;
         }
 
@@ -71,6 +71,7 @@ namespace AlfaKuryer.Persistance.Services
             rate.From = postDto.From;
             rate.To = postDto.To;
             rate.Price = postDto.Price;
+            rate.DeliveryMethod = postDto.DeliveryMethod;
             await _rateWriteRepository.UpdateAsync(rate);
             await _rateWriteRepository.SaveAsync();
         }

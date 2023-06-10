@@ -36,6 +36,9 @@ namespace AlfaKuryer.Application.Dtos.OrderDtos
         public DateTime CreatedDate { get; set; }
         public bool IsFast { get; set; }
         public bool IsCash { get; set; }
+        public int PageCount { get; set; }
+        public string? FromFullName { get; set; }
+        public string? FromPhoneNumber { get; set; }
 
     }
 }

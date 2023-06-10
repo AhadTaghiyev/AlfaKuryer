@@ -29,9 +29,10 @@ namespace AlfaKargo.App.Controllers
         {
             return View(await _orderService.GetOrderForAccept());
         }
-        public async Task<IActionResult> History()
+        public async Task<IActionResult> History(int page=1)
         {
-            return View(await _orderService.GetAllByCourierHistory());
+            ViewBag.CurrentPage = page;
+            return View(await _orderService.GetAllByCourierHistory(page));
         }
     
         public async Task<IActionResult> AcceptOrder(int id)
@@ -79,10 +80,6 @@ namespace AlfaKargo.App.Controllers
             await _orderService.Delivered(id);
             return RedirectToAction(nameof(Index));
         }
-
-
-
-
     }
 }
 

@@ -86,14 +86,14 @@
                             <div class="form-group col-5 d-flex flex-column">
 
                                 <select asp-for="Method" required>
-                                    <option value="email">Bildirişləri email ilə al</option>
-                                    <option value="phone">Bildirişləri telefon ilə al</option>
+                                    <option value="email">@localizer["Receive notifications by email"]</option>
+                                    <option value="phone">@localizer["Receive notifications by phone"]</option>
                                 </select>
                             </div>
 
                         </div>
                         <div class="form-comp">
-                            <div class="form-group col-5 d-flex align-items-center gap-2">
+                            <div class="form-group col-10 d-flex align-items-center gap-2">
                                 <input type="checkbox" asp-for="IsAgree" required>
                                 <div class="text">
                                     <a asp-controller="about" asp-action="agreement" style="color: #15b2ec;">
@@ -102,12 +102,6 @@
                                     <span style="font-size: 13px">  @localizer["I agree with"]</span>
                                     <span class="text text-danger" asp-validation-for="IsAgree"></span>
                                 </div>
-                            </div>
-                            <div class="form-group col-5 d-flex">
-                                <a style="color: #EF3340;" href="https://youtu.be/mn-va-DWDmk" target="_blank" class="d-flex align-items-center">
-                                    <i><span class="iconify" data-icon="octicon:video-16" data-height="16"></span></i>
-                                    <span style="margin-left: .5rem;">@localizer["Follow the registration process"]</span>
-                                </a>
                             </div>
                         </div>
                         <div class="btn-wrap d-flex justify-content-center">
@@ -161,7 +155,7 @@
                             </div>
                         </div>
                         <div class="form-comp">
-                            <div class="form-group col-5 d-flex align-items-center gap-2">
+                            <div class="form-group col-10 d-flex  align-items-center gap-2">
                                 <input type="checkbox" asp-for="IsAgree" required>
                                 <div class="text">
                                     <a asp-controller="about" asp-action="agreement" style="color: #15b2ec;">
@@ -169,12 +163,6 @@
                                     </a>
                                     <span style="font-size: 13px">  @localizer["I agree with"]</span>
                                 </div>
-                            </div>
-                            <div class="form-group col-5 d-flex">
-                                <a style="color: #EF3340;" href="https://youtu.be/mn-va-DWDmk" target="_blank" class="d-flex align-items-center">
-                                    <i><span class="iconify" data-icon="octicon:video-16" data-height="16"></span></i>
-                                    <span style="margin-left: .5rem;">@localizer["Follow the registration process"]</span>
-                                </a>
                             </div>
                         </div>
                         <div class="btn-wrap d-flex justify-content-center">

@@ -1,5 +1,5 @@
 ﻿@using AlfaKuryer.Application.Dtos.OrderDtos;
-@model OrderPostDto
+@model OrderPostDtoStorage
 <div class="card">
     <div class="card-header">
         Yeni sifariş
@@ -11,38 +11,15 @@
 
                 <form asp-action="Create" class="row">
                     <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-                    <div class="form-group col-md-6">
-                        <label class="control-label">Hansı Şəhərdən</label>
-                        <select asp-for="OrderFromCityId" class="city form-control" onchange="handleCityChange(this, 'district')">
-                            @foreach (var item in ViewBag.Cities)
-                            {
-                                <option value="@item.Id">
-                                    @item.Name
-                                </option>
-                            }
-                        </select>
-                        <span asp-validation-for="OrderFromCityId"></span>
-                    </div>
-                    <div class="form-group col-md-6">
-                        <label class="control-label">Hansı Rayondan</label>
-                        <select asp-for="OrderFromDistrictId" class="district form-control" onchange="handleDistrictChange(this, 'city')">
-                            <option value="0">Rayon</option>
-                            @foreach (var item in ViewBag.Districts)
-                            {
-                                <option data-id="@item.CityId" value="@item.Id">
-                                    @item.Name
-                                </option>
-                            }
-                        </select>
-                        <span asp-validation-for="OrderToDistrictId"></span>
-                    </div>
-
-
-
                     <div class="form-group  col-md-6">
-                        <label class="control-label">Haradan Adress mənzil</label>
-                        <input asp-for="FromAdress" class="form-control" />
-                        <span asp-validation-for="FromAdress"></span>
+                        <label class="control-label">Sifariş verən ad soyad </label>
+                        <input asp-for="FromFullName" class="form-control" />
+                        <span asp-validation-for="FromFullName"></span>
+                    </div>
+                    <div class="form-group  col-md-6">
+                        <label class="control-label">Sifariş verən telefon nömrəsi</label>
+                        <input asp-for="FromPhoneNumber" class="form-control" />
+                        <span asp-validation-for="FromPhoneNumber"></span>
                     </div>
                     <div class="form-group col-md-6">
                         <label class="control-label">Hansı Şəhərə</label>
@@ -95,6 +72,20 @@
                         <label class="control-label">Bağlama çəkisi</label>
                         <input asp-for="Kq" class="form-control" />
                         <span asp-validation-for="Kq"></span>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label class="control-label">Ödəniş üsulu</label>
+                        <select asp-for="Payment" class="cityTo form-control" onchange="handleCityChange(this, 'districtTo')">
+
+                            <option value="Card">
+                                Kart
+                            </option>
+                            <option value="Cash">
+                                Nəğd
+                            </option>
+
+                        </select>
+                        <span asp-validation-for="OrderToCityId"></span>
                     </div>
 
                     <div class="col-md-12 mt-3">

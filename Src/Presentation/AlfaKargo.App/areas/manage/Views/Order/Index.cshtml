@@ -5,25 +5,25 @@
 }
 
 
-<style>
-    th, td {
-        font-size: 9px;
-    }
-</style>
 
 <div class="card">
     <div class="card-header">
-        Sifarişlər
+        <input type="text" id="searchInput" placeholder="Axtar" onkeyup="searchTable()">
     </div>
     <div class="card-body">
-
         <div class="text-center mb-3 mt-3">
-            <a asp-action="Create" class="btn btn-success">
-                <i class="fas fa-plus"></i> Yenisini əlavə et
-            </a>
+            <label for="start">Başlangıç Tarihi:</label>
+            <input type="date" id="start" name="start">
+            <label for="end">Bitiş Tarihi:</label>
+            <input type="date" id="end" name="end">
+            <button onclick="filterData()">Filtrele</button>
         </div>
-
-
+        <div id="summary">
+            <p id="totalPrice">Toplam Sifariş Miqdarı: </p>
+            <p id="totalCash">Toplam nəğd Ödəmə: </p>
+            <p id="totalCard">Toplam Kart Ödəmə: </p>
+            <p id="totalRow">Toplam Sifariş Sayı: </p>
+        </div>
         <table class="table" data-emrah="products">
             <thead>
                 <tr>
@@ -33,7 +33,6 @@
                     <th>
                         Qiymət
                     </th>
-
                     <th>
                         Hardan
                     </th>
@@ -68,14 +67,26 @@
                         <td>
                             @item.OrderToCity?.Name
                         </td>
-                        <td>
-                            @item.Customer?.Name @item.Customer.Surname
-                        </td>
+                        @if (item.Customer != null)
+                        {
+                            <td>
+                                @item.Customer?.Name @item.Customer.Surname
+                            </td>
+                        }
+                        else
+                        {
+                            <td>
+                                @item.ToFullName
+                            </td>
+                        }
                         <td>
                             @item.ToFullName
                         </td>
                         <td>
-                            @item.CreatedDate.ToString("dd:MM:yyyy:hh:mm");
+                            @item.CreatedDate.ToString("MM/dd/yyyy")
+                        </td>
+                        <td style="display:none">
+                            @(item.IsCash ? "Nəğd" : "Kart")
                         </td>
                         <td>
                             <a asp-action="detail" asp-route-id="@item.Id">Ətraflı</a>
@@ -84,12 +95,97 @@
                 }
             </tbody>
         </table>
-
-
-
     </div>
 </div>
 
-<script>const active = document.querySelector(".active");
-    console.log(active);</script>
+<script>function searchTable() {
+        try {
+            let input = document.getElementById("searchInput");
+            let filter = input.value.toUpperCase();
+            let tables = document.querySelectorAll("table[data-emrah='products']");
 
+            tables.forEach(function (table) {
+                let rows = table.getElementsByTagName("tr");
+
+                for (var i = 0; i < rows.length; i++) {
+                    let cells = rows[i].getElementsByTagName("td");
+
+                    let rowMatch = false;
+
+                    for (var j = 0; j < cells.length; j++) {
+                        let cell = cells[j];
+                        let value = cell.textContent || cell.innerText;
+
+                        if (value.toUpperCase().indexOf(filter) > -1) {
+                            rowMatch = true;
+                            break;
+                        }
+                    }
+
+                    if (rowMatch) {
+                        rows[i].style.display = "";
+                    } else {
+                        rows[i].style.display = "none";
+                    }
+                }
+            });
+        } catch (error) {
+            console.error("An error occurred in searchTable function:", error);
+        }
+    }
+
+    function filterData() {
+        
+            let totalPrice = 0;
+            var totalCash = 0;
+            var totalCard = 0;
+            var rowCount = 0;
+            let startInput = document.getElementById("start");
+            let endInput = document.getElementById("end");
+            let start = new Date(startInput.value);
+            let end = new Date(endInput.value);
+
+            let tables = document.querySelectorAll("table[data-emrah='products']");
+
+            tables.forEach(function (table) {
+                let rows = table.querySelectorAll("tbody tr");
+
+                for (let i = 0; i < rows.length; i++) {
+                    let dateCell = rows[i].querySelector("td:nth-child(7)");
+
+                    var orderPriceCell = rows[i].querySelector("td:nth-child(2)");
+                    var paymentMethodCell = rows[i].querySelector("td:nth-child(8)");
+
+                    var orderPrice = parseFloat(orderPriceCell.textContent);
+                    var paymentMethod = paymentMethodCell.textContent.trim();
+
+                    if (paymentMethod === "Nəğd") {
+                        totalCash += orderPrice;
+                    } else if (paymentMethod === "Kart") {
+                        totalCard += orderPrice;
+                    }
+                    totalPrice += orderPrice;
+
+                    let date = new Date(dateCell.textContent);
+
+                    if ((date >= start && date <= end) || date.toDateString() === start.toDateString()) {
+                        rows[i].style.display = "table-row";
+                        rowCount++;
+                    } else {
+                        rows[i].style.display = "none";
+                    }
+                }
+            });
+
+        var totalRowElement = document.getElementById("totalRow");
+        totalRowElement.textContent = "Toplam Satır Sayısı: " + rowCount;
+
+        var totalPriceElement = document.getElementById("totalPrice");
+        var totalCashElement = document.getElementById("totalCash");
+        var totalCardElement = document.getElementById("totalCard");
+
+        totalPriceElement.textContent = "Toplam Sipariş Miqdarı: " + totalPrice.toFixed(2) + " AZN";
+        totalCashElement.textContent = "Toplam Nəğd Ödəmə: " + totalCash.toFixed(2) + " AZN";
+        totalCardElement.textContent = "Toplam Kart Ödəmə: " + totalCard.toFixed(2) + " AZN";
+        
+    }</script>

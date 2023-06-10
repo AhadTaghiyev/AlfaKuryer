@@ -763,6 +763,33 @@ form {
     }
 }
 
+
+
+@media only screen and (max-width: 767px) {
+    .form-account input {
+        padding: 2px;
+        font-size: 9px;
+    }
+    .odenis-usulu p {
+        font-size: 9px;
+    }
+    #toDistrict {
+        font-size: 10px;
+        padding: 0px !important;
+    }
+    .edit-form button {
+        padding: 3px;
+        font-size: 9px;
+    }
+    .form-select {
+        padding: 0px !important;
+    }
+    .send button  {
+        padding: 3px;
+        font-size: 9px;
+    }
+}
+
 @media only screen and (max-width: 767px) {
     .step-progress {
         margin-right: 70px;
@@ -786,7 +813,7 @@ form {
         font-size: 10px;
         padding-left: 2px;
     }
-
+  
     .send button {
         font-size: 12px;
     }

@@ -17,8 +17,11 @@ namespace AlfaKuryer.Application.Dtos.IdentityDtos
 		public int? CityId { get; set; }
 		public List<int>? Ids { get; set; }
 		public string? Method { get; set; }
+		public double? CourierSimpleSalary { get; set; }
+        public double? CourierFastleSalary { get; set; }
 
-	
-	}
+
+
+    }
 }
 

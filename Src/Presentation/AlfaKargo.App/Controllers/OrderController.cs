@@ -15,7 +15,6 @@ using Microsoft.AspNetCore.Mvc.ModelBinding;
 
 namespace AlfaKargo.App.Controllers
 {
-    [Authorize(Roles ="Company,User")]
     public class OrderController : Controller
     {
         private readonly IOrderService _orderService;
@@ -31,10 +30,13 @@ namespace AlfaKargo.App.Controllers
             _identityService = identityService;
         }
 
+        [Authorize(Roles = "Company,User")]
         public async Task<IActionResult> Index()
         {
             return View(await _orderService.GetAllByCustomer());
         }
+
+        [Authorize(Roles = "Company,User")]
         public async Task<IActionResult> PayConfirm(int id)
         {
             await _orderService.Payed(id);
@@ -42,19 +44,27 @@ namespace AlfaKargo.App.Controllers
             return RedirectToAction(nameof(Index));
         }
 
+        [Authorize(Roles = "Company,User")]
         public async Task<IActionResult> Detail(int id)
         {
             return View(await _orderService.GetOrderById(id));
         }
-        public async Task<IActionResult> History()
+
+        [Authorize(Roles = "Company,User")]
+        public async Task<IActionResult> History(int page=1)
         {
-            return View(await _orderService.GetAllByCustomerHistory());
+            ViewBag.CurrentPage = page;
+            return View(await _orderService.GetAllByCustomerHistory(page));
         }
+
+        [Authorize(Roles = "Company,User")]
 
         public async Task<IActionResult> Track(int id)
         {
             return View(await _orderService.GetOrderById(id));
         }
+
+        [Authorize(Roles = "Company,User")]
         public async Task<IActionResult> CreateOrder()
         {
             ViewBag.Cities = await _cityService.GetAll();
@@ -62,6 +72,8 @@ namespace AlfaKargo.App.Controllers
             ViewBag.Adresses = await _identityService.GetAdress();
             return View();
         }
+
+        [Authorize(Roles = "Company,User")]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> CreateOrder(OrderPostDto postDto)
@@ -111,6 +123,12 @@ namespace AlfaKargo.App.Controllers
             TempData["verify"] = "verify";
             return RedirectToAction(nameof(Index));
         }
+
+        public async Task<IActionResult> TrackPublic(int id)
+        {
+            return View(await _orderService.GetOrderById(id));
+        }
+
     }
 }
 

@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Linq.Expressions;
 using AlfaKuryer.Application.Dtos.AdresDtos;
+using AlfaKuryer.Application.Dtos.CassirDtos;
 using AlfaKuryer.Application.Dtos.IdentityDtos;
+using AlfaKuryer.Application.Dtos.SalaryDtos;
 using AlfaKuryer.Domain.Entities;
 
 namespace AlfaKuryer.Application.Services.IdentityServices
@@ -23,6 +25,9 @@ namespace AlfaKuryer.Application.Services.IdentityServices
         public Task<UserGetDto> Get(string id);
 		public  Task<string> Update(UpdateDto dto);
 		public  Task<IEnumerable<AdressGetDto>> GetAdress();
+		public Task<IEnumerable<SalaryDto>> GetSalaries(string id);
+		public  Task<IEnumerable<CassirBalanceGetDto>> GetCassirBalance(string id);
+		public  Task<string> SigninAdmin(LoginDto dto);
     }
 }
 

@@ -106,15 +106,15 @@ namespace AlfaKuryer.Persistance.Services
             if (help == null)
                 throw new ItemNotFound("Help not found");
 
-            HelpGetManageDto helpGetManageDto = new HelpGetManageDto
-            {
-                DescriptionAz = help.HelpLanguages.FirstOrDefault(x=>x.Code=="az-AZ").Description,
-                DescriptionEn = help.HelpLanguages.FirstOrDefault(x=>x.Code=="en-US").Description,
-                DescriptionRu = help.HelpLanguages.FirstOrDefault(x=>x.Code=="ru-RU").Description,
-                TitleAz = help.HelpLanguages.FirstOrDefault(x => x.Code == "az-AZ").Title,
-                TitleEn = help.HelpLanguages.FirstOrDefault(x => x.Code == "en-Us").Title,
-                TitleRu = help.HelpLanguages.FirstOrDefault(x => x.Code == "ru-RU").Title,
-            };
+            HelpGetManageDto helpGetManageDto = new HelpGetManageDto();
+
+            helpGetManageDto.DescriptionAz = help.HelpLanguages?.FirstOrDefault(x => x.Code == "az-AZ")?.Description;
+            helpGetManageDto.DescriptionEn = help.HelpLanguages?.FirstOrDefault(x => x.Code == "en-US")?.Description;
+            helpGetManageDto.DescriptionRu = help.HelpLanguages?.FirstOrDefault(x => x.Code == "ru-RU")?.Description;
+            helpGetManageDto.TitleAz = help.HelpLanguages?.FirstOrDefault(x => x.Code == "az-AZ")?.Title;
+            helpGetManageDto.TitleEn = help.HelpLanguages?.FirstOrDefault(x => x.Code == "en-Us")?.Title;
+            helpGetManageDto.TitleRu = help.HelpLanguages?.FirstOrDefault(x => x.Code == "ru-RU")?.Title;
+            
             return helpGetManageDto;
         }
 

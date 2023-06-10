@@ -22,7 +22,12 @@
                         Email
                     </th>
 
-                    <th></th>
+                    <th>
+                        Sifarişlərin gör
+                    </th>
+                    <th>
+                        
+                    </th>
                 </tr>
             </thead>
             <tbody>
@@ -34,6 +39,9 @@
                         </td>
                         <td>
                             @item.Email
+                        </td>
+                        <td>
+                            <a asp-controller="order" asp-action="CopmanyOrders" asp-route-UserId="@item.Id">Sifarişi tam gör</a>
                         </td>
 
                         <td>

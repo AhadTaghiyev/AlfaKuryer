@@ -87,7 +87,18 @@
                                         <td>@item.Price Azn</td>
                                         <td>@item.OrderFromCity?.Name</td>
                                         <td>@item.OrderToCity?.Name</td>
-                                        <td>@item.Customer.Name</td>
+                                        @if (item.Customer != null)
+                                        {
+                                            <td>
+                                                @item.Customer?.Name
+                                            </td>
+                                        }
+                                        else
+                                        {
+                                            <td>
+                                                @item.ToFullName
+                                            </td>
+                                        }
                                         <td>@item.ToFullName</td>
                                         <td><a asp-controller="order" asp-action="track" asp-route-id="@item.Id">İzlə</a></td>
                                         <td><a asp-controller="order" asp-action="detail" asp-route-id="@item.Id">Ətraflı</a></td>

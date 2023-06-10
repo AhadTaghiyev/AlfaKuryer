@@ -1,0 +1,151 @@
+﻿@using AlfaKuryer.Application.Dtos.SalaryDtos;
+@model IEnumerable<SalaryDto>
+@{
+    ViewData["Title"] = "Index";
+}
+
+<div class="card">
+    <div class="card-header">
+        Kuryerlər
+    </div>
+    <div class="card-body">
+
+        <div class="text-center mb-3 mt-3">
+            <label for="start">Başlangıç Tarixi:</label>
+            <input type="date" id="start" name="start">
+            <label for="end">Bitiş Tarixi:</label>
+            <input type="date" id="end" name="end">
+            <button onclick="filterData()">Axtar</button>
+        </div>
+        <div id="summary">
+            <p id="totalPrice">Toplam Sifariş Miqdarı: </p>
+            <p id="totalCourierSalary">Toplam Kuryer Maaşı: </p>
+            <p id="totalCash">Toplam nəğd Ödəmə: </p>
+            <p id="totalCard">Toplam Kart Ödəmə: </p>
+            <p id="totalRow">Toplam Sifariş Sayı: </p>
+        </div>
+        <table class="table" data-emrah="partners">
+            <thead>
+                <tr>
+                    <th>
+                        Kuryerin Adı
+                    </th>
+                    <th>
+                        Sifarişin nömrəsi
+                    </th>
+                    <th>
+                        Sifariş qiyməti
+                    </th>
+                    <th>
+                        Kuryerin sifariş üçün maaşı
+                    </th>
+                    <th>
+                        Sifariş üsulu
+                    </th>
+                    <th>
+                        Ödəniş üsulu
+                    </th>
+                    <th>
+                        Bağlamanı təhvil aldığı tarix
+                    </th>
+                    <th>
+                        Sifarişi tam gör
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr data-id="@item.Id">
+                        <td>
+                            @item.ApplicationUser.Name
+                        </td>
+                        <td>
+                            @item.OrderNumber
+                        </td>
+                        <td>
+                            @item.OrderPrice AZN
+                        </td>
+                        <td>
+                            @item.CouruyerSalary AZN
+                        </td>
+                        <td>
+                            @(item.IsFast ? "Sürətli" : "Sadə")
+                        </td>
+                        <td>
+                            @(item.IsCash ? "Nəğd" : "Kart")
+                        </td>
+                        <td style="display:none">
+                            @item.PriceDate.ToString("MM/dd/yyyy")
+                        </td>
+                        <td>
+                            @item.PriceDate.ToString("dd/MM/yyyy/HH/mm")
+                        </td>
+                        <td>
+                            <a asp-controller="order" asp-action="detail" asp-route-id="@item.OrderNumber">Sifarişi tam gör</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<script>function filterData() {
+        var startInput = document.getElementById("start");
+        var endInput = document.getElementById("end");
+        var start = new Date(startInput.value);
+        var end = new Date(endInput.value);
+
+        var rows = document.querySelectorAll("table[data-emrah='partners'] tbody tr");
+
+        var totalPrice = 0;
+        var totalCourierSalary = 0;
+        var totalCash = 0;
+        var totalCard = 0;
+        var rowCount = 0;
+
+        for (var i = 0; i < rows.length; i++) {
+            var dateCell = rows[i].querySelector("td:nth-child(7)");
+            var orderPriceCell = rows[i].querySelector("td:nth-child(3)");
+            var courierSalaryCell = rows[i].querySelector("td:nth-child(4)");
+            var paymentMethodCell = rows[i].querySelector("td:nth-child(6)");
+
+            var date = new Date(dateCell.textContent);
+            var orderPrice = parseFloat(orderPriceCell.textContent);
+            var courierSalary = parseFloat(courierSalaryCell.textContent);
+            var paymentMethod = paymentMethodCell.textContent.trim();
+
+            totalPrice += orderPrice;
+            totalCourierSalary += courierSalary;
+
+            if (paymentMethod === "Nəğd") {
+                totalCash += orderPrice;
+            } else if (paymentMethod === "Kart") {
+                totalCard += orderPrice;
+            }
+
+            // Gün başından itibaren olan zaman aralığında kontrol yapın
+            start.setHours(0, 0, 0, 0);
+
+            if (date < start || date > end) {
+                rows[i].style.display = "none";
+            } else {
+                rows[i].style.display = "table-row";
+                rowCount++;
+            }
+        }
+
+        var totalRowElement = document.getElementById("totalRow");
+        totalRowElement.textContent = "Toplam Satır Sayısı: " + rowCount;
+
+        var totalPriceElement = document.getElementById("totalPrice");
+        var totalCourierSalaryElement = document.getElementById("totalCourierSalary");
+        var totalCashElement = document.getElementById("totalCash");
+        var totalCardElement = document.getElementById("totalCard");
+
+        totalPriceElement.textContent = "Toplam Sipariş Miqdarı: " + totalPrice.toFixed(2) + " AZN";
+        totalCourierSalaryElement.textContent = "Toplam Kuryer Maaşı: " + totalCourierSalary.toFixed(2) + " AZN";
+        totalCashElement.textContent = "Toplam Nəğd Ödəmə: " + totalCash.toFixed(2) + " AZN";
+        totalCardElement.textContent = "Toplam Kart Ödəmə: " + totalCard.toFixed(2) + " AZN";
+    }</script>

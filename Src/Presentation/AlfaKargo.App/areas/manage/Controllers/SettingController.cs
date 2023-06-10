@@ -1,11 +1,14 @@
-﻿using AlfaKargo.App.areas.ViewModels;
+﻿using System.Data;
+using AlfaKargo.App.areas.ViewModels;
 using AlfaKuryer.Application.Dtos.SettingDtos;
 using AlfaKuryer.Application.Services.SettingServices;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace AlfaKargo.App.Areas.manage.Controllers
 {
     [Area("manage")]
+    [Authorize(Roles = "Admin,SuperAdmin")]
     public class SettingController : Controller
     {
         private readonly ISettingService _settingService;

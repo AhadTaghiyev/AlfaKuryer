@@ -1,12 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Threading.Tasks;
+using AlfaKargo.App.areas.ViewModels;
 using AlfaKuryer.Application.Dtos.IdentityDtos;
 using AlfaKuryer.Application.Services.CityServices;
 using AlfaKuryer.Application.Services.DistrictServices;
 using AlfaKuryer.Application.Services.IdentityServices;
 using AlfaKuryer.Persistance.Services;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 
@@ -29,38 +32,55 @@ namespace AlfaKargo.App.areas.manage.Controllers
             _districtservice = districtservice;
             _roleManager = roleManager;
         }
-        public async Task<IActionResult> Role()
+  
+        public async Task<IActionResult> Login()
         {
-            await _roleManager.CreateAsync(new IdentityRole { Name="Admin"});
-            await _roleManager.CreateAsync(new IdentityRole { Name="SuperAdmin"});
-            await _roleManager.CreateAsync(new IdentityRole { Name="Company"});
-            await _roleManager.CreateAsync(new IdentityRole { Name="Courier"});
-            await _roleManager.CreateAsync(new IdentityRole { Name="User"});
-        
-            return Json("ok");
+            return View();
         }
-    
+        [HttpPost]
+        public async Task<IActionResult> Login(LoginDto  login)
+        {
+            var result=await _identity.SigninAdmin(login);
+
+            if (!string.IsNullOrWhiteSpace(result))
+            {
+                return View();
+            }
+            return RedirectToAction("Index","Home");
+        }
+
+        [Authorize(Roles = "Admin,SuperAdmin")]
         public async Task<IActionResult> Admins()
         {
             return View(await _identity.GetUsers(x => x.Role == "Admin" || x.Role == "SuperAdmin" && x.Status == true));
         }
+        [Authorize(Roles = "Admin,SuperAdmin")]
         public async Task<IActionResult> Couriers()
         {
             return View(await _identity.GetUsers(x => x.Role == "Courier" && x.Status == true));
         }
+        [Authorize(Roles = "Admin,SuperAdmin")]
         public async Task<IActionResult> Companies()
         {
             return View(await _identity.GetUsers(x => x.Role == "Company" && x.Status == true));
         }
+        [Authorize(Roles = "Admin,SuperAdmin")]
+        public async Task<IActionResult> Cassirs()
+        {
+            return View(await _identity.GetUsers(x => x.Role == "Cassir" && x.Status == true));
+        }
+        [Authorize(Roles = "Admin,SuperAdmin")]
         public async Task<IActionResult> Users()
         {
             return View(await _identity.GetUsers(x => x.Role == "User" && x.Status == true));
         }
+        [Authorize(Roles = "Admin,SuperAdmin")]
         public async Task<IActionResult> CreateAdmin()
         {
             ViewBag.Roles = _roleManager.Roles.Where(x=>x.Name=="Admin"||x.Name=="SuperAdmin").ToList();
             return View();
         }
+        [Authorize(Roles = "Admin,SuperAdmin")]
         [HttpPost]
         public async Task<IActionResult> CreateAdmin(RegisterDto dto)
         {
@@ -77,12 +97,14 @@ namespace AlfaKargo.App.areas.manage.Controllers
             }
             return Redirect(nameof(Admins));
         }
+        [Authorize(Roles = "Admin,SuperAdmin")]
         public async Task<IActionResult> CreateCourier()
         {
             ViewBag.Cities = await _cityservice.GetAll();
             ViewBag.Districts = await _districtservice.GetAll();
             return View();
         }
+        [Authorize(Roles = "Admin,SuperAdmin")]
         [HttpPost]
         public async Task<IActionResult> CreateCourier(RegisterDto dto)
         {
@@ -102,31 +124,67 @@ namespace AlfaKargo.App.areas.manage.Controllers
             }
             return Redirect(nameof(Couriers));
         }
-
-
-
+        [Authorize(Roles = "Admin,SuperAdmin")]
+        public async Task<IActionResult> CreateCassir()
+        {
+            ViewBag.Cities = await _cityservice.GetAll();
+            ViewBag.Districts = await _districtservice.GetAll();
+            return View();
+        }
+        [HttpPost]
+        [Authorize(Roles = "Admin,SuperAdmin")]
+        public async Task<IActionResult> CreateCassir(RegisterDto dto)
+        {
+            if (!ModelState.IsValid)
+            {
+                return View(dto);
+            };
+            string result = await _identity.Register(dto);
+            if (result.Length > 0)
+            {
+                ModelState.AddModelError("", result);
+                return View(dto);
+            }
+            return Redirect(nameof(Cassirs));
+        }
+        [Authorize(Roles = "Admin,SuperAdmin")]
         public async Task<IActionResult> DeleteConfirmed(string UserId)
         {
             await _identity.ChangeStatus(UserId);
             return Redirect(Request.Headers["Referer"].ToString());
         }
+        [Authorize(Roles = "Admin,SuperAdmin")]
         public async Task<IActionResult> CourierUpdate()
         {
             ViewBag.Cities = await _cityservice.GetAll();
             ViewBag.Districts = await _districtservice.GetAll();
             return View();
         }
-
+        [Authorize(Roles = "Admin,SuperAdmin")]
         public async Task<IActionResult> SendMessage()
         {
             return View();
         }
         [HttpPost]
+        [Authorize(Roles = "Admin,SuperAdmin")]
         public async Task<IActionResult> SendMessage(SendMailToUsers sendMailTo)
         {
             await _identity.SendMessageToAllUsers(sendMailTo);
             return RedirectToAction("index","home");
         }
+        [Authorize(Roles = "Admin,SuperAdmin")]
+
+        public async Task<IActionResult> CourierSalary(string UserId)
+        {
+            return View(await _identity.GetSalaries(UserId));
+        }
+         [Authorize(Roles = "Admin,SuperAdmin")]
+        public async Task<IActionResult> CassirBalance(string UserId)
+        {
+            return View(await _identity.GetCassirBalance(UserId));
+        }
+        
+
     }
 }
 

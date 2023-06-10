@@ -29,5 +29,7 @@ namespace AlfaKuryer.Domain.Entities
         public List<Order> Orders { get; set; }
         public  double? CourierSalaryForSimple { get; set; }
         public  double? CourierSalaryForFast { get; set; }
+        public List<CourierBalance> CourierBalances { get; set; }
+        public List<CassirBalance> CassirBalances { get; set; }
     }
 }

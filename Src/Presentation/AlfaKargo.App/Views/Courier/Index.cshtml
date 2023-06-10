@@ -60,66 +60,134 @@
                     <div class="cards">
                         @foreach (var item in Model)
                         {
-                            <div class="card">
-                                <div class="card-header">
-                                    <h3 class="order-number">Sifariş nömrəsi: @item.Id</h3>
-                                    <p class="customer-name"><strong>@item.Customer.Name</strong></p>
-                                    <p class="customer-location"><strong>Hansi Rayondan:</strong> @item.OrderFromDistrict?.Name </p>
-                                </div>
-                                <div class="card-body">
-                                    <p class="address">
-                                        <strong>Adress:</strong> @item.FromAdress
-                                    </p>
-                                    <p class="payment-method"><strong>Ödeme Yöntemi:</strong> Nagd</p>
-                                    <p class="customer-phone"><strong>Sipariş Veren Telefon Numarası:</strong>@item.Customer.PhoneNumber</p>
-                                    <p class="order-date"><strong>Sipariş Verildiği Tarih:</strong>@item.CreatedDate.ToString("dd:MM:yyyy:hh:mm")</p>
-                                    <p class="parcel-count"><strong>Bağlama Sayısı:</strong> @item.PackageCount</p>
-                                    <p class="parcel-weight"><strong>Qiyməti:</strong>@item.Price Azn</p>
-                                </div>
-                                <div class="card-footer">
-                                    @if (item.ForeignCourier == null)
-                                    {
-                                        @if (item.IsAccepted == true && item.IsCourierOnRoad == false)
+                            if (item.ForeignCourier == null)
+                            {
+                                <div class="card">
+                                    <div class="card-header">
+                                        <h3 class="order-number">Sifariş nömrəsi: @item.Id</h3>
+                                        <p class="customer-name"><strong>@item.Customer.Name</strong></p>
+                                        <p class="customer-location"><strong>Hansi Rayondan:</strong> @item.OrderFromDistrict?.Name </p>
+                                    </div>
+                                    <div class="card-body">
+                                        <p class="address">
+                                            <strong>Adress:</strong> @item.FromAdress
+                                        </p>
+                                        <p class="payment-method"><strong>Ödəniş üsulu:</strong>@(item.IsCash ? "Nəğd" : "Kart")</p>
+                                        <p class="customer-phone"><strong>Sifariş Verən Telefon Nömrəsi:</strong>@item.Customer.PhoneNumber</p>
+                                        <p class="order-date"><strong>Sipariş Verildiği Tarih:</strong>@item.CreatedDate.ToString("dd:MM:yyyy:hh:mm")</p>
+                                        <p class="parcel-count"><strong>Bağlama Sayı:</strong> @item.PackageCount</p>
+                                        <p class="parcel-weight"><strong>Bağlama Ağırlığı:</strong>@item.Kq kg</p>
+                                        <p class="parcel-weight"><strong>Məbləğ:</strong>@item.Price AZN</p>
+                                    </div>
+                                    <div class="card-footer">
+                                        @if (item.ForeignCourier == null)
                                         {
-                                            <a asp-controller="courier" asp-action="CurierOnRoadForTake" asp-route-id="@item.Id" class="accept-btn">Müştəriyə tərəf gedirəm</a>
-                                        }
-                                        else if (item.IsAccepted == true && item.IsCourierOnRoad == true && item.IsCourierArriveForTake == false)
-                                        {
-                                            <a asp-controller="courier" asp-action="CourierArriveForTake" asp-route-id="@item.Id" class="accept-btn">Çatdım</a>
+                                            @if (item.IsAccepted == true && item.IsCourierOnRoad == false)
+                                            {
+                                                <a asp-controller="courier" asp-action="CurierOnRoadForTake" asp-route-id="@item.Id" class="accept-btn">Müştəriyə tərəf gedirəm</a>
+                                            }
+                                            else if (item.IsAccepted == true && item.IsCourierOnRoad == true && item.IsCourierArriveForTake == false)
+                                            {
+                                                <a asp-controller="courier" asp-action="CourierArriveForTake" asp-route-id="@item.Id" class="accept-btn">Çatdım</a>
+
+                                            }
+                                            else if (item.IsAccepted == true && item.IsCourierOnRoad == true && item.IsCourierArriveForTake == true && item.IsCourierTaked == false)
+                                            {
+                                                <a asp-controller="courier" asp-action="CourierTaked" asp-route-id="@item.Id" class="accept-btn">Təhvil aldım</a>
+                                            }
+                                            else if (item.IsAccepted == true && item.IsCourierOnRoad == true && item.IsCourierArriveForTake == true && item.IsCourierTaked == true && item.IsInStorage == false)
+                                            {
+                                                <a asp-controller="courier" asp-action="InStorage" asp-route-id="@item.Id" class="accept-btn">Anbara təhvil verdim</a>
+                                            }
+
 
                                         }
-                                        else if (item.IsAccepted == true && item.IsCourierOnRoad == true && item.IsCourierArriveForTake == true && item.IsCourierTaked == false)
+                                        else
                                         {
-                                            <a asp-controller="courier" asp-action="CourierTaked" asp-route-id="@item.Id" class="accept-btn">Təhvil aldım</a>
+                                            if (item.IsInForeignCity == false && item.IsForeignCourierAccepted == false)
+                                            {
+                                                <a asp-controller="courier" asp-action="InForeignCity" asp-route-id="@item.Id" class="accept-btn">Təhvil adlım</a>
+                                            }
+                                            else if (item.IsInForeignCity == true && item.IsOnRoad == false)
+                                            {
+                                                <a asp-controller="courier" asp-action="OnRoad" asp-route-id="@item.Id" class="accept-btn">Təhvilə gedirəm</a>
+                                            }
+                                            else if (item.IsInForeignCity == true && item.IsOnRoad == true && item.IsCourierArrive == false)
+                                            {
+                                                <a asp-controller="courier" asp-action="CourierArrived" asp-route-id="@item.Id" class="accept-btn">Çatdım</a>
+                                            }
+                                            else if (item.IsInForeignCity == true && item.IsOnRoad == true && item.IsCourierArrive == true && item.IsDelivered == false)
+                                            {
+                                                <a asp-controller="courier" asp-action="Delivered" asp-route-id="@item.Id" class="accept-btn">Sifariş tamamlandı</a>
+                                            }
                                         }
-                                        else if (item.IsAccepted == true && item.IsCourierOnRoad == true && item.IsCourierArriveForTake == true && item.IsCourierTaked == true && item.IsInStorage == false)
-                                        {
-                                            <a asp-controller="courier" asp-action="InStorage" asp-route-id="@item.Id" class="accept-btn">Anbara təhvil verdim</a>
-                                        }
-
-
-                                    }
-                                    else
-                                    {
-                                        if (item.IsInForeignCity == false&&item.IsForeignCourierAccepted==false)
-                                        {
-                                            <a asp-controller="courier" asp-action="InForeignCity" asp-route-id="@item.Id" class="accept-btn">Təhvil adlım</a>
-                                        }
-                                        else if (item.IsInForeignCity == true && item.IsOnRoad == false)
-                                        {
-                                            <a asp-controller="courier" asp-action="OnRoad" asp-route-id="@item.Id" class="accept-btn">Təhvilə gedirəm</a>
-                                        }
-                                        else if (item.IsInForeignCity == true && item.IsOnRoad == true && item.IsCourierArrive == false)
-                                        {
-                                            <a asp-controller="courier" asp-action="CourierArrived" asp-route-id="@item.Id" class="accept-btn">Çatdım</a>
-                                        }
-                                        else if (item.IsInForeignCity == true && item.IsOnRoad == true && item.IsCourierArrive == true && item.IsDelivered == false)
-                                        {
-                                            <a asp-controller="courier" asp-action="Delivered" asp-route-id="@item.Id" class="accept-btn">Sifariş tamamlandı</a>
-                                        }
-                                    }
+                                    </div>
                                 </div>
-                            </div>
+                            }
+                            else
+                            {
+                                <div class="card">
+                                    <div class="card-header">
+                                        <h3 class="order-number">Sifariş nömrəsi: @item.Id</h3>
+                                        <p class="customer-name"><strong>@item.ToFullName</strong></p>
+                                        <p class="customer-location"><strong>Hansi Rayona:</strong> @item.OrderToDistrict?.Name </p>
+                                    </div>
+                                    <div class="card-body">
+                                        <p class="address">
+                                            <strong>Adress:</strong> @item.ToAdress
+                                        </p>
+                                        <p class="payment-method"><strong>Ödəniş üsulu:</strong>@(item.IsCash?"Nəğd":"Kart")</p>
+                                        <p class="customer-phone"><strong>Sifariş Verən Telefon Nömrəsi:</strong>@item.ToPhoneNumber</p>
+                                        <p class="order-date"><strong>Sipariş Verildiği Tarih:</strong>@item.CreatedDate.ToString("dd:MM:yyyy:hh:mm")</p>
+                                        <p class="parcel-count"><strong>Bağlama Sayı:</strong> @item.PackageCount</p>
+                                        <p class="parcel-weight"><strong>Bağlama Ağırlığı:</strong>@item.Kq kg</p>
+                                        <p class="parcel-weight"><strong>Məbləğ:</strong>@item.Price AZN</p>
+                                    </div>
+                                    <div class="card-footer">
+                                        @if (item.ForeignCourier == null)
+                                        {
+                                            @if (item.IsAccepted == true && item.IsCourierOnRoad == false)
+                                            {
+                                                <a asp-controller="courier" asp-action="CurierOnRoadForTake" asp-route-id="@item.Id" class="accept-btn">Müştəriyə tərəf gedirəm</a>
+                                            }
+                                            else if (item.IsAccepted == true && item.IsCourierOnRoad == true && item.IsCourierArriveForTake == false)
+                                            {
+                                                <a asp-controller="courier" asp-action="CourierArriveForTake" asp-route-id="@item.Id" class="accept-btn">Çatdım</a>
+
+                                            }
+                                            else if (item.IsAccepted == true && item.IsCourierOnRoad == true && item.IsCourierArriveForTake == true && item.IsCourierTaked == false)
+                                            {
+                                                <a asp-controller="courier" asp-action="CourierTaked" asp-route-id="@item.Id" class="accept-btn">Təhvil aldım</a>
+                                            }
+                                            else if (item.IsAccepted == true && item.IsCourierOnRoad == true && item.IsCourierArriveForTake == true && item.IsCourierTaked == true && item.IsInStorage == false)
+                                            {
+                                                <a asp-controller="courier" asp-action="InStorage" asp-route-id="@item.Id" class="accept-btn">Anbara təhvil verdim</a>
+                                            }
+
+
+                                        }
+                                        else
+                                        {
+                                            if (item.IsInForeignCity == false && item.IsForeignCourierAccepted == false)
+                                            {
+                                                <a asp-controller="courier" asp-action="InForeignCity" asp-route-id="@item.Id" class="accept-btn">Təhvil adlım</a>
+                                            }
+                                            else if (item.IsInForeignCity == true && item.IsOnRoad == false)
+                                            {
+                                                <a asp-controller="courier" asp-action="OnRoad" asp-route-id="@item.Id" class="accept-btn">Təhvilə gedirəm</a>
+                                            }
+                                            else if (item.IsInForeignCity == true && item.IsOnRoad == true && item.IsCourierArrive == false)
+                                            {
+                                                <a asp-controller="courier" asp-action="CourierArrived" asp-route-id="@item.Id" class="accept-btn">Çatdım</a>
+                                            }
+                                            else if (item.IsInForeignCity == true && item.IsOnRoad == true && item.IsCourierArrive == true && item.IsDelivered == false)
+                                            {
+                                                <a asp-controller="courier" asp-action="Delivered" asp-route-id="@item.Id" class="accept-btn">Sifariş tamamlandı</a>
+                                            }
+                                        }
+                                    </div>
+                                </div>
+                            }
                         }
 
                     </div>

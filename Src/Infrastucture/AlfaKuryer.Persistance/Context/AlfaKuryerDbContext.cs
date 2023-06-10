@@ -28,6 +28,8 @@ namespace AlfaKuryer.Persistance.Context
         public DbSet<PriceForOrder> PriceForOrders{get;}
         public DbSet<Adress> Adresses { get; }
         public DbSet<UserPayment> UserPayments { get; }
+        public DbSet<CourierBalance> CourierBalances { get; }
+        public DbSet<CassirBalance> CassirBalances { get; }
 
         protected override void OnModelCreating(ModelBuilder builder)
         {

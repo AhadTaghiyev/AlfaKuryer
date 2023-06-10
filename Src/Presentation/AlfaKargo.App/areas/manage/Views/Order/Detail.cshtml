@@ -5,16 +5,23 @@
         Yeni sifariş
     </div>
     <div class="card-body">
-
+      
         <div class="row">
             <div class="col-md-12">
 
                 <form class="row">
                     <div asp-validation-summary="ModelOnly" class="text-danger"></div>
                     <div class="form-group col-md-6">
-                        <label class="control-label">Hansı Şəhərdən</label>
-                        <input class="form-control" disabled asp-for="OrderFromCity.Name" />
+                        <label class="control-label">Sifariş nömrəsi</label>
+                        <input class="form-control" disabled asp-for="Id" />
                     </div>
+                    @if (Model.OrderFromCity != null)
+                    {
+                        <div class="form-group col-md-6">
+                            <label class="control-label">Hansı Şəhərdən</label>
+                            <input class="form-control" disabled asp-for="OrderFromCity.Name" />
+                        </div>
+                    }
                     @if (Model.OrderFromDistrict != null)
                     {
                         <div class="form-group col-md-6">
@@ -25,11 +32,14 @@
 
 
 
-                    <div class="form-group  col-md-6">
-                        <label class="control-label">Haradan Adress mənzil</label>
-                        <input class="form-control" disabled asp-for="FromAdress"></input>
-                    </div>
+                    @if (Model.FromAdress != null)
+                    {
+                        <div class="form-group  col-md-6">
+                            <label class="control-label">Haradan Adress mənzil</label>
+                            <input class="form-control" disabled asp-for="FromAdress"></input>
+                        </div>
 
+                    }
 
                     @if (Model.OrderToCity != null)
                     {
@@ -42,9 +52,34 @@
                     @if (Model.OrderToDistrict != null)
                     {
                         <div class="form-group col-md-6">
-                            <label class="control-label">Hansı Şəhərə</label>
+                            <label class="control-label">Hansı Rayona</label>
                             <input class="form-control" disabled asp-for="OrderToDistrict.Name" />
                         </div>
+                    }
+                    @if (Model.Customer != null)
+                    {
+                        <div class="form-group col-md-6">
+                            <label class="control-label">Sifariş verən istifadəçi</label>
+                            <input class="form-control" disabled asp-for="Customer.Name" />
+                        </div>
+                        <div class="form-group  col-md-6">
+                            <label class="control-label">Sifariş verən telefon nömrəsi</label>
+                            <input disabled asp-for="ToFullName" class="form-control" />
+                        </div>
+
+                    }
+                    else
+                    {
+
+                        <div class="form-group col-md-6">
+                            <label class="control-label">Hansı Şəhərə</label>
+                            <input class="form-control" disabled asp-for="FromFullName" />
+                        </div>
+                        <div class="form-group  col-md-6">
+                            <label class="control-label">Sifariş verən telefon nömrəsi</label>
+                            <input disabled asp-for="ToPhoneNumber" class="form-control" />
+                        </div>
+
                     }
 
 
@@ -54,7 +89,7 @@
                     </div>
                     <div class="form-group  col-md-6">
                         <label class="control-label">qəbul edənin Ad Soyad</label>
-                        <input disabled  asp-for="ToFullName" class="form-control" />
+                        <input disabled asp-for="ToFullName" class="form-control" />
                         <span asp-validation-for="ToPhoneNumber"></span>
                     </div>
                     <div class="form-group  col-md-6">
@@ -87,15 +122,12 @@
                             <input disabled asp-for="ForeignCourier.Name" class="form-control" />
                         </div>
                     }
+                
+                  
                     <div class="form-group  col-md-6">
-                        <label class="control-label">Sifariş verən</label>
-                        <input disabled asp-for="Customer.Name" class="form-control" />
+                        <label class="control-label">Sifariş tarixi</label>
+                        <input disabled asp-for="CreatedDate" class="form-control" />
                     </div>
-                    <div class="form-group  col-md-6">
-                        <label class="control-label">Sifariş verən Əlaqə nömrədi</label>
-                        <input disabled asp-for="Customer.PhoneNumber" class="form-control" />
-                    </div>
-
                     <div class="col-md-12 mt-3">
                         <a class="btn btn-dark" asp-action="index"><i class="fas fa-undo"></i> Siyahıya geri dön</a>
                     </div>

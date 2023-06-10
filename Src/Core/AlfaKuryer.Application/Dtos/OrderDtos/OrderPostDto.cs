@@ -16,6 +16,8 @@ namespace AlfaKuryer.Application.Dtos.OrderDtos
         public string ToFullName { get; set; }
         public bool IsFast { get; set; }
         public string Payment { get; set; }
+        public string? FromFullName { get; set; }
+        public string? FromPhoneNumber { get; set; }
     }
 }
 

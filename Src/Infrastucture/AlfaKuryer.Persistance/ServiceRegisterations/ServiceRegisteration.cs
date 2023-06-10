@@ -89,6 +89,7 @@ namespace AlfaKuryer.Persistance.ServiceRegisterations
                 opt.User.RequireUniqueEmail = false;
                 opt.Lockout.AllowedForNewUsers = true;
                 opt.Lockout.MaxFailedAccessAttempts = 5;
+                opt.Password.RequireNonAlphanumeric = false;
                 opt.Lockout.DefaultLockoutTimeSpan = TimeSpan.FromMinutes(5);
             })
           .AddEntityFrameworkStores<AlfaKuryerDbContext>()
@@ -130,6 +131,14 @@ namespace AlfaKuryer.Persistance.ServiceRegisterations
             services.AddScoped<IUserPaymentReadRepository, UserPaymentReadRepository>();
             services.AddScoped<IUserPaymentWriteRepository, UserPaymentWriteRepository>();
             services.AddTransient<IPaymentService, PaymentService>();
+            #endregion
+            #region CourierBalance
+            services.AddScoped<ICourierBalanceReadRepository, CourierBalanceReadRepository>();
+            services.AddScoped<ICourierBalanceWriteRepository, CourierBalanceWriteRepository>();
+            #endregion
+            #region CassirBalance
+            services.AddScoped<ICassirBalanceReadRepository, CassirBalanceReadRepository>();
+            services.AddScoped<ICassirBalanceWriteRepository, CassirBalanceWriteRepository>();
             #endregion
         }
     }

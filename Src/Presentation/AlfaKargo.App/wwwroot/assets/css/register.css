@@ -169,4 +169,12 @@
   .left .title b {
     font-size: 18px !important;
   }
+    #register .left .form input,select {
+        font-size: 9px;
+      
+    }
+
+    #register .left .form select {
+        font-size: 9px;
+    }
 }

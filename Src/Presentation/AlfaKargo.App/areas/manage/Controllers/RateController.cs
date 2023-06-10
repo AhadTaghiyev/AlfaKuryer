@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Threading.Tasks;
 using AlfaKargo.App.areas.ViewModels;
@@ -7,6 +8,7 @@ using AlfaKuryer.Application.Dtos.RateDtos;
 using AlfaKuryer.Application.Services.CityServices;
 using AlfaKuryer.Application.Services.DistrictServices;
 using AlfaKuryer.Application.Services.RateServices;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Org.BouncyCastle.Asn1.X509;
 
@@ -15,6 +17,7 @@ using Org.BouncyCastle.Asn1.X509;
 namespace AlfaKargo.App.areas.manage.Controllers
 {
     [Area("manage")]
+    [Authorize(Roles = "Admin,SuperAdmin")]
     public class RateController : Controller
     {
         private readonly IRateService _service;

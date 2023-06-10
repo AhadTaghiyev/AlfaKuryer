@@ -28,27 +28,37 @@ builder.Services.AddMvc()
     }
     );
 
-
-builder.Services.Configure<RequestLocalizationOptions>(opt =>
+builder.Services.Configure<RequestLocalizationOptions>(options =>
 {
+    var calen = new CultureInfo("en-US");
+    calen.NumberFormat.NumberDecimalSeparator = ".";
+    var calaz = new CultureInfo("az-AZ");
+    calaz.NumberFormat.NumberDecimalSeparator = ".";
+    var calru = new CultureInfo("ru-RU");
+    calru.NumberFormat.NumberDecimalSeparator = ".";
     var supportedCultures = new List<CultureInfo>
-                {
-                    new CultureInfo("en-US"),
-                    new CultureInfo("az-AZ"),
-                    new CultureInfo("ru-RU"),
+    {
+        calen,
+        calaz,
+        calru
+    };
+   
 
-                };
-    opt.DefaultRequestCulture = new RequestCulture("en-US");
-    opt.SupportedCultures = supportedCultures;
-    opt.SupportedUICultures = supportedCultures;
+    var defaultCulture = new CultureInfo("en-US");
 
-    opt.RequestCultureProviders = new List<IRequestCultureProvider>
-                {
-                    new  QueryStringRequestCultureProvider(),
-                    new CookieRequestCultureProvider(),
-                    new AcceptLanguageHeaderRequestCultureProvider()
-                };
+    options.DefaultRequestCulture = new RequestCulture(defaultCulture);
+    options.SupportedCultures = supportedCultures;
+    options.SupportedUICultures = supportedCultures;
+
+    options.RequestCultureProviders = new List<IRequestCultureProvider>
+    {
+        new QueryStringRequestCultureProvider(),
+        new CookieRequestCultureProvider(),
+        new AcceptLanguageHeaderRequestCultureProvider()
+    };
 });
+
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

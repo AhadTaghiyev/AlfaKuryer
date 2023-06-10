@@ -75,7 +75,7 @@
                                     <div class="name col-5">
                                         <label class="form-label">Hasnı şəhərdən</label>
                                         <select id="fromCity" asp-for="OrderFromCityId" class="form-select fromcity" aria-label="Default select example">
-                                            <option value="0">Hansi Seherden</option>
+                                            <option value="0">Şəhər</option>
                                             @foreach (var item in ViewBag.Cities)
                                             {
                                                 <option value="@item.Id">@item.Name</option>
@@ -86,7 +86,7 @@
                                     <div class="surname col-5">
                                         <label for="" class="form-label">Hansı Rayondan</label>
                                         <select id="fromDistrict" asp-for="OrderFromDistrictId" class="form-select" aria-label="Default select example">
-                                            <option value="0">Hansi Rayondan</option>
+                                            <option value="0">Rayon</option>
                                             @foreach (var item in ViewBag.Districts)
                                             {
                                                 <option class="fromdistrict" data-id="@item.CityId" value="@item.Id">@item.Name</option>
@@ -102,7 +102,7 @@
                                         {
                                             <div class="name col-5">
                                                 <label for="" class="form-label">Hara Address Mənzil</label>
-                                                <input type="text" class="form-control" asp-for="ToAdress" placeholder="Hara Address Mənzil">
+                                                <input type="text" class="form-control" asp-for="ToAdress">
                                                 <span class="text text-danger" asp-validation-for="ToAdress" />
                                             </div>
                                         }
@@ -111,7 +111,7 @@
                                         else
                                         {
                                             <select asp-for="FromAdress" class="form-select" aria-label="Default select example">
-                                                <option>Haradan Address Mənzil</option>
+                                                <option>Adress</option>
                                                 @foreach (var item in ViewBag.Adresses)
                                                 {
                                                     <option value="@item.UserAdres">@item.UserAdres</option>
@@ -124,7 +124,7 @@
                                     <div class="name col-5">
                                         <label for="" class="form-label">Hasnı şəhərə</label>
                                         <select id="toCity" asp-for="OrderToCityId" class="form-select" aria-label="Default select example">
-                                            <option value="">Hansi Sehere</option>
+                                            <option value="">Şəhər</option>
                                             @foreach (var item in ViewBag.Cities)
                                             {
                                                 <option value="@item.Id">@item.Name</option>
@@ -139,7 +139,7 @@
                                     <div class="surname col-5">
                                         <label for="" class="form-label">Hansı Rayona</label>
                                         <select id="toDistrict" asp-for="OrderToDistrictId" class="form-select" aria-label="Default select example">
-                                            <option value="">Rayona</option>
+                                            <option value="">Rayon</option>
                                             @foreach (var item in ViewBag.Districts)
                                             {
                                                 <option value="@item.Id" data-id="@item.CityId">@item.Name</option>

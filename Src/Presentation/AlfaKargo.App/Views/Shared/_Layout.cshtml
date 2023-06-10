@@ -4,19 +4,20 @@
     AlfaKuryer.Application.Dtos.SettingDtos.SettingGetDto settingGetDto = await settingservice.Get();
 }
 @{
-        string controller = "";
-        string action = "";
+    string controller = "";
+    string action = "";
 
-        if (User.IsInRole("User") || User.IsInRole("Company"))
-        {
-            controller = "Account";
-            action = "update";
-        }
-        else if (User.IsInRole("Courier"))
-        {
-            controller = "Courier";
-            action = "accept";
-        }
+    if (User.IsInRole("User") || User.IsInRole("Company"))
+    {
+        controller = "Account";
+        action = "update";
+    }
+    else if (User.IsInRole("Courier"))
+    {
+        controller = "Courier";
+        action = "accept";
+    }
+    string selectedLanguage = localizer["Language"];
     }
     <!DOCTYPE html>
     <html lang="en">
@@ -45,32 +46,33 @@
                                         </a>
                                         <a style="color:white;">@localizer["Address"] : @settingGetDto.Adress</a>
                                     </div>
-                                    <div class="top-header-right-side d-flex gap-4 align-items-center">
-                                        <a href="#" class="d-flex align-items-center gap-1 lang-all" id="lang-all">
-                                            <span class="lang" id="lang" style="position: relative;">
-                                                @(localizer["Language"] == "Az" ? "AZ" : (localizer["Language"] == "Ru" ? "RU" : "EN"))
-                                            </span>
+                                <div class="top-header-right-side d-flex gap-4 align-items-center">
+                                    <a href="#" class="d-flex align-items-center gap-1 lang-all" id="lang-all">
+                                        <span class="lang" id="lang" style="position: relative;">
+                                            @(localizer["Language"] == "Az" ? "AZ" : (localizer["Language"] == "Ru" ? "RU" : "EN"))
+                                        </span>
 
-                                            <div class="lang-drop-down" id="lang-drop-down">
-                                                <a asp-controller="home" asp-action="ChangeLanguage" asp-route-culture="az-AZ"
-                                                   class="aze @(localizer["Language"] == "Az" ? "selected" : "")" id="aze">AZ</a>
-                                                <a asp-controller="home" asp-action="ChangeLanguage" asp-route-culture="en-En" class="eng @(localizer["Language"] == "En" ? "selected" : "")" id="eng">EN</a>
-                                                <a asp-controller="home" asp-action="ChangeLanguage" asp-route-culture="ru-RU" class="rus @(localizer["Language"] == "Ru" ? "selected" : "")" id="rus">RU</a>
-                                            </div>
+                                        <div class="lang-drop-down" id="lang-drop-down">
+                                            <a asp-controller="home" asp-action="ChangeLanguage" asp-route-culture="az-AZ"
+                                               class="aze @(localizer["Language"] == "Az" ? "selected" : "")" id="aze">AZ</a>
+                                            <a asp-controller="home" asp-action="ChangeLanguage" asp-route-culture="en-En" class="eng @(localizer["Language"] == "En" ? "selected" : "")" id="eng">EN</a>
+                                            <a asp-controller="home" asp-action="ChangeLanguage" asp-route-culture="ru-RU" class="rus @(localizer["Language"] == "Ru" ? "selected" : "")" id="rus">RU</a>
+                                        </div>
 
-                                        </a>
-                                        @if (User.Identity.IsAuthenticated)
-                                        {
-                                            <a asp-controller="account" asp-action="SignOut" class="sign-in">@localizer["Logout"]</a>
-                                            <a asp-controller="@controller" asp-action="@action" class="sign-up">Panel</a>
-                                        }
-                                        else
-                                        {
-                                            <a asp-controller="account" asp-action="login" class="sign-in">@localizer["Login"]</a>
-                                            <a asp-controller="account" asp-action="register" class="sign-up">@localizer["Sign up"]</a>
+                                    </a>
 
-                                        }
-                                    </div>
+                                    @if (User.Identity.IsAuthenticated && !User.IsInRole("Admin") && !User.IsInRole("Courier") && !User.IsInRole("Cassir"))
+                                    {
+                                        <a asp-controller="account" asp-action="SignOut" class="sign-in">@localizer["Logout"]</a>
+                                        <a asp-controller="@controller" asp-action="@action" class="sign-up">Panel</a>
+                                    }
+                                    else
+                                    {
+                                        <a asp-controller="account" asp-action="login" class="sign-in">@localizer["Login"]</a>
+                                        <a asp-controller="account" asp-action="Register" class="sign-up">@localizer["Sign up"]</a>
+
+                                    }
+                                </div>
                                 </div>
                             </div>
                         </div>
@@ -93,14 +95,17 @@
                                                 <li><a asp-controller="news" asp-action="index">@localizer["News"]</a></li>
                                                 <li><a asp-controller="contact" asp-action="index">@localizer["Contact Us"]</a></li>
                                                 <li style="display: flex">
-                                                    <input id="tracking" placeholder="@localizer["Order Tracking"]" />
-                                                    <button class="btn-red"><i class="fa fa-search"></i></button>
+                                                    <form class="form-tack" action="/order/TrackPublic">
+                                                        <input id="tracking" name="id" placeholder="@localizer["Order Tracking"]" />
+                                                        <button type="submit" class="btn-red"><i class="fa fa-search"></i></button>
+                                                    </form>
                                                 </li>
                                             </ul>
                                         </nav>
                                     </div>
                                     <div class="bottom-header-right-side">
-                                        @if (User.Identity.IsAuthenticated)
+
+                                        @if (User.Identity.IsAuthenticated && !User.IsInRole("Admin") && !User.IsInRole("Courier") && !User.IsInRole("Cassir"))
                                         {
                                             <a asp-controller="account" asp-action="SignOut" class="sign-in">@localizer["Logout"]</a>
                                             <a asp-controller="@controller" asp-action="@action" class="sign-in">Panel</a>
@@ -108,7 +113,7 @@
                                         else
                                         {
                                             <a asp-controller="account" asp-action="login" class="sign-in">@localizer["Login"]</a>
-                                            <a asp-controller="account" asp-action="register" class="sign-in">@localizer["Sign up"]</a>
+                                            <a asp-controller="account" asp-action="Register" class="sign-in">@localizer["Sign up"]</a>
 
                                         }
 
@@ -118,26 +123,61 @@
                                         <div class="icon">
                                             <i class="fa-solid fa-bars"></i>
                                         </div>
-                                        <div class="mini-menu active-menu" style="height:100%;z-index:1000">
+                                        <div class="mini-menu active-menu" style="height:100%;z-index:99999999">
                                             <ul>
                                                 <li class="close"><i class="fa-solid fa-xmark"></i></li>
-                                                <li style="display: flex">
-                                                    <input id="tracking2" placeholder="@localizer["Order Tracking"]" />
-                                                    <button class="btn-red2"><i class="fa fa-search"></i></button>
-                                                </li>
                                                 <li>
-                                                    <select name="cars" id="cars">
-                                                        <option value="saab">Az</option>
-                                                        <option value="mercedes">En</option>
-                                                        <option value="audi">Ru</option>
-                                                        <option value="audi">Tr</option>
+                                                    <select name="cars" id="cars" onchange="(changeLanguage(this))">
+                                                        @if (selectedLanguage == "Az")
+                                                        {
+                                                            <option selected value="az-AZ">Az</option>
+                                                        }
+                                                        else
+                                                        {
+                                                            <option value="az-AZ">Az</option>
+                                                        }
+
+                                                        @if (selectedLanguage == "En")
+                                                        {
+                                                            <option selected value="en-EN">En</option>
+                                                        }
+                                                        else
+                                                        {
+                                                            <option value="en-EN">En</option>
+                                                        }
+
+                                                        @if (selectedLanguage == "Ru")
+                                                        {
+                                                            <option selected value="ru-RU">Ru</option>
+                                                        }
+                                                        else
+                                                        {
+                                                            <option value="ru-RU">Ru</option>
+                                                        }
                                                     </select>
+
                                                 </li>
 
 
                                                 <li><a asp-controller="rate" asp-action="index">@localizer["Tariffs"]</a></li>
                                                 <li><a asp-controller="news" asp-action="index">@localizer["News"]</a></li>
                                                 <li><a asp-controller="contact" asp-action="index">@localizer["Contact Us"]</a></li>
+
+                                                @if (User.Identity.IsAuthenticated&&!User.IsInRole("Admin")&&!User.IsInRole("Courier")&&!User.IsInRole("Cassir"))
+                                                {
+                                                    
+                                                  
+                                                    <li><a asp-controller="account" asp-action="SignOut">@localizer["Logout"]</a></li>
+                                                    <li>  <a asp-controller="@controller" asp-action="@action">Panel</a></li>
+                                                }
+                                                else
+                                                {
+                                                    <li><a asp-controller="account" asp-action="login">@localizer["Login"]</a></li>
+                                                    <li><a asp-controller="account" asp-action="register">@localizer["Sign up"]</a></li>
+
+                                                }
+
+
 
 
                                             </ul>
@@ -159,26 +199,57 @@
                         <div class="icon">
                             <i class="fa-solid fa-bars"></i>
                         </div>
-                        <div class="mini-menu2 active-menu" style="height:100%;z-index:1000;">
+                        <div class="mini-menu2 active-menu" style="height:100%;z-index:99999999;">
                             <ul>
                                 <li class="close2"><i class="fa-solid fa-xmark"></i></li>
                                 <li>
-                                    <select name="cars" id="cars">
-                                        <option value="saab">Az</option>
-                                        <option value="mercedes">En</option>
-                                        <option value="audi">Ru</option>
-                                        <option value="audi">Tr</option>
+                                    <select name="cars" id="cars" onchange="(changeLanguage(this))">
+                                        @if (selectedLanguage == "Az")
+                                        {
+                                            <option selected value="az-AZ">Az</option>
+                                        }
+                                        else
+                                        {
+                                            <option value="az-AZ">Az</option>
+                                        }
+
+                                        @if (selectedLanguage == "En")
+                                        {
+                                            <option selected value="en-EN">En</option>
+                                        }
+                                        else
+                                        {
+                                            <option value="en-EN">En</option>
+                                        }
+
+                                        @if (selectedLanguage == "Ru")
+                                        {
+                                            <option selected value="ru-RU">Ru</option>
+                                        }
+                                        else
+                                        {
+                                            <option value="ru-RU">Ru</option>
+                                        }
                                     </select>
-                                </li>
-                                <li style="display: flex">
-                                    <input id="tracking3" placeholder="@localizer["Order Tracking"]" />
-                                    <button class="btn-red3"><i class="fa fa-search"></i></button>
                                 </li>
 
                                 <li><a asp-controller="rate" asp-action="index">@localizer["Tariffs"]</a></li>
                                 <li><a asp-controller="news" asp-action="index">@localizer["News"]</a></li>
                                 <li><a asp-controller="contact" asp-action="index">@localizer["Contact Us"]</a></li>
 
+                                @if (User.Identity.IsAuthenticated && !User.IsInRole("Admin") && !User.IsInRole("Courier") && !User.IsInRole("Cassir"))
+                                {
+
+
+                                    <li><a asp-controller="account" asp-action="SignOut">@localizer["Logout"]</a></li>
+                                    <li>  <a asp-controller="@controller" asp-action="@action">Panel</a></li>
+                                }
+                                else
+                                {
+                                    <li><a asp-controller="account" asp-action="login">@localizer["Login"]</a></li>
+                                    <li><a asp-controller="account" asp-action="register">@localizer["Sign up"]</a></li>
+
+                                }
                             </ul>
                         </div>
                     </div>
@@ -195,7 +266,7 @@
                             <div class="row">
                                 <div class="col-lg-3 col-md-12">
                                     <a asp-controller="home" asp-action="index" class="white-logo">
-                                        <img class="mb-4" src="~/assets/imgs/index/Logo.jpg" alt="Dynamex Logo" width="160">
+                                        <img class="mb-4" src="~/assets/imgs/Logo/alfa kuryer logo.png" alt="Dynamex Logo" width="160">
                                     </a>
                                     <p class="mb-5">
                                         <span class="iconify" data-icon="mdi:copyright"></span>
@@ -290,6 +361,19 @@
                     crossorigin="anonymous" referrerpolicy="no-referrer"></script>
             <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
             <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+        <script>
+            function changeLanguage(culture) {
+                fetch('/home/ChangeLanguageJson?culture=' + culture.value)
+                    .then(response => response.json())
+                    .then(data => {
+                       window.location.reload() // Assuming you want to display the response in the console
+                    })
+                    .catch(error => {
+                        console.error('Error:', error);
+                    });
+            }
+
+        </script>
             @await RenderSectionAsync("Scripts", required: false)
         </body>
     </html>

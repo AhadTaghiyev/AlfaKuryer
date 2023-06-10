@@ -59,7 +59,7 @@ namespace AlfaKuryer.Application.Validations
             });
             RuleFor(x => x).Custom((x, context) =>
             {
-                if (x.Role != "User" && x.Role != "Company" && x.Role != "Courier" && x.Role != "Admin" && x.Role != "SuperAdmin")
+                if (x.Role != "User" && x.Role != "Company" && x.Role != "Courier" && x.Role != "Admin" && x.Role != "SuperAdmin"&&x.Role!="Cassir")
                 {
                     context.AddFailure("Bütün hüquqlar alfaex tərəfindən qorunur");
                 }

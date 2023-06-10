@@ -19,6 +19,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
+using static Microsoft.EntityFrameworkCore.DbLoggerCategory;
 using static Org.BouncyCastle.Math.EC.ECCurve;
 
 namespace AlfaKuryer.Persistance.Services
@@ -29,6 +30,10 @@ namespace AlfaKuryer.Persistance.Services
         private readonly IOrderWriteRepository _orderWrite;
         private readonly IUserPaymentReadRepository _userPaymentRead;
         private readonly IUserPaymentWriteRepository _userPaymentWrite;
+        private readonly ICourierBalanceReadRepository _balanceRead;
+        private readonly ICourierBalanceWriteRepository _balanceWrite;
+        private readonly ICassirBalanceReadRepository _cassirbalanceRead;
+        private readonly ICassirBalanceWriteRepository _cassirbalanceWrite;
         private readonly IMapper _mapper;
         private readonly IHttpContextAccessor _http;
         private readonly UserManager<ApplicationUser> _userManager;
@@ -38,7 +43,7 @@ namespace AlfaKuryer.Persistance.Services
         private readonly IConfiguration _config;
         private readonly IPaymentService _payment;
 
-        public OrderService(IOrderReadRepository orderRead, IOrderWriteRepository orderWrite, IMapper mapper, IHttpContextAccessor http, UserManager<ApplicationUser> userManager, ICityService cityService, IDistrictService districtService, IPriceService priceService, IConfiguration config, IUserPaymentReadRepository userPaymentRead, IUserPaymentWriteRepository userPaymentWrite, IPaymentService payment)
+        public OrderService(IOrderReadRepository orderRead, IOrderWriteRepository orderWrite, IMapper mapper, IHttpContextAccessor http, UserManager<ApplicationUser> userManager, ICityService cityService, IDistrictService districtService, IPriceService priceService, IConfiguration config, IUserPaymentReadRepository userPaymentRead, IUserPaymentWriteRepository userPaymentWrite, IPaymentService payment, ICourierBalanceReadRepository balanceRead, ICourierBalanceWriteRepository balanceWrite, ICassirBalanceReadRepository cassirbalanceRead, ICassirBalanceWriteRepository cassirbalanceWrite)
         {
             _orderRead = orderRead;
             _orderWrite = orderWrite;
@@ -52,6 +57,10 @@ namespace AlfaKuryer.Persistance.Services
             _userPaymentRead = userPaymentRead;
             _userPaymentWrite = userPaymentWrite;
             _payment = payment;
+            _balanceRead = balanceRead;
+            _balanceWrite = balanceWrite;
+            _cassirbalanceRead = cassirbalanceRead;
+            _cassirbalanceWrite = cassirbalanceWrite;
         }
         public async Task Accept(int id)
         {
@@ -64,6 +73,7 @@ namespace AlfaKuryer.Persistance.Services
             {
                 order.IsAccepted = true;
                 order.Courier = user;
+             
 
                 await _orderWrite.UpdateAsync(order);
                 await _orderWrite.SaveAsync();
@@ -71,12 +81,12 @@ namespace AlfaKuryer.Persistance.Services
                 if (order.Customer.MessgaeBy == true)
                 {
                     MailService mail = new MailService(_config);
-                    await MessageJob.SedMessage(()=>mail.Send(order.Customer.Email, $"Kuryer təyin olundu Ad:{user.Name}", order.Customer.Name));
+                    await MessageJob.SedMessage(()=>mail.Send(order.Customer.Email, $"{order.Id}-li sifarişə Kuryer təyin olundu"));
                 }
                 else
                 {
                     SmsService smsService = new SmsService();
-                    await MessageJob.SedMessage(()=>SmsService.Send($"Kuryer təyin olundu Ad:{user.Name}", order.Customer.PhoneNumber));
+                    await MessageJob.SedMessage(()=>SmsService.Send($"{order.Id}-li sifarişə Kuryer təyin olundu", order.Customer.PhoneNumber));
                 }
             }
 
@@ -112,17 +122,17 @@ namespace AlfaKuryer.Persistance.Services
 
             if (dto.OrderFromCityId == dto.OrderToCityId&&!dto.IsFast)
             {
-                priceGetDto = await _priceService.Get(1);
+                priceGetDto = await _priceService.Get(3);
                 inCity = true;
 
             }else if(dto.OrderFromCityId != dto.OrderToCityId && dto.IsFast)
             {
-                priceGetDto = await _priceService.Get(2);
+                priceGetDto = await _priceService.Get(4);
                 inCity = true;
             }
             else
             {
-                priceGetDto = await _priceService.Get(3);
+                priceGetDto = await _priceService.Get(5);
 
             }
             double Price;
@@ -168,18 +178,68 @@ namespace AlfaKuryer.Persistance.Services
             return "";
         }
 
-        public async Task CurierOnRoad(int id)
+        public async Task<string> CreateOrderInStorage(OrderPostDtoStorage dto)
         {
+            var user = await _userManager.FindByNameAsync(_http.HttpContext.User.Identity.Name);
+            bool inCity = false;
 
-            var order = await _orderRead.GetAsync(x => x.Id == id, true, true);
+            PriceGetDto priceGetDto = default;
 
-            if (order == null)
-                throw new ItemNotFound("order not found");
+    
+                priceGetDto = await _priceService.Get(3);
 
-            order.IsCourierOnRoad = true;
+            
+            double Price;
+            if (dto.Kq <= priceGetDto.UntilKq)
+            {
+                Price = priceGetDto.MinPrice;
+            }
+            else
+            {
+                int kqover = (int)Math.Ceiling(dto.Kq - priceGetDto.UntilKq);
+                Price = priceGetDto.MinPrice;
+                Price += kqover * priceGetDto.Price;
+            }
 
-            await _orderWrite.UpdateAsync(order);
+
+            Order order = new Order
+            {
+                FromAdress = "Anbar",
+                Kq = dto.Kq,
+                OrderToCityId = dto.OrderToCityId,
+                ToAdress = dto.ToAdress,
+                ToPhoneNumber = dto.ToPhoneNumber,
+                Price = Price,
+                IsInCity = inCity,
+                ToFullname = dto.ToFullName,
+                PackageCount = dto.PackageCount,
+                IsCash = dto.Payment == "Cash" ? true : false,
+                IsFast = false,
+                IsPaid = true,
+                IsInStorage = true,
+                IsAccepted = true,
+                IsCourierOnRoad=true,
+                IsCourierArriveForTake=true,
+                FromFullName=dto.FromFullName,
+                FromPhoneNumber=dto.FromPhoneNumber
+            };
+            
+            
+            order.OrderToDistrictId = dto.OrderToDistrictId != 0 ? dto.OrderToDistrictId : null;
+            await _orderWrite.AddAsync(order);
+       
             await _orderWrite.SaveAsync();
+            await _cassirbalanceWrite.AddAsync(new CassirBalance
+            {
+                ApplicationUser = user,
+                OrderNumber = order.Id,
+                IsCash = order.IsCash,
+                OrderPrice = order.Price,
+                IsFast = order.IsFast
+                
+            });
+            await _cassirbalanceWrite.SaveAsync();
+            return "";
         }
 
         public async Task<OrderGetDto> Get(int id)
@@ -196,45 +256,9 @@ namespace AlfaKuryer.Persistance.Services
         public async Task<IEnumerable<OrderGetDto>> GetAll()
         {
             IQueryable<Order> ordersquery = ordersquery = await _orderRead.GetAllAsync(x =>(x.IsCash)||(!x.IsCash&&x.IsPaid), false, true, "Customer", "Courier", "OrderFromCity", "OrderFromDistrict", "OrderToCity", "OrderToDistrict");
-
-
-            var orders = ordersquery.Select(x => new OrderGetDto
-            {
-                Courier = x.Courier,
-                Customer = x.Customer,
-                FromAdress = x.FromAdress,
-                IsAccepted = x.IsAccepted,
-                IsInStorage = x.IsInStorage,
-                IsOutStorage = x.IsOutStorage,
-                IsCourierArrive = x.IsCourierArrive,
-                IsCourierArriveForTake = x.IsCourierArriveForTake,
-                IsCourierOnRoad = x.IsCourierOnRoad,
-                IsCourierTaked = x.IsCourierTaked,
-                IsDelivered = x.IsDelivered,
-                IsInCity = x.IsInCity,
-                IsInForeignCity = x.IsInForeignCity,
-                IsOnRoad = x.IsOnRoad,
-                IsOnroadToForeignCity = x.IsOnroadToForeignCity,
-                Kq = x.Kq,
-                OrderFromCity = x.OrderFromCity,
-                OrderFromDistrict = x.OrderFromDistrict,
-                OrderToCity = x.OrderToCity,
-                OrderToDistrict = x.OrderToDistrict,
-                PackageCount = x.PackageCount,
-                Price = x.Price,
-                ToAdress = x.ToAdress,
-                ToPhoneNumber = x.ToPhoneNumber,
-                Id=x.Id,
-                ToFullName=x.ToFullname,
-                ForeignCourier=x.ForeignCourier,
-                CreatedDate=x.CreatedAt,
-                IsCash=x.IsCash,
-                IsFast=x.IsFast,
-                IsForeignCourierAccepted=x.IsForeignCourierAccepted,
-                
-                
-            });
-
+            var orders = ordersquery.Select(x =>
+                MapOrderToOrderGetDto(x)
+            ); ;
             return orders;
         }
 
@@ -247,12 +271,9 @@ namespace AlfaKuryer.Persistance.Services
             else if(couroerid!=null)
                 ordersquery = await _orderRead.GetAllAsync(x => (x.CustomerId == customerId && x.IsCash) || (x.CustomerId == customerId && !x.IsCash && x.IsPaid), false, true, "Customer", "Courier", "OrderFromCity", "OrderFromDistrict", "OrderToCity", "OrderToDistrict");
           
-            var orders =await ordersquery.Select(x=>new OrderGetDto { Courier=x.Courier,Customer=x.Customer,FromAdress=x.FromAdress,IsAccepted=x.IsAccepted,
-                IsInStorage=x.IsInStorage,IsOutStorage=x.IsOutStorage,IsCourierArrive=x.IsCourierArrive,IsCourierArriveForTake=x.IsCourierArriveForTake,
-                IsCourierOnRoad=x.IsCourierOnRoad,IsCourierTaked=x.IsCourierTaked,IsDelivered=x.IsDelivered,IsInCity=x.IsInCity,IsInForeignCity=x.IsInForeignCity,
-                IsOnRoad=x.IsOnRoad,IsOnroadToForeignCity=x.IsOnroadToForeignCity,Kq=x.Kq,OrderFromCity=x.OrderFromCity,OrderFromDistrict=x.OrderFromDistrict,OrderToCity=x.OrderToCity,
-                OrderToDistrict=x.OrderToDistrict,PackageCount=x.PackageCount,Price=x.Price,ToAdress=x.ToAdress,ToPhoneNumber=x.ToPhoneNumber
-            }).ToListAsync();
+            var orders =await ordersquery.Select(x=>
+              MapOrderToOrderGetDto(x)
+            ).ToListAsync();
 
             return orders;
         }
@@ -268,197 +289,26 @@ namespace AlfaKuryer.Persistance.Services
     "OrderToCity",
     "OrderToDistrict");
 
-            var orders = await ordersquery.Select(x => new OrderGetDto
-            {
-                Id=x.Id,
-                Courier = x.Courier,
-                Customer = x.Customer,
-                FromAdress = x.FromAdress,
-                IsAccepted = x.IsAccepted,
-                IsInStorage = x.IsInStorage,
-                IsOutStorage = x.IsOutStorage,
-                IsCourierArrive = x.IsCourierArrive,
-                IsCourierArriveForTake = x.IsCourierArriveForTake,
-                IsCourierOnRoad = x.IsCourierOnRoad,
-                IsCourierTaked = x.IsCourierTaked,
-                IsDelivered = x.IsDelivered,
-                IsInCity = x.IsInCity,
-                IsInForeignCity = x.IsInForeignCity,
-                IsOnRoad = x.IsOnRoad,
-                IsOnroadToForeignCity = x.IsOnroadToForeignCity,
-                Kq = x.Kq,
-                OrderFromCity = x.OrderFromCity,
-                OrderFromDistrict = x.OrderFromDistrict,
-                OrderToCity = x.OrderToCity,
-                OrderToDistrict = x.OrderToDistrict,
-                PackageCount = x.PackageCount,
-                Price = x.Price,
-                ToAdress = x.ToAdress,
-                ToPhoneNumber = x.ToPhoneNumber,
-                ToFullName=x.ToFullname,
-                IsCash = x.IsCash,
-                IsFast = x.IsFast,
-                IsForeignCourierAccepted = x.IsForeignCourierAccepted
-            }).ToListAsync();
+            var orders = await ordersquery.Select( x =>  MapOrderToOrderGetDto(x)).ToListAsync();
 
             return orders;
         }
 
-        public async Task<IEnumerable<OrderGetDto>> GetAllByCourier()
+        public async Task<IEnumerable<OrderGetDto>> GetAllByCompany()
         {
-            IQueryable<Order> queryOrder = default;
+            IQueryable<Order> ordersquery = default;
             var user = await _userManager.FindByNameAsync(_http.HttpContext.User.Identity.Name);
 
-             queryOrder = await _orderRead.GetAllAsync(x => (x.OrderFromCityId == user.CityId && user.ApplicationUserDistricts.FirstOrDefault(z => z.DistrictId == x.OrderFromDistrictId) != null&&x.IsCash)|| (x.OrderFromCityId == user.CityId && user.ApplicationUserDistricts.FirstOrDefault(z => z.DistrictId == x.OrderFromDistrictId) != null && !x.IsCash&&x.IsPaid==true), false, true, "Customer", "Courier", "OrderFromCity", "OrderFromDistrict", "OrderToCity", "OrderToDistrict");
+            ordersquery = await _orderRead.GetAllAsync(x => (x.CustomerId == user.Id), false, true, "Customer", "Courier",
+"OrderFromCity",
+"OrderFromDistrict",
+"OrderToCity",
+"OrderToDistrict");
 
-            var orders = await queryOrder.Select(x => new OrderGetDto
-            {
-                Id = x.Id,
-                Courier = x.Courier,
-                Customer = x.Customer,
-                FromAdress = x.FromAdress,
-                IsAccepted = x.IsAccepted,
-                IsInStorage = x.IsInStorage,
-                IsOutStorage = x.IsOutStorage,
-                IsCourierArrive = x.IsCourierArrive,
-                IsCourierArriveForTake = x.IsCourierArriveForTake,
-                IsCourierOnRoad = x.IsCourierOnRoad,
-                IsCourierTaked = x.IsCourierTaked,
-                IsDelivered = x.IsDelivered,
-                IsInCity = x.IsInCity,
-                IsInForeignCity = x.IsInForeignCity,
-                IsOnRoad = x.IsOnRoad,
-                IsOnroadToForeignCity = x.IsOnroadToForeignCity,
-                Kq = x.Kq,
-                OrderFromCity = x.OrderFromCity,
-                OrderFromDistrict = x.OrderFromDistrict,
-                OrderToCity = x.OrderToCity,
-                OrderToDistrict = x.OrderToDistrict,
-                PackageCount = x.PackageCount,
-                Price = x.Price,
-                ToAdress = x.ToAdress,
-                ToPhoneNumber = x.ToPhoneNumber,
-                CreatedDate=x.CreatedAt,
-                IsCash = x.IsCash,
-                IsFast = x.IsFast,
-                IsForeignCourierAccepted = x.IsForeignCourierAccepted
-            }).ToListAsync();
+            var orders = await ordersquery.Select(x => MapOrderToOrderGetDto(x)).ToListAsync();
 
             return orders;
         }
-
-        public async Task<IEnumerable<OrderGetDto>> GetOrderFromCourier()
-        {
-            var user = await _userManager.Users.Where(x=>x.UserName==_http.HttpContext.User.Identity.Name).Include(x=>x.ApplicationUserDistricts).FirstOrDefaultAsync();
-            
-            List<int?> Ids = new List<int?>();
-            foreach (var item in user.ApplicationUserDistricts)
-            {
-                Ids.Add(item.DistrictId);
-            }
-      
-
-            var queryOrder = await _orderRead.GetAllAsync(x=>(Ids.Contains(x.OrderFromDistrictId)&&x.IsCash)|| (Ids.Contains(x.OrderFromDistrictId) && !x.IsCash&&x.IsPaid), true,false, "Customer", "Courier", "OrderFromCity", "OrderFromDistrict", "OrderToCity", "OrderToDistrict");
-
-       
-
-  
-
-            var orders = await queryOrder.Select(x => new OrderGetDto
-            {
-                Courier = x.Courier,
-                Customer = x.Customer,
-                FromAdress = x.FromAdress,
-                IsAccepted = x.IsAccepted,
-                IsInStorage = x.IsInStorage,
-                IsOutStorage = x.IsOutStorage,
-                IsCourierArrive = x.IsCourierArrive,
-                IsCourierArriveForTake = x.IsCourierArriveForTake,
-                IsCourierOnRoad = x.IsCourierOnRoad,
-                IsCourierTaked = x.IsCourierTaked,
-                IsDelivered = x.IsDelivered,
-                IsInCity = x.IsInCity,
-                IsInForeignCity = x.IsInForeignCity,
-                IsOnRoad = x.IsOnRoad,
-                IsOnroadToForeignCity = x.IsOnroadToForeignCity,
-                Kq = x.Kq,
-                OrderFromCity = x.OrderFromCity,
-                OrderFromDistrict = x.OrderFromDistrict,
-                OrderToCity = x.OrderToCity,
-                OrderToDistrict = x.OrderToDistrict,
-                PackageCount = x.PackageCount,
-                Price = x.Price,
-                ToAdress = x.ToAdress,
-                ToPhoneNumber = x.ToPhoneNumber,
-                Id=x.Id,
-                CreatedDate=x.CreatedAt,
-                IsForeignCourierAccepted = x.IsForeignCourierAccepted,
-                IsCash = x.IsCash,
-                IsFast = x.IsFast,
-
-            }).ToListAsync();
-            return orders;
-        }
-
-        public async Task<IEnumerable<OrderGetDto>> GetOrderToCourier()
-        {
-            var user = await _userManager.FindByNameAsync(_http.HttpContext?.User?.Identity?.Name);
-
-            var queryorder = await _orderRead.GetAllAsync(x => (user.ApplicationUserDistricts.Any(z => z.DistrictId == x.OrderToDistrictId && x.OrderFromCityId == x.OrderFromCityId)&&x.IsCash)|| (user.ApplicationUserDistricts.Any(z => z.DistrictId == x.OrderToDistrictId && x.OrderFromCityId == x.OrderFromCityId) && !x.IsCash&&x.IsPaid), false, true, "Customer", "Courier", "OrderFromCity", "OrderFromDistrict", "OrderToCity", "OrderToDistrict");
-
-            var orders = await queryorder.Select(x => new OrderGetDto
-            {
-                Courier = x.Courier,
-                Customer = x.Customer,
-                FromAdress = x.FromAdress,
-                IsAccepted = x.IsAccepted,
-                IsInStorage = x.IsInStorage,
-                IsOutStorage = x.IsOutStorage,
-                IsCourierArrive = x.IsCourierArrive,
-                IsCourierArriveForTake = x.IsCourierArriveForTake,
-                IsCourierOnRoad = x.IsCourierOnRoad,
-                IsCourierTaked = x.IsCourierTaked,
-                IsDelivered = x.IsDelivered,
-                IsInCity = x.IsInCity,
-                IsInForeignCity = x.IsInForeignCity,
-                IsOnRoad = x.IsOnRoad,
-                IsOnroadToForeignCity = x.IsOnroadToForeignCity,
-                Kq = x.Kq,
-                OrderFromCity = x.OrderFromCity,
-                OrderFromDistrict = x.OrderFromDistrict,
-                OrderToCity = x.OrderToCity,
-                OrderToDistrict = x.OrderToDistrict,
-                PackageCount = x.PackageCount,
-                Price = x.Price,
-                ToAdress = x.ToAdress,
-                ToPhoneNumber = x.ToPhoneNumber,
-                IsForeignCourierAccepted = x.IsForeignCourierAccepted,
-                IsCash = x.IsCash,
-                IsFast = x.IsFast,
-            }).ToListAsync();
-
-           orders.RemoveAll(x=>x.IsAccepted==true&&x.Courier.Name!=user.Name);
-
-
-            return orders;
-        }
-
-        public async Task OnroadToForeignCity(int id)
-        {
-
-            var order = await _orderRead.GetAsync(x => x.Id == id, true, true);
-
-            if (order == null)
-                throw new ItemNotFound("order not found");
-
-            order.IsOnroadToForeignCity = true;
-
-            await _orderWrite.UpdateAsync(order);
-            await _orderWrite.SaveAsync();
-        }
-
-     
-
         public async Task<OrderGetDto> GetOrderById(int id)
         {
             var order = await _orderRead.GetAsync(x=>x.Id==id,false,true, "Customer", "Courier", "OrderFromCity", "OrderFromDistrict", "OrderToCity", "OrderToDistrict", "ForeignCourier");
@@ -471,7 +321,7 @@ namespace AlfaKuryer.Persistance.Services
 
         }
 
-        private  OrderGetDto MapOrderToOrderGetDto(Order order)
+        private static OrderGetDto MapOrderToOrderGetDto(Order order)
         {
             var orderGetDto = new OrderGetDto
             {
@@ -506,6 +356,7 @@ namespace AlfaKuryer.Persistance.Services
                 IsForeignCourierAccepted = order.IsForeignCourierAccepted,
                 IsCash = order.IsCash,
                 IsFast = order.IsFast,
+                
             };
 
             return orderGetDto;
@@ -522,49 +373,16 @@ namespace AlfaKuryer.Persistance.Services
             }
 
 
-            var queryOrder = await _orderRead.GetAllAsync(x =>(x.IsAccepted==false&& Ids.Contains(x.OrderFromDistrictId)&&x.IsCash)||
-            (x.IsAccepted == false && Ids.Contains(x.OrderFromDistrictId) && !x.IsCash&&x.IsPaid) ||
+            var queryOrder = await _orderRead.GetAllAsync(x =>(x.IsAccepted==false&&x.OrderFromCityId==user.CityId &&Ids.Contains(x.OrderFromDistrictId)&&x.IsCash)||
+            (x.IsAccepted == false && x.OrderFromCityId == user.CityId && Ids.Contains(x.OrderFromDistrictId) && !x.IsCash&&x.IsPaid)
+            ||
             (x.ForeignCourierId==null&&x.IsOutStorage==true&&x.OrderToCityId==user.CityId&&Ids.Contains(x.OrderToDistrictId)&&x.IsCash)||
+
                         (x.ForeignCourierId == null && x.IsOutStorage == true && x.OrderToCityId == user.CityId && Ids.Contains(x.OrderToDistrictId) && !x.IsCash&&x.IsPaid)
             , true, false, "Customer", "Courier", "OrderFromCity", "OrderFromDistrict", "OrderToCity", "OrderToDistrict");
-
-
-
-
-
-            var orders = await queryOrder.Select(x => new OrderGetDto
-            {
-                Courier = x.Courier,
-                Customer = x.Customer,
-                FromAdress = x.FromAdress,
-                IsAccepted = x.IsAccepted,
-                IsInStorage = x.IsInStorage,
-                IsOutStorage = x.IsOutStorage,
-                IsCourierArrive = x.IsCourierArrive,
-                IsCourierArriveForTake = x.IsCourierArriveForTake,
-                IsCourierOnRoad = x.IsCourierOnRoad,
-                IsCourierTaked = x.IsCourierTaked,
-                IsDelivered = x.IsDelivered,
-                IsInCity = x.IsInCity,
-                IsInForeignCity = x.IsInForeignCity,
-                IsOnRoad = x.IsOnRoad,
-                IsOnroadToForeignCity = x.IsOnroadToForeignCity,
-                Kq = x.Kq,
-                OrderFromCity = x.OrderFromCity,
-                OrderFromDistrict = x.OrderFromDistrict,
-                OrderToCity = x.OrderToCity,
-                OrderToDistrict = x.OrderToDistrict,
-                PackageCount = x.PackageCount,
-                Price = x.Price,
-                ToAdress = x.ToAdress,
-                ToPhoneNumber = x.ToPhoneNumber,
-                Id = x.Id,
-                CreatedDate = x.CreatedAt,
-                IsForeignCourierAccepted = x.IsForeignCourierAccepted,
-                IsCash = x.IsCash,
-                IsFast = x.IsFast,
-
-            }).ToListAsync();
+            var orders = await queryOrder.Select(x =>
+              MapOrderToOrderGetDto(x)
+           ).ToListAsync();
             return orders;
         }
 
@@ -572,41 +390,10 @@ namespace AlfaKuryer.Persistance.Services
         {
             string userName = _http.HttpContext.User.Identity.Name;
             var user =await _userManager.FindByNameAsync(userName);
-            var queryOrder = await _orderRead.GetAllAsync(x => (x.CourierId==user.Id&&x.IsInStorage==false)||(x.ForeignCourierId==user.Id&&x.IsDelivered==false), true, false, "Customer", "Courier", "OrderFromCity", "OrderFromDistrict", "OrderToCity", "OrderToDistrict");
-            var orders = await queryOrder.Select(x => new OrderGetDto
-            {
-                Courier = x.Courier,
-                Customer = x.Customer,
-                FromAdress = x.FromAdress,
-                IsAccepted = x.IsAccepted,
-                IsInStorage = x.IsInStorage,
-                IsOutStorage = x.IsOutStorage,
-                IsCourierArrive = x.IsCourierArrive,
-                IsCourierArriveForTake = x.IsCourierArriveForTake,
-                IsCourierOnRoad = x.IsCourierOnRoad,
-                IsCourierTaked = x.IsCourierTaked,
-                IsDelivered = x.IsDelivered,
-                IsInCity = x.IsInCity,
-                IsInForeignCity = x.IsInForeignCity,
-                IsOnRoad = x.IsOnRoad,
-                IsOnroadToForeignCity = x.IsOnroadToForeignCity,
-                Kq = x.Kq,
-                OrderFromCity = x.OrderFromCity,
-                OrderFromDistrict = x.OrderFromDistrict,
-                OrderToCity = x.OrderToCity,
-                OrderToDistrict = x.OrderToDistrict,
-                PackageCount = x.PackageCount,
-                Price = x.Price,
-                ToAdress = x.ToAdress,
-                ToPhoneNumber = x.ToPhoneNumber,
-                Id = x.Id,
-                CreatedDate = x.CreatedAt,
-                IsForeignCourierAccepted = x.IsForeignCourierAccepted,
-                IsCash = x.IsCash,
-                IsFast = x.IsFast,
-                ForeignCourier =x.ForeignCourier
-
-            }).ToListAsync();
+            var queryOrder = await _orderRead.GetAllAsync(x => (x.CourierId==user.Id&&x.IsInStorage==false)||(x.ForeignCourierId==user.Id&&x.IsDelivered==false), true, false, "Customer", "Courier", "OrderFromCity", "OrderFromDistrict", "OrderToCity", "OrderToDistrict", "ForeignCourier");
+            var orders = await queryOrder.Select(x => 
+                MapOrderToOrderGetDto(x)
+            ).ToListAsync();
             return orders;
         }
         public async Task CurierOnRoadForTake(int id)
@@ -616,7 +403,6 @@ namespace AlfaKuryer.Persistance.Services
 
             if (order == null)
                 throw new ItemNotFound("order not found");
-
 
 
             if (order.IsCourierOnRoad == false)
@@ -629,12 +415,7 @@ namespace AlfaKuryer.Persistance.Services
                 if (order.Customer.MessgaeBy == true)
                 {
                     MailService mail = new MailService(_config);
-                    await MessageJob.SedMessage(() => mail.Send(order.Customer.Email, $"Kuryer sizə tərəf yoldadır", order.Customer.Name));
-                }
-                else
-                {
-                    SmsService smsService = new SmsService();
-                    await MessageJob.SedMessage(() => SmsService.Send($"Kuryer sizə tərəf yoldadır", order.Customer.PhoneNumber));
+                    await MessageJob.SedMessage(() => mail.Send(order.Customer.Email, $"Kuryer sizə tərəf yoldadır"));
                 }
             }
        
@@ -659,12 +440,7 @@ namespace AlfaKuryer.Persistance.Services
                 if (order.Customer.MessgaeBy == true)
                 {
                     MailService mail = new MailService(_config);
-                    await MessageJob.SedMessage(() => mail.Send(order.Customer.Email, $"Kuryer çatdı", order.Customer.Name));
-                }
-                else
-                {
-                    SmsService smsService = new SmsService();
-                    await MessageJob.SedMessage(() => SmsService.Send($"Kuryer çatdı", order.Customer.PhoneNumber));
+                    await MessageJob.SedMessage(() => mail.Send(order.Customer.Email, $"Kuryer çatdı"));
                 }
             }
 
@@ -673,30 +449,31 @@ namespace AlfaKuryer.Persistance.Services
 
         public async Task CourierTaked(int id)
         {
-
             var user = await _userManager.FindByNameAsync(_http.HttpContext.User.Identity.Name);
             var order = await _orderRead.GetAsync(x => x.Id == id && x.CourierId == user.Id, true, true, "Customer");
 
             if (order == null)
                 throw new ItemNotFound("order not found");
 
-
             if (order.IsCourierTaked == false)
             {
+                await _balanceWrite.AddAsync(new CourierBalance
+                {
+                    ApplicationUser = user,
+                    CouruyerSalary = order.IsFast ? (double)user.CourierSalaryForFast : (double)user.CourierSalaryForSimple,
+                    OrderNumber = order.Id,
+                    OrderPrice = order.Price,
+                    IsCash = order.IsCash,
+                    IsFast = order.IsFast
+                });
                 order.IsCourierTaked = true;
-
                 await _orderWrite.UpdateAsync(order);
                 await _orderWrite.SaveAsync();
 
                 if (order.Customer.MessgaeBy == true)
                 {
                     MailService mail = new MailService(_config);
-                    await MessageJob.SedMessage(() => mail.Send(order.Customer.Email, $"Kuryer tehvil aldi", order.Customer.Name));
-                }
-                else
-                {
-                    SmsService smsService = new SmsService();
-                    await MessageJob.SedMessage(() => SmsService.Send($"Kuryer tehvil aldi", order.Customer.PhoneNumber));
+                    await MessageJob.SedMessage(() => mail.Send(order.Customer.Email, $"Kuryer təhvil aldı"));
                 }
             }
         }
@@ -721,7 +498,7 @@ namespace AlfaKuryer.Persistance.Services
                 if (order.Customer.MessgaeBy == true)
                 {
                     MailService mail = new MailService(_config);
-                    await MessageJob.SedMessage(() => mail.Send(order.Customer.Email, $"Sifarişiniz anbarda", order.Customer.Name));
+                    await MessageJob.SedMessage(() => mail.Send(order.Customer.Email, $"Sifarişiniz anbarda"));
                 }
                 else
                 {
@@ -744,18 +521,33 @@ namespace AlfaKuryer.Persistance.Services
                 order.IsForeignCourierAccepted = true;
                     order.ForeignCourier = user;
 
+                await _balanceWrite.AddAsync(new CourierBalance
+                {
+                    ApplicationUser = user,
+                    CouruyerSalary = order.IsFast ? (double)user.CourierSalaryForFast : (double)user.CourierSalaryForSimple,
+                    OrderNumber = order.Id,
+                    OrderPrice = order.Price,
+                    IsCash=order.IsCash,
+                    IsFast=order.IsFast
+                });
+
                 await _orderWrite.UpdateAsync(order);
                 await _orderWrite.SaveAsync();
 
-                if (order.Customer.MessgaeBy == true)
+                if (order.Customer == null)
+                {
+                    SmsService smsService = new SmsService();
+                    await MessageJob.SedMessage(() => SmsService.Send("çatdırılması üçün kuryer sifarişi təslim aldı", order.FromPhoneNumber));
+                }
+                else if (order.Customer.MessgaeBy == true)
                 {
                     MailService mail = new MailService(_config);
-                    await MessageJob.SedMessage(() => mail.Send(order.Customer.Email, $"Sifarişiniz {order.OrderToCity.Name}-da", order.Customer.Name));
+                    await MessageJob.SedMessage(() => mail.Send(order.Customer.Email, "çatdırılması üçün kuryer sifarişi təslim aldı"));
                 }
                 else
                 {
                     SmsService smsService = new SmsService();
-                    await MessageJob.SedMessage(() => SmsService.Send($"Sifarişiniz {order.OrderToCity.Name}-da", order.Customer.PhoneNumber));
+                    await MessageJob.SedMessage(() => SmsService.Send("çatdırılması üçün kuryer sifarişi təslim aldı", order.Customer.PhoneNumber));
                 }
             }
         }
@@ -775,15 +567,13 @@ namespace AlfaKuryer.Persistance.Services
                 await _orderWrite.UpdateAsync(order);
                 await _orderWrite.SaveAsync();
 
-                if (order.Customer.MessgaeBy == true)
+                if (order.Customer != null)
                 {
-                    MailService mail = new MailService(_config);
-                    await MessageJob.SedMessage(() => mail.Send(order.Customer.Email, $"Sifarişiniz size teref gelir", order.Customer.Name));
-                }
-                else
-                {
-                    SmsService smsService = new SmsService();
-                    await MessageJob.SedMessage(() => SmsService.Send($"Sifarişiniz size tereg gelir", order.Customer.PhoneNumber));
+                    if (order.Customer.MessgaeBy == true)
+                    {
+                        MailService mail = new MailService(_config);
+                        await MessageJob.SedMessage(() => mail.Send(order.Customer.Email, $"Sifarişiniz size teref gelir"));
+                    }
                 }
             }
         }
@@ -803,16 +593,16 @@ namespace AlfaKuryer.Persistance.Services
                 await _orderWrite.UpdateAsync(order);
                 await _orderWrite.SaveAsync();
 
-                if (order.Customer.MessgaeBy == true)
+                if (order.Customer != null)
                 {
-                    MailService mail = new MailService(_config);
-                    await MessageJob.SedMessage(() => mail.Send(order.Customer.Email, "Kuryer catdi", order.Customer.Name));
+                    if (order.Customer.MessgaeBy == true)
+                    {
+                        MailService mail = new MailService(_config);
+                        await MessageJob.SedMessage(() => mail.Send(order.Customer.Email, "Kuryer çatdı", order.Customer.Name));
+                    }
                 }
-                else
-                {
-                    SmsService smsService = new SmsService();
-                    await MessageJob.SedMessage(() => SmsService.Send("Kuryer catdi", order.Customer.PhoneNumber));
-                }
+              
+            
             }
         }
 
@@ -832,16 +622,16 @@ namespace AlfaKuryer.Persistance.Services
                 await _orderWrite.UpdateAsync(order);
                 await _orderWrite.SaveAsync();
 
-                if (order.Customer.MessgaeBy == true)
+                if (order.Customer != null)
                 {
-                    MailService mail = new MailService(_config);
-                    await MessageJob.SedMessage(() => mail.Send(order.Customer.Email, "Sifaris tamamlandi", order.Customer.Name));
+                    if (order.Customer!=null)
+                    {
+                        MailService mail = new MailService(_config);
+                        await MessageJob.SedMessage(() => mail.Send(order.Customer.Email, "Sifariş tamamlandi"));
+                    }
                 }
-                else
-                {
-                    SmsService smsService = new SmsService();
-                    await MessageJob.SedMessage(() => SmsService.Send("Sifaris tamamlandi", order.Customer.PhoneNumber));
-                }
+                 
+
             }
         }
 
@@ -899,20 +689,24 @@ namespace AlfaKuryer.Persistance.Services
             await _orderWrite.UpdateAsync(order);
             await _orderWrite.SaveAsync();
 
-
-            if (order.Customer.MessgaeBy == true)
+            if (order.Customer == null)
+            {
+                SmsService smsService = new SmsService();
+                await MessageJob.SedMessage(() => SmsService.Send($"Sifaris anbardan çıxdı sizin isdiqamətdə yoldadır", order.FromPhoneNumber));
+            }
+            else if (order.Customer.MessgaeBy == true)
             {
                 MailService mail = new MailService(_config);
-                await MessageJob.SedMessage(() => mail.Send(order.Customer.Email, "Sifaris anbardan cixdi", order.Customer.Name));
+                await MessageJob.SedMessage(() => mail.Send(order.Customer.Email, $"Sifaris anbardan çıxdı sizin isdiqamətdə yoldadır"));
             }
             else
             {
                 SmsService smsService = new SmsService();
-                await MessageJob.SedMessage(() => SmsService.Send("Sifaris anbardan cixdi", order.Customer.PhoneNumber));
+                await MessageJob.SedMessage(() => SmsService.Send($"Sifaris anbardan çıxdı sizin isdiqamətdə yoldadır", order.Customer.PhoneNumber));
             }
         }
 
-        public async Task<IEnumerable<OrderGetDto>> GetAllByCustomerHistory()
+        public async Task<IEnumerable<OrderGetDto>> GetAllByCustomerHistory(int page)
         {
             IQueryable<Order> ordersquery = default;
             var user = await _userManager.FindByNameAsync(_http.HttpContext.User.Identity.Name);
@@ -922,7 +716,9 @@ namespace AlfaKuryer.Persistance.Services
 "OrderFromDistrict",
 "OrderToCity",
 "OrderToDistrict");
-
+            int Maxnum = ordersquery.Count();
+            ordersquery = ordersquery.OrderByDescending(x => x.Id);
+            ordersquery = ordersquery.Skip((page - 1) * 10).Take(10);
             var orders = await ordersquery.Select(x => new OrderGetDto
             {
                 Id = x.Id,
@@ -954,13 +750,14 @@ namespace AlfaKuryer.Persistance.Services
                 IsForeignCourierAccepted = x.IsForeignCourierAccepted,
                 IsCash = x.IsCash,
                 IsFast = x.IsFast,
+                PageCount = (int)Math.Ceiling((decimal)ordersquery.Count() / 8)
 
             }).ToListAsync();
 
             return orders;
         }
 
-        public async Task<IEnumerable<OrderGetDto>> GetAllByCourierHistory()
+        public async Task<IEnumerable<OrderGetDto>> GetAllByCourierHistory(int page)
         {
             IQueryable<Order> ordersquery = default;
             var user = await _userManager.FindByNameAsync(_http.HttpContext.User.Identity.Name);
@@ -970,6 +767,9 @@ namespace AlfaKuryer.Persistance.Services
 "OrderFromDistrict",
 "OrderToCity",
 "OrderToDistrict");
+          int Maxnum=  ordersquery.Count();
+            ordersquery = ordersquery.OrderByDescending(x => x.Id);
+            ordersquery = ordersquery.Skip((page-1)*10).Take(10);
 
             var orders = await ordersquery.Select(x => new OrderGetDto
             {
@@ -1002,8 +802,10 @@ namespace AlfaKuryer.Persistance.Services
                 IsForeignCourierAccepted = x.IsForeignCourierAccepted,
                 IsCash = x.IsCash,
                 IsFast = x.IsFast,
+                CreatedDate = x.CreatedAt,
+                PageCount = (int)Math.Ceiling((decimal)ordersquery.Count() / 8)
 
-            }).ToListAsync();
+        }).ToListAsync();
 
             return orders;
         }

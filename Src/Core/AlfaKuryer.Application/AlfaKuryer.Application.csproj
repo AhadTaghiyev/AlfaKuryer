@@ -39,6 +39,8 @@
     <None Remove="Services\OrderServices\" />
     <None Remove="Dtos\AdresDtos\" />
     <None Remove="Services\PaymentServices\" />
+    <None Remove="Dtos\SalaryDtos\" />
+    <None Remove="Dtos\CassirDtos\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Dtos\RateDtos\" />
@@ -61,5 +63,7 @@
     <Folder Include="Services\OrderServices\" />
     <Folder Include="Dtos\AdresDtos\" />
     <Folder Include="Services\PaymentServices\" />
+    <Folder Include="Dtos\SalaryDtos\" />
+    <Folder Include="Dtos\CassirDtos\" />
   </ItemGroup>
 </Project>

@@ -6,10 +6,12 @@ namespace AlfaKuryer.Domain.Entities
 	public class Order:BaseEntity
 	{
         public string? CustomerId { get; set; } // Assuming this is the foreign key to ApplicationUser for customer
-        public ApplicationUser Customer { get; set; } // Navigation property to ApplicationUser for customer
+        public ApplicationUser? Customer { get; set; } // Navigation property to ApplicationUser for customer
 
         public string? CourierId { get; set; } // Assuming this is the foreign key to ApplicationUser for courier
         public ApplicationUser? Courier { get; set; }
+        public string? FromFullName { get; set; }
+        public string? FromPhoneNumber { get; set; }
 
         public string? ForeignCourierId { get; set; } // Assuming this is the foreign key to ApplicationUser for foreign courier
         public ApplicationUser? ForeignCourier { get; set; }
@@ -17,12 +19,12 @@ namespace AlfaKuryer.Domain.Entities
         public string ToAdress { get; set; }
         public string FromAdress { get; set; }
 
-        public City OrderFromCity { get; set; }
+        public City? OrderFromCity { get; set; }
         public District? OrderFromDistrict { get; set; }
         public City OrderToCity { get; set; }
         public District? OrderToDistrict { get; set; }
         public string ToFullname { get; set; }
-        public int OrderFromCityId { get; set; }
+        public int? OrderFromCityId { get; set; }
         public int? OrderFromDistrictId { get; set; }
         public int OrderToCityId { get; set; }
         public int? OrderToDistrictId { get; set; }
@@ -45,6 +47,8 @@ namespace AlfaKuryer.Domain.Entities
         public bool IsCash { get; set; }
         public bool IsFast { get; set; }
         public bool IsPaid { get; set; }
+        public bool OrderFromCassir { get; set; }
+        public List<CourierBalance> CourierBalances { get; set; }
     }
 }
 

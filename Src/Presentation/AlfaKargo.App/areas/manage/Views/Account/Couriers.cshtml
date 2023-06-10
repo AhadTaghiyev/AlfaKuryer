@@ -25,7 +25,9 @@
                     <th>
                         Email
                     </th>
-
+                    <th>
+                        Sifarişlərin gör
+                    </th>
                     <th></th>
                 </tr>
             </thead>
@@ -39,7 +41,9 @@
                         <td>
                             @item.Email
                         </td>
-
+                        <td>
+                            <a   asp-action="CourierSalary" asp-route-UserId="@item.Id">Sifarişlərin gör</a>
+                        </td>
                         <td>
                             <a class="btn btn-danger" onclick="return confirm('Silmək istədiyinizdən əminsiniz?');" asp-action="DeleteConfirmed" asp-route-UserId="@item.Id"><i class="fas fa-trash-alt"></i></a>
                         </td>
